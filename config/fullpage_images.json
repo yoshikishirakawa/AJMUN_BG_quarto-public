@@ -1,0 +1,121 @@
+{
+    "version": "1.0.0",
+    "images": [
+        {
+            "id": "c1d6c8f2-1a54-4b45-9c92-8d8a6a6a7d01",
+            "type": "cover_front",
+            "title": "表紙",
+            "path": "assets/uploads/ch_012_1769933301_front_cover.jpg",
+            "position": {
+                "placement": "before_toc",
+                "chapter_id": null,
+                "page_number": null,
+                "target_chapter_index": null,
+                "offset_pages": 0
+            },
+            "display": {
+                "mode": "fill",
+                "scale": 100,
+                "offset_x": 0,
+                "offset_y": 0,
+                "bleed": 3
+            },
+            "validation": {
+                "format": "",
+                "width": 0,
+                "height": 0,
+                "dpi": 0,
+                "warnings": [],
+                "errors": []
+            },
+            "enabled": true,
+            "order": 0,
+            "created_at": "2026-02-03T18:10:00Z",
+            "updated_at": "2026-02-03T18:10:00Z"
+        },
+        {
+            "id": "f1b3a9d0-6a61-4d7d-9d35-8d5e2a4f0b22",
+            "type": "advertisement",
+            "title": "広告",
+            "path": "assets/uploads/ch_014_1769933342_37A4_1P_page-0001.jpg",
+            "position": {
+                "placement": "after_content",
+                "chapter_id": null,
+                "page_number": null,
+                "target_chapter_index": null,
+                "offset_pages": 0
+            },
+            "display": {
+                "mode": "fill",
+                "scale": 100,
+                "offset_x": 0,
+                "offset_y": 0,
+                "bleed": 3
+            },
+            "validation": {
+                "format": "",
+                "width": 0,
+                "height": 0,
+                "dpi": 0,
+                "warnings": [],
+                "errors": []
+            },
+            "enabled": true,
+            "order": 1,
+            "created_at": "2026-02-03T18:10:00Z",
+            "updated_at": "2026-02-03T18:10:00Z"
+        },
+        {
+            "id": "a7c9d2e1-2d3b-4b6a-9f2f-1c3b8e9a4a33",
+            "type": "cover_back",
+            "title": "裏表紙",
+            "path": "assets/uploads/ch_013_1769933353_back_cover.png",
+            "position": {
+                "placement": "after_appendices",
+                "chapter_id": null,
+                "page_number": null,
+                "target_chapter_index": null,
+                "offset_pages": 0
+            },
+            "display": {
+                "mode": "fill",
+                "scale": 100,
+                "offset_x": 0,
+                "offset_y": 0,
+                "bleed": 3
+            },
+            "validation": {
+                "format": "",
+                "width": 0,
+                "height": 0,
+                "dpi": 0,
+                "warnings": [],
+                "errors": []
+            },
+            "enabled": true,
+            "order": 2,
+            "created_at": "2026-02-03T18:10:00Z",
+            "updated_at": "2026-02-03T18:10:00Z"
+        }
+    ],
+    "metadata": {
+        "storage": {
+            "type": "local",
+            "basePath": "assets/fullpage"
+        },
+        "validation": {
+            "allowedMimeTypes": [
+                "image/jpeg",
+                "image/png",
+                "image/pdf"
+            ],
+            "maxFileSize": 20971520,
+            "recommendedDimensions": {
+                "width": 2480,
+                "height": 3508,
+                "dpi": 300,
+                "bleed": 3
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+---
+format:
+  html: default
+  pdf: default
+---
+
+![](/assets/uploads/ch_013_1769933353_back_cover.png){.fullpage-image width="a4" fit="stretch" position="center"}

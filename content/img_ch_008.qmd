@@ -1,0 +1,5 @@
+---
+format: html
+---
+
+![](/assets/uploads/ch_008_1768115567_dummy_test_image.jpg){width=100%}

@@ -1,0 +1,358 @@
+/* ============================================
+   utilities.css
+   ユーティリティクラス
+
+   作成日: 2026-01-24
+   関連: docs/ui-redesign/05-implementation.md
+   ============================================ */
+
+/* ============================================
+   表示制御
+   ============================================ */
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-visible {
+  display: block !important;
+}
+
+.u-invisible {
+  visibility: hidden;
+}
+
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================
+   テキスト配置
+   ============================================ */
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-justify {
+  text-align: justify;
+}
+
+/* ============================================
+   フォントサイズ
+   ============================================ */
+
+.u-text-xs {
+  font-size: 0.75rem;
+}
+
+.u-text-sm {
+  font-size: 0.85rem;
+}
+
+.u-text-base {
+  font-size: 1rem;
+}
+
+.u-text-lg {
+  font-size: 1.125rem;
+}
+
+.u-text-xl {
+  font-size: 1.25rem;
+}
+
+/* ============================================
+   フォントウェイト
+   ============================================ */
+
+.u-font-normal {
+  font-weight: 400;
+}
+
+.u-font-medium {
+  font-weight: 500;
+}
+
+.u-font-semibold {
+  font-weight: 600;
+}
+
+.u-font-bold {
+  font-weight: 700;
+}
+
+/* ============================================
+   カラー
+   ============================================ */
+
+.u-text-accent {
+  color: var(--color-accent);
+}
+
+.u-text-muted {
+  color: var(--color-text-muted);
+}
+
+.u-bg-surface {
+  background: var(--color-surface);
+}
+
+.u-bg-muted {
+  background: var(--color-surface-muted);
+}
+
+/* ============================================
+   スペーシング
+   ============================================ */
+
+.u-m-0 { margin: 0; }
+.u-m-1 { margin: 0.25rem; }
+.u-m-2 { margin: 0.5rem; }
+.u-m-3 { margin: 0.75rem; }
+.u-m-4 { margin: 1rem; }
+
+.u-mt-0 { margin-top: 0; }
+.u-mt-1 { margin-top: 0.25rem; }
+.u-mt-2 { margin-top: 0.5rem; }
+.u-mt-3 { margin-top: 0.75rem; }
+.u-mt-4 { margin-top: 1rem; }
+
+.u-mb-0 { margin-bottom: 0; }
+.u-mb-1 { margin-bottom: 0.25rem; }
+.u-mb-2 { margin-bottom: 0.5rem; }
+.u-mb-3 { margin-bottom: 0.75rem; }
+.u-mb-4 { margin-bottom: 1rem; }
+
+.u-p-0 { padding: 0; }
+.u-p-1 { padding: 0.25rem; }
+.u-p-2 { padding: 0.5rem; }
+.u-p-3 { padding: 0.75rem; }
+.u-p-4 { padding: 1rem; }
+
+/* ============================================
+   Flexbox
+   ============================================ */
+
+.u-flex {
+  display: flex;
+}
+
+.u-flex-column {
+  flex-direction: column;
+}
+
+.u-flex-row {
+  flex-direction: row;
+}
+
+.u-items-center {
+  align-items: center;
+}
+
+.u-items-start {
+  align-items: flex-start;
+}
+
+.u-items-end {
+  align-items: flex-end;
+}
+
+.u-justify-center {
+  justify-content: center;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-justify-start {
+  justify-content: flex-start;
+}
+
+.u-justify-end {
+  justify-content: flex-end;
+}
+
+.u-flex-1 {
+  flex: 1;
+}
+
+.u-flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   Grid
+   ============================================ */
+
+.u-grid {
+  display: grid;
+}
+
+.u-grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.u-grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.u-gap-1 { gap: 0.25rem; }
+.u-gap-2 { gap: 0.5rem; }
+.u-gap-3 { gap: 0.75rem; }
+.u-gap-4 { gap: 1rem; }
+
+/* ============================================
+   位置
+   ============================================ */
+
+.u-relative {
+  position: relative;
+}
+
+.u-absolute {
+  position: absolute;
+}
+
+.u-fixed {
+  position: fixed;
+}
+
+.u-sticky {
+  position: sticky;
+}
+
+/* ============================================
+   サイズ
+   ============================================ */
+
+.u-w-full {
+  width: 100%;
+}
+
+.u-h-full {
+  height: 100%;
+}
+
+/* ============================================
+   オーバーフロー
+   ============================================ */
+
+.u-overflow-auto {
+  overflow: auto;
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-overflow-scroll {
+  overflow: scroll;
+}
+
+/* ============================================
+   角丸
+   ============================================ */
+
+.u-rounded {
+  border-radius: 0.25rem;
+}
+
+.u-rounded-full {
+  border-radius: 9999px;
+}
+
+.u-rounded-none {
+  border-radius: 0;
+}
+
+/* ============================================
+   シャドウ
+   ============================================ */
+
+.u-shadow {
+  box-shadow: 0 1px 3px var(--color-shadow);
+}
+
+.u-shadow-md {
+  box-shadow: 0 4px 6px var(--color-shadow);
+}
+
+.u-shadow-lg {
+  box-shadow: 0 10px 15px var(--color-shadow);
+}
+
+/* ============================================
+   カーソル
+   ============================================ */
+
+.u-cursor-pointer {
+  cursor: pointer;
+}
+
+.u-cursor-default {
+  cursor: default;
+}
+
+.u-cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+/* ============================================
+   ユーザー選択
+   ============================================ */
+
+.u-select-none {
+  user-select: none;
+}
+
+.u-select-text {
+  user-select: text;
+}
+
+.u-select-all {
+  user-select: all;
+}
+
+/* ============================================
+   画面サイズのみの表示制御
+   ============================================ */
+
+@media (max-width: 767px) {
+  .u-hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .u-hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   印刷用
+   ============================================ */
+
+@media print {
+  .u-no-print {
+    display: none !important;
+  }
+}

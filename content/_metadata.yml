@@ -1,0 +1,48 @@
+format:
+  html:
+    embed-resources: false
+    include-in-header:
+      - file: ../templates/pdf-download-config.html
+      - text: |
+          <script>
+            (function() {
+              try {
+                var theme = localStorage.getItem('quarto-theme') || 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+                // Ensure body gets the attribute as soon as it exists
+                var observer = new MutationObserver(function(mutations) {
+                  if (document.body) {
+                    document.body.setAttribute('data-theme', theme);
+                    if (theme === 'dark') {
+                      document.body.classList.add('dark');
+                    }
+                    observer.disconnect();
+                  }
+                });
+                observer.observe(document.documentElement, { childList: true });
+              } catch (e) {}
+            })();
+          </script>
+      - text: |
+          <style>
+            :root {
+              --sidebar-width: 280px;
+              --margin-width: 150px;
+              --gutter-width: 12px;
+            }
+          </style>
+          <link rel="preload" href="../fonts/BIZUDPMincho-Regular.ttf" as="font" type="font/ttf" crossorigin>
+
+filters:
+  - ../filters/toc_header_ids.lua
+  - ../filters/law.lua
+  - ../filters/highlight.lua
+  - ../filters/index.lua
+  - ../filters/image.lua
+  - ../filters/colmin.lua
+  - ../filters/toc_links.lua

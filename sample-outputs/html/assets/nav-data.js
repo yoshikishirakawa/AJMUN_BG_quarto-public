@@ -1,0 +1,1570 @@
+window.__NAV_DATA__ = {
+  "generated_at": "2026-05-16T01:32:27.446424+00:00",
+  "pages": [
+    {
+      "source": "index.qmd",
+      "output": "index.html",
+      "title": "平和への課題：補遺",
+      "headings": [
+        {
+          "title": "平和への課題：補遺",
+          "level": 1,
+          "anchor": null,
+          "children": [
+            {
+              "title": "基本操作",
+              "level": 2,
+              "anchor": "basic-use",
+              "children": [
+                {
+                  "title": "章へ移動する",
+                  "level": 3,
+                  "anchor": "章へ移動する",
+                  "children": []
+                },
+                {
+                  "title": "本文内リンクを確認する",
+                  "level": 3,
+                  "anchor": "本文内リンクを確認する",
+                  "children": []
+                },
+                {
+                  "title": "Google Docsリンクを開く",
+                  "level": 3,
+                  "anchor": "google-docsリンクを開く",
+                  "children": []
+                },
+                {
+                  "title": "脚注とコメントを見る",
+                  "level": 3,
+                  "anchor": "脚注とコメントを見る",
+                  "children": []
+                },
+                {
+                  "title": "検索と索引を使う",
+                  "level": 3,
+                  "anchor": "検索と索引を使う",
+                  "children": []
+                },
+                {
+                  "title": "表示状態を保存する",
+                  "level": 3,
+                  "anchor": "表示状態を保存する",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "PDFと印刷",
+              "level": 2,
+              "anchor": "printing",
+              "children": []
+            },
+            {
+              "title": "注意事項",
+              "level": 2,
+              "anchor": "notes",
+              "children": []
+            },
+            {
+              "title": "印刷用画像",
+              "level": 2,
+              "anchor": "print-assets",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "content/00_front.md",
+      "output": "content/00_front.html",
+      "title": "フロント挨拶",
+      "headings": [
+        {
+          "title": "フロント挨拶",
+          "level": 1,
+          "anchor": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "source": "content/01_ch01.md",
+      "output": "content/01_ch01.html",
+      "title": "第1章 会議の基本情報",
+      "headings": [
+        {
+          "title": "第1章 会議の基本情報",
+          "level": 1,
+          "anchor": null,
+          "children": [
+            {
+              "title": "第1節 基礎情報",
+              "level": 2,
+              "anchor": "第1節-基礎情報",
+              "children": []
+            },
+            {
+              "title": "第2節 コンセプト解説",
+              "level": 2,
+              "anchor": "第2節-コンセプト解説",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "content/02_ch02.md",
+      "output": "content/02_ch02.html",
+      "title": "第2章 集団安全保障体制の系譜 - 「平和への課題：補遺」に至るまで",
+      "headings": [
+        {
+          "title": "第2章 集団安全保障体制の系譜 - 「平和への課題：補遺」に至るまで",
+          "level": 1,
+          "anchor": null,
+          "children": [
+            {
+              "title": "第1節 はじめに",
+              "level": 2,
+              "anchor": "第1節-はじめに",
+              "children": []
+            },
+            {
+              "title": "第2節 集団安全保障体制の創設から国際連合の設立まで",
+              "level": 2,
+              "anchor": "第2節-集団安全保障体制の創設から国際連合の設立まで",
+              "children": [
+                {
+                  "title": "第1項 集団安全保障の誕生",
+                  "level": 3,
+                  "anchor": "第1項-集団安全保障の誕生",
+                  "children": []
+                },
+                {
+                  "title": "第2項 国際連合での集団安全保障",
+                  "level": 3,
+                  "anchor": "第2項-国際連合での集団安全保障",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "第3節 冷戦期における国連の集団安全保障体制",
+              "level": 2,
+              "anchor": "第3節-冷戦期における国連の集団安全保障体制",
+              "children": [
+                {
+                  "title": "第1項 安保理の問題点",
+                  "level": 3,
+                  "anchor": "第1項-安保理の問題点",
+                  "children": []
+                },
+                {
+                  "title": "第2項 国連憲章における強制措置の特色と弱点",
+                  "level": 3,
+                  "anchor": "第2項-国連憲章における強制措置の特色と弱点",
+                  "children": [
+                    {
+                      "title": "コラム 軍事制裁の組織化の失敗",
+                      "level": 4,
+                      "anchor": "コラム-軍事制裁の組織化の失敗",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第3項 朝鮮戦争",
+                  "level": 3,
+                  "anchor": "第3項-朝鮮戦争",
+                  "children": [
+                    {
+                      "title": "コラム 冷戦下唯一の安保理決議による軍事行動",
+                      "level": 4,
+                      "anchor": "コラム-冷戦下唯一の安保理決議による軍事行動",
+                      "children": []
+                    },
+                    {
+                      "title": "コラム 「平和のための結集」決議",
+                      "level": 4,
+                      "anchor": "コラム-平和のための結集決議",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第4項 アジア・アフリカ諸国の外交努力",
+                  "level": 3,
+                  "anchor": "第4項-アジアアフリカ諸国の外交努力",
+                  "children": []
+                },
+                {
+                  "title": "第5項 平和維持活動の登場",
+                  "level": 3,
+                  "anchor": "第5項-平和維持活動の登場",
+                  "children": [
+                    {
+                      "title": "コラム リー事務総長による「国家警備隊（UN Guard Force）」の構想",
+                      "level": 4,
+                      "anchor": "コラム-リー事務総長による国家警備隊un-guard-forceの構想",
+                      "children": []
+                    },
+                    {
+                      "title": "国連緊急軍（UNEF）",
+                      "level": 4,
+                      "anchor": "国連緊急軍unef",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第6項 スエズ危機と国連軍（UNEF）",
+                  "level": 3,
+                  "anchor": "第6項-スエズ危機と国連軍unef",
+                  "children": [
+                    {
+                      "title": "コラム レバノン内戦",
+                      "level": 4,
+                      "anchor": "コラム-レバノン内戦",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第7項 コンゴ動乱と国連軍（ONUC）",
+                  "level": 3,
+                  "anchor": "第7項-コンゴ動乱と国連軍onuc",
+                  "children": []
+                },
+                {
+                  "title": "第8項 ある種の経費事件",
+                  "level": 3,
+                  "anchor": "第8項-ある種の経費事件",
+                  "children": []
+                },
+                {
+                  "title": "第9項 平和維持活動の基本的課題と特別委員会の議論",
+                  "level": 3,
+                  "anchor": "第9項-平和維持活動の基本的課題と特別委員会の議論",
+                  "children": [
+                    {
+                      "title": "平和維持活動の国連憲章上の根拠について",
+                      "level": 4,
+                      "anchor": "平和維持活動の国連憲章上の根拠について",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第10項 冷戦期における「国連待機軍」の議論",
+                  "level": 3,
+                  "anchor": "第10項-冷戦期における国連待機軍の議論",
+                  "children": []
+                },
+                {
+                  "title": "第11項 第3節のむすびに",
+                  "level": 3,
+                  "anchor": "第11項-第3節のむすびに",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "第4節 ポスト冷戦期の国連の集団安全保障体制",
+              "level": 2,
+              "anchor": "第4節-ポスト冷戦期の国連の集団安全保障体制",
+              "children": [
+                {
+                  "title": "第1項 湾岸戦争",
+                  "level": 3,
+                  "anchor": "第1項-湾岸戦争",
+                  "children": []
+                },
+                {
+                  "title": "第2項 ポスト冷戦期の始まりと安保理サミット",
+                  "level": 3,
+                  "anchor": "第2項-ポスト冷戦期の始まりと安保理サミット",
+                  "children": []
+                },
+                {
+                  "title": "第3項 「平和への課題」",
+                  "level": 3,
+                  "anchor": "第3項-平和への課題",
+                  "children": []
+                },
+                {
+                  "title": "第4項 ソマリア内戦",
+                  "level": 3,
+                  "anchor": "第4項-ソマリア内戦",
+                  "children": []
+                },
+                {
+                  "title": "第5項 旧ユーゴ内戦",
+                  "level": 3,
+                  "anchor": "第5項-旧ユーゴ内戦",
+                  "children": []
+                },
+                {
+                  "title": "第6項 ルワンダ内戦",
+                  "level": 3,
+                  "anchor": "第6項-ルワンダ内戦",
+                  "children": []
+                },
+                {
+                  "title": "第7項 ポスト冷戦期のPKOにおける課題点",
+                  "level": 3,
+                  "anchor": "第7項-ポスト冷戦期のpkoにおける課題点",
+                  "children": []
+                },
+                {
+                  "title": "第8項 ガリが残した「平和への課題：補遺」",
+                  "level": 3,
+                  "anchor": "第8項-ガリが残した平和への課題補遺",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "コラム 安保理改革の議論",
+              "level": 2,
+              "anchor": "コラム-安保理改革の議論",
+              "children": [
+                {
+                  "title": "「国際の平和と安全」 の概念の拡大",
+                  "level": 3,
+                  "anchor": "国際の平和と安全-の概念の拡大",
+                  "children": []
+                },
+                {
+                  "title": "安保理システムに内在する制約",
+                  "level": 3,
+                  "anchor": "安保理システムに内在する制約",
+                  "children": [
+                    {
+                      "title": "①政治的な制約",
+                      "level": 4,
+                      "anchor": "政治的な制約",
+                      "children": []
+                    },
+                    {
+                      "title": "②PKOの制約",
+                      "level": 4,
+                      "anchor": "pkoの制約",
+                      "children": []
+                    },
+                    {
+                      "title": "③強制措置における正統性の制約",
+                      "level": 4,
+                      "anchor": "強制措置における正統性の制約",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "安保理改革の前提",
+                  "level": 3,
+                  "anchor": "安保理改革の前提",
+                  "children": []
+                },
+                {
+                  "title": "年の安保理拡大",
+                  "level": 3,
+                  "anchor": "年の安保理拡大",
+                  "children": []
+                },
+                {
+                  "title": "冷戦終焉後の安保理改革",
+                  "level": 3,
+                  "anchor": "冷戦終焉後の安保理改革",
+                  "children": [
+                    {
+                      "title": "改革の波",
+                      "level": 4,
+                      "anchor": "改革の波",
+                      "children": []
+                    },
+                    {
+                      "title": "作業部会での議論",
+                      "level": 4,
+                      "anchor": "作業部会での議論",
+                      "children": []
+                    },
+                    {
+                      "title": "会議時点での安保理改革",
+                      "level": 4,
+                      "anchor": "会議時点での安保理改革",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "content/03_ch03.md",
+      "output": "content/03_ch03.html",
+      "title": "第3章 争点・論点解説",
+      "headings": [
+        {
+          "title": "第3章 争点・論点解説",
+          "level": 1,
+          "anchor": null,
+          "children": [
+            {
+              "title": "第1節 争点・論点の解説に差し当たって",
+              "level": 2,
+              "anchor": "第1節-争点論点の解説に差し当たって",
+              "children": []
+            },
+            {
+              "title": "第2節 大論点1：国連の迅速展開能力の問題とその対処",
+              "level": 2,
+              "anchor": "第2節-大論点1国連の迅速展開能力の問題とその対処",
+              "children": [
+                {
+                  "title": "第1項 問題意識",
+                  "level": 3,
+                  "anchor": "第1項-問題意識",
+                  "children": []
+                },
+                {
+                  "title": "第2項 平和維持活動の迅速的展開に向けた動き",
+                  "level": 3,
+                  "anchor": "第2項-平和維持活動の迅速的展開に向けた動き",
+                  "children": [
+                    {
+                      "title": "平和強制部隊と待機取極",
+                      "level": 4,
+                      "anchor": "平和強制部隊と待機取極",
+                      "children": []
+                    },
+                    {
+                      "title": "平和強制部隊についての変遷",
+                      "level": 4,
+                      "anchor": "平和強制部隊についての変遷",
+                      "children": []
+                    },
+                    {
+                      "title": "平和維持活動の待機取極についての変遷",
+                      "level": 4,
+                      "anchor": "平和維持活動の待機取極についての変遷",
+                      "children": []
+                    },
+                    {
+                      "title": "常設軍",
+                      "level": 4,
+                      "anchor": "常設軍",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第3項 PKOの迅速的な展開のために表出する争点",
+                  "level": 3,
+                  "anchor": "第3項-pkoの迅速的な展開のために表出する争点",
+                  "children": [
+                    {
+                      "title": "①PKOの早期展開のために7章に基づく行動が必要か",
+                      "level": 4,
+                      "anchor": "pkoの早期展開のために7章に基づく行動が必要か",
+                      "children": []
+                    },
+                    {
+                      "title": "②派遣元国の同意を得る必要があるか",
+                      "level": 4,
+                      "anchor": "派遣元国の同意を得る必要があるか",
+                      "children": []
+                    },
+                    {
+                      "title": "③即応部隊の実質的制度とマンデート（＝派遣決定前における水準）",
+                      "level": 4,
+                      "anchor": "即応部隊の実質的制度とマンデート派遣決定前における水準",
+                      "children": []
+                    },
+                    {
+                      "title": "④即応部隊の撤退時期",
+                      "level": 4,
+                      "anchor": "即応部隊の撤退時期",
+                      "children": []
+                    },
+                    {
+                      "title": "変更可能条文",
+                      "level": 4,
+                      "anchor": "変更可能条文",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "第3節 大論点2：経済制裁レジームの問題とその対処",
+              "level": 2,
+              "anchor": "第3節-大論点2経済制裁レジームの問題とその対処",
+              "children": [
+                {
+                  "title": "第1項 問題の概略と補遺の提案内容",
+                  "level": 3,
+                  "anchor": "第1項-問題の概略と補遺の提案内容",
+                  "children": [
+                    {
+                      "title": "①制裁の目的の不明瞭さ・制裁解除の客観的な基準の不存在",
+                      "level": 4,
+                      "anchor": "制裁の目的の不明瞭さ制裁解除の客観的な基準の不存在",
+                      "children": []
+                    },
+                    {
+                      "title": "②制裁の設計・運用プロセスの不備や制度化の欠如",
+                      "level": 4,
+                      "anchor": "制裁の設計運用プロセスの不備や制度化の欠如",
+                      "children": []
+                    },
+                    {
+                      "title": "③第三国被害の補償",
+                      "level": 4,
+                      "anchor": "第三国被害の補償",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第2項 大論点2：論点および成果文書の解説",
+                  "level": 3,
+                  "anchor": "第2項-大論点2論点および成果文書の解説",
+                  "children": [
+                    {
+                      "title": "成果文書の形式とその概要",
+                      "level": 4,
+                      "anchor": "成果文書の形式とその概要",
+                      "children": []
+                    },
+                    {
+                      "title": "OoA(禁止する議論)とその解説",
+                      "level": 4,
+                      "anchor": "ooa禁止する議論とその解説",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "content/04_ch04.md",
+      "output": "content/04_ch04.html",
+      "title": "第4章 国連による紛争処理",
+      "headings": [
+        {
+          "title": "第4章 国連による紛争処理",
+          "level": 1,
+          "anchor": null,
+          "children": [
+            {
+              "title": "はじめに",
+              "level": 2,
+              "anchor": "はじめに",
+              "children": []
+            },
+            {
+              "title": "国連（パレスチナ）休戦監視機構（1948年～）",
+              "level": 2,
+              "anchor": "国連パレスチナ休戦監視機構1948年",
+              "children": []
+            },
+            {
+              "title": "国連緊急軍",
+              "level": 2,
+              "anchor": "国連緊急軍",
+              "children": [
+                {
+                  "title": "第一次国連緊急軍（UNEFⅠ）",
+                  "level": 3,
+                  "anchor": "第一次国連緊急軍unefⅰ",
+                  "children": []
+                },
+                {
+                  "title": "第二次国連緊急軍（UNEFⅡ）",
+                  "level": 3,
+                  "anchor": "第二次国連緊急軍unefⅱ",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "コンゴ動乱（1960年～1964年）",
+              "level": 2,
+              "anchor": "コンゴ動乱1960年1964年",
+              "children": []
+            },
+            {
+              "title": "キプロス（1964年～）",
+              "level": 2,
+              "anchor": "キプロス1964年",
+              "children": []
+            },
+            {
+              "title": "アンゴラ（1989年～1999年）",
+              "level": 2,
+              "anchor": "アンゴラ1989年1999年",
+              "children": []
+            },
+            {
+              "title": "ナミビア（1989年～1990年）",
+              "level": 2,
+              "anchor": "ナミビア1989年1990年",
+              "children": []
+            },
+            {
+              "title": "湾岸戦争（1990年～1991年）",
+              "level": 2,
+              "anchor": "湾岸戦争1990年1991年",
+              "children": []
+            },
+            {
+              "title": "イラク（1991年～2003年）",
+              "level": 2,
+              "anchor": "イラク1991年2003年",
+              "children": []
+            },
+            {
+              "title": "西サハラ（1991年～）",
+              "level": 2,
+              "anchor": "西サハラ1991年",
+              "children": []
+            },
+            {
+              "title": "エルサルバドル（1991年～1995年）",
+              "level": 2,
+              "anchor": "エルサルバドル1991年1995年",
+              "children": []
+            },
+            {
+              "title": "旧ユーゴスラビア（UNPROFOR）",
+              "level": 2,
+              "anchor": "旧ユーゴスラビアunprofor",
+              "children": [
+                {
+                  "title": "クロアチア",
+                  "level": 3,
+                  "anchor": "クロアチア",
+                  "children": []
+                },
+                {
+                  "title": "ボスニア",
+                  "level": 3,
+                  "anchor": "ボスニア",
+                  "children": []
+                },
+                {
+                  "title": "マケドニア",
+                  "level": 3,
+                  "anchor": "マケドニア",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "カンボジア（1992年～1993年）",
+              "level": 2,
+              "anchor": "カンボジア1992年1993年",
+              "children": []
+            },
+            {
+              "title": "ソマリア内戦（1990年代初期）",
+              "level": 2,
+              "anchor": "ソマリア内戦1990年代初期",
+              "children": []
+            },
+            {
+              "title": "モザンビーク（1992年～1994年）",
+              "level": 2,
+              "anchor": "モザンビーク1992年1994年",
+              "children": []
+            },
+            {
+              "title": "リベリア（1993年～1997年）",
+              "level": 2,
+              "anchor": "リベリア1993年1997年",
+              "children": []
+            },
+            {
+              "title": "ハイチ（1993年～）",
+              "level": 2,
+              "anchor": "ハイチ1993年",
+              "children": []
+            },
+            {
+              "title": "ルワンダ内戦（1994年）",
+              "level": 2,
+              "anchor": "ルワンダ内戦1994年",
+              "children": []
+            },
+            {
+              "title": "エピローグ",
+              "level": 2,
+              "anchor": "エピローグ",
+              "children": [
+                {
+                  "title": "伝統的PKO",
+                  "level": 3,
+                  "anchor": "伝統的pko",
+                  "children": []
+                },
+                {
+                  "title": "防止（予防）型PKO",
+                  "level": 3,
+                  "anchor": "防止予防型pko",
+                  "children": []
+                },
+                {
+                  "title": "多機能型PKO",
+                  "level": 3,
+                  "anchor": "多機能型pko",
+                  "children": []
+                },
+                {
+                  "title": "複雑・緊急事態型PKO",
+                  "level": 3,
+                  "anchor": "複雑緊急事態型pko",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "参照",
+              "level": 2,
+              "anchor": "参照",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "content/05_ch05.md",
+      "output": "content/05_ch05.html",
+      "title": "第5章 国連の制度",
+      "headings": [
+        {
+          "title": "第5章 国連の制度",
+          "level": 1,
+          "anchor": null,
+          "children": [
+            {
+              "title": "はじめに",
+              "level": 2,
+              "anchor": "はじめに",
+              "children": []
+            },
+            {
+              "title": "第1節 国連という組織",
+              "level": 2,
+              "anchor": "第1節-国連という組織",
+              "children": [
+                {
+                  "title": "第1項 概要・組織構造",
+                  "level": 3,
+                  "anchor": "第1項-概要組織構造",
+                  "children": [
+                    {
+                      "title": "国連総会",
+                      "level": 4,
+                      "anchor": "国連総会",
+                      "children": []
+                    },
+                    {
+                      "title": "国連事務局",
+                      "level": 4,
+                      "anchor": "国連事務局",
+                      "children": []
+                    },
+                    {
+                      "title": "その他の関連機関",
+                      "level": 4,
+                      "anchor": "その他の関連機関",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第2項 安全保障理事会",
+                  "level": 3,
+                  "anchor": "第2項-安全保障理事会",
+                  "children": [
+                    {
+                      "title": "安保理の概要",
+                      "level": 4,
+                      "anchor": "安保理の概要",
+                      "children": []
+                    },
+                    {
+                      "title": "安保理の構成",
+                      "level": 4,
+                      "anchor": "安保理の構成",
+                      "children": []
+                    },
+                    {
+                      "title": "拒否権+α",
+                      "level": 4,
+                      "anchor": "拒否権α",
+                      "children": []
+                    },
+                    {
+                      "title": "安保理の下部機関",
+                      "level": 4,
+                      "anchor": "安保理の下部機関",
+                      "children": []
+                    },
+                    {
+                      "title": "安保理の各種文書",
+                      "level": 4,
+                      "anchor": "安保理の各種文書",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第3項 国連の紛争対処",
+                  "level": 3,
+                  "anchor": "第3項-国連の紛争対処",
+                  "children": [
+                    {
+                      "title": "〜第6章〜 紛争への初期の介入",
+                      "level": 4,
+                      "anchor": "第6章-紛争への初期の介入",
+                      "children": []
+                    },
+                    {
+                      "title": "〜第7章〜 強制措置",
+                      "level": 4,
+                      "anchor": "第7章-強制措置",
+                      "children": []
+                    },
+                    {
+                      "title": "平和構築・平和維持",
+                      "level": 4,
+                      "anchor": "平和構築平和維持",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第4項 安保理決議に基づく義務",
+                  "level": 3,
+                  "anchor": "第4項-安保理決議に基づく義務",
+                  "children": [
+                    {
+                      "title": "義務の発生",
+                      "level": 4,
+                      "anchor": "義務の発生",
+                      "children": []
+                    },
+                    {
+                      "title": "安保理の措置の限界",
+                      "level": 4,
+                      "anchor": "安保理の措置の限界",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "第2節 国連財政",
+              "level": 2,
+              "anchor": "第2節-国連財政",
+              "children": [
+                {
+                  "title": "第1項 通常予算 決定・分担と滞納",
+                  "level": 3,
+                  "anchor": "第1項-通常予算-決定分担と滞納",
+                  "children": []
+                },
+                {
+                  "title": "第2項 PKO予算",
+                  "level": 3,
+                  "anchor": "第2項-pko予算",
+                  "children": [
+                    {
+                      "title": "PKO予算の決定",
+                      "level": 4,
+                      "anchor": "pko予算の決定",
+                      "children": []
+                    },
+                    {
+                      "title": "PKO予算の分担",
+                      "level": 4,
+                      "anchor": "pko予算の分担",
+                      "children": []
+                    },
+                    {
+                      "title": "年代におけるPKOおよび通常予算の改革",
+                      "level": 4,
+                      "anchor": "年代におけるpkoおよび通常予算の改革",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "第3節 PKOができるまで",
+              "level": 2,
+              "anchor": "第3節-pkoができるまで",
+              "children": [
+                {
+                  "title": "第1項 PKOの設立過程",
+                  "level": 3,
+                  "anchor": "第1項-pkoの設立過程",
+                  "children": []
+                },
+                {
+                  "title": "第2項 当時の問題",
+                  "level": 3,
+                  "anchor": "第2項-当時の問題",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "第4節 国連の経済制裁",
+              "level": 2,
+              "anchor": "第4節-国連の経済制裁",
+              "children": [
+                {
+                  "title": "第1項 国際連合憲章における経済制裁措置",
+                  "level": 3,
+                  "anchor": "第1項-国際連合憲章における経済制裁措置",
+                  "children": [
+                    {
+                      "title": "国際連盟期",
+                      "level": 4,
+                      "anchor": "国際連盟期",
+                      "children": []
+                    },
+                    {
+                      "title": "国連憲章における経済制裁と集団安全保障の負担 憲章41, 49, 50条",
+                      "level": 4,
+                      "anchor": "国連憲章における経済制裁と集団安全保障の負担-憲章41-49-50条",
+                      "children": []
+                    },
+                    {
+                      "title": "ダンバートンオークス提案における憲章49, 50条",
+                      "level": 4,
+                      "anchor": "ダンバートンオークス提案における憲章49-50条",
+                      "children": []
+                    },
+                    {
+                      "title": "サンフランシスコ会議における憲章49, 50条",
+                      "level": 4,
+                      "anchor": "サンフランシスコ会議における憲章49-50条",
+                      "children": []
+                    },
+                    {
+                      "title": "国連憲章起草後の集団安全保障",
+                      "level": 4,
+                      "anchor": "国連憲章起草後の集団安全保障",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第2項 冷戦下の経済制裁 対南ローデシア制裁と対南アフリカ制裁",
+                  "level": 3,
+                  "anchor": "第2項-冷戦下の経済制裁-対南ローデシア制裁と対南アフリカ制裁",
+                  "children": [
+                    {
+                      "title": "集団措置特別委員会",
+                      "level": 4,
+                      "anchor": "集団措置特別委員会",
+                      "children": []
+                    },
+                    {
+                      "title": "対南ローデシア制裁",
+                      "level": 4,
+                      "anchor": "対南ローデシア制裁",
+                      "children": []
+                    },
+                    {
+                      "title": "対南アフリカ制裁",
+                      "level": 4,
+                      "anchor": "対南アフリカ制裁",
+                      "children": []
+                    },
+                    {
+                      "title": "冷戦下における経済制裁措置の総評",
+                      "level": 4,
+                      "anchor": "冷戦下における経済制裁措置の総評",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第3項 冷戦後の経済制裁",
+                  "level": 3,
+                  "anchor": "第3項-冷戦後の経済制裁",
+                  "children": [
+                    {
+                      "title": "対イラク制裁とその影響",
+                      "level": 4,
+                      "anchor": "対イラク制裁とその影響",
+                      "children": []
+                    },
+                    {
+                      "title": "対イラク制裁における憲章50条の適用",
+                      "level": 4,
+                      "anchor": "対イラク制裁における憲章50条の適用",
+                      "children": []
+                    },
+                    {
+                      "title": "イラク制裁の総評",
+                      "level": 4,
+                      "anchor": "イラク制裁の総評",
+                      "children": []
+                    },
+                    {
+                      "title": "対ユーゴ制裁",
+                      "level": 4,
+                      "anchor": "対ユーゴ制裁",
+                      "children": []
+                    },
+                    {
+                      "title": "対ユーゴ制裁の効果と問題",
+                      "level": 4,
+                      "anchor": "対ユーゴ制裁の効果と問題",
+                      "children": []
+                    },
+                    {
+                      "title": "対ユーゴ制裁における憲章50条の援用",
+                      "level": 4,
+                      "anchor": "対ユーゴ制裁における憲章50条の援用",
+                      "children": []
+                    },
+                    {
+                      "title": "対リビア制裁",
+                      "level": 4,
+                      "anchor": "対リビア制裁",
+                      "children": []
+                    },
+                    {
+                      "title": "対ハイチ制裁",
+                      "level": 4,
+                      "anchor": "対ハイチ制裁",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "title": "第4項 経済制裁に伴う問題とその後",
+                  "level": 3,
+                  "anchor": "第4項-経済制裁に伴う問題とその後",
+                  "children": [
+                    {
+                      "title": "補遺に至る議論の経緯",
+                      "level": 4,
+                      "anchor": "補遺に至る議論の経緯",
+                      "children": []
+                    },
+                    {
+                      "title": "平和への課題：補遺",
+                      "level": 4,
+                      "anchor": "平和への課題補遺",
+                      "children": []
+                    },
+                    {
+                      "title": "史実のその後",
+                      "level": 4,
+                      "anchor": "史実のその後",
+                      "children": []
+                    },
+                    {
+                      "title": "スマートサンクション",
+                      "level": 4,
+                      "anchor": "スマートサンクション",
+                      "children": []
+                    },
+                    {
+                      "title": "制裁の現在",
+                      "level": 4,
+                      "anchor": "制裁の現在",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "content/06_ch06.md",
+      "output": "content/06_ch06.html",
+      "title": "第6章 その他の関連国際法",
+      "headings": [
+        {
+          "title": "第6章 その他の関連国際法",
+          "level": 1,
+          "anchor": null,
+          "children": [
+            {
+              "title": "第1節 国際法基礎",
+              "level": 2,
+              "anchor": "第1節-国際法基礎",
+              "children": [
+                {
+                  "title": "第1項 国際法法源論",
+                  "level": 3,
+                  "anchor": "第1項-国際法法源論",
+                  "children": []
+                },
+                {
+                  "title": "国際法の法的性質",
+                  "level": 3,
+                  "anchor": "国際法の法的性質",
+                  "children": []
+                },
+                {
+                  "title": "国際法の法源",
+                  "level": 3,
+                  "anchor": "国際法の法源",
+                  "children": []
+                },
+                {
+                  "title": "第2項 内政不干渉原則",
+                  "level": 3,
+                  "anchor": "第2項-内政不干渉原則",
+                  "children": []
+                },
+                {
+                  "title": "第3項 国際法と国内法における違法行為への対応の概念",
+                  "level": 3,
+                  "anchor": "第3項-国際法と国内法における違法行為への対応の概念",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "第2節 国家責任法",
+              "level": 2,
+              "anchor": "第2節-国家責任法",
+              "children": [
+                {
+                  "title": "第1項 国家責任法概説",
+                  "level": 3,
+                  "anchor": "第1項-国家責任法概説",
+                  "children": [
+                    {
+                      "title": "国家責任法の成り立ち",
+                      "level": 4,
+                      "anchor": "国家責任法の成り立ち",
+                      "children": []
+                    },
+                    {
+                      "title": "国家責任法のあらまし～国家責任の定義・発生～",
+                      "level": 4,
+                      "anchor": "国家責任法のあらまし国家責任の定義発生",
+                      "children": []
+                    },
+                    {
+                      "title": "要件①",
+                      "level": 4,
+                      "anchor": "要件①",
+                      "children": []
+                    },
+                    {
+                      "title": "要件②",
+                      "level": 4,
+                      "anchor": "要件②",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "国家責任法のあらまし～国家責任の結果～",
+              "level": 2,
+              "anchor": "国家責任法のあらまし国家責任の結果",
+              "children": [
+                {
+                  "title": "第2項 対抗措置",
+                  "level": 3,
+                  "anchor": "第2項-対抗措置",
+                  "children": [
+                    {
+                      "title": "対抗措置",
+                      "level": 4,
+                      "anchor": "対抗措置",
+                      "children": []
+                    },
+                    {
+                      "title": "対抗措置としての単独国家による制裁",
+                      "level": 4,
+                      "anchor": "対抗措置としての単独国家による制裁",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "第3節 国連による経済制裁の法的問題",
+              "level": 2,
+              "anchor": "第3節-国連による経済制裁の法的問題",
+              "children": [
+                {
+                  "title": "第1項 制裁における人道法上の抵触",
+                  "level": 3,
+                  "anchor": "第1項-制裁における人道法上の抵触",
+                  "children": []
+                },
+                {
+                  "title": "第2項 第三国被害の発生およびその責任追及",
+                  "level": 3,
+                  "anchor": "第2項-第三国被害の発生およびその責任追及",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "第4節 国際経済法",
+              "level": 2,
+              "anchor": "第4節-国際経済法",
+              "children": [
+                {
+                  "title": "安全保障例外",
+                  "level": 3,
+                  "anchor": "安全保障例外",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "content/90_afterword.md",
+      "output": "content/90_afterword.html",
+      "title": "編集後記",
+      "headings": [
+        {
+          "title": "編集後記",
+          "level": 1,
+          "anchor": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "source": "content/95_references.qmd",
+      "output": "content/95_references.html",
+      "title": "参考文献",
+      "headings": [
+        {
+          "title": "参考文献",
+          "level": 1,
+          "anchor": null,
+          "children": [
+            {
+              "title": "第2章 集団安全保障体制の系譜",
+              "level": 2,
+              "anchor": "第2章-集団安全保障体制の系譜",
+              "children": []
+            },
+            {
+              "title": "第3章 争点・論点解説",
+              "level": 2,
+              "anchor": "第3章-争点論点解説",
+              "children": []
+            },
+            {
+              "title": "第4章 国連による紛争処理",
+              "level": 2,
+              "anchor": "第4章-国連による紛争処理",
+              "children": []
+            },
+            {
+              "title": "第5章 国連の制度",
+              "level": 2,
+              "anchor": "第5章-国連の制度",
+              "children": [
+                {
+                  "title": "第1節 国連安保理による非軍事的強制措置の法的諸問題",
+                  "level": 3,
+                  "anchor": "第1節-国連安保理による非軍事的強制措置の法的諸問題",
+                  "children": []
+                },
+                {
+                  "title": "第2節 国連財政と憲章解釈",
+                  "level": 3,
+                  "anchor": "第2節-国連財政と憲章解釈",
+                  "children": []
+                },
+                {
+                  "title": "第3節 PKOと人道的介入",
+                  "level": 3,
+                  "anchor": "第3節-pkoと人道的介入",
+                  "children": []
+                },
+                {
+                  "title": "第4節 経済制裁の事例研究",
+                  "level": 3,
+                  "anchor": "第4節-経済制裁の事例研究",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "第6章 その他の関連国際法",
+              "level": 2,
+              "anchor": "第6章-その他の関連国際法",
+              "children": [
+                {
+                  "title": "第1節 国際法基礎",
+                  "level": 3,
+                  "anchor": "第1節-国際法基礎",
+                  "children": []
+                },
+                {
+                  "title": "第2節 国家責任法",
+                  "level": 3,
+                  "anchor": "第2節-国家責任法",
+                  "children": []
+                },
+                {
+                  "title": "第3節 国際経済法",
+                  "level": 3,
+                  "anchor": "第3節-国際経済法",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "content/96_index.qmd",
+      "output": "content/96_index.html",
+      "title": "索引",
+      "headings": [
+        {
+          "title": "索引",
+          "level": 1,
+          "anchor": null,
+          "children": [
+            {
+              "title": "文書集索引",
+              "level": 2,
+              "anchor": "文書集索引",
+              "children": [
+                {
+                  "title": "安保理決議",
+                  "level": 3,
+                  "anchor": "安保理決議",
+                  "children": []
+                },
+                {
+                  "title": "総会決議",
+                  "level": 3,
+                  "anchor": "総会決議",
+                  "children": []
+                },
+                {
+                  "title": "その他の文書",
+                  "level": 3,
+                  "anchor": "その他の文書",
+                  "children": []
+                },
+                {
+                  "title": "その他の国際法",
+                  "level": 3,
+                  "anchor": "その他の国際法",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "事項索引",
+              "level": 2,
+              "anchor": "事項索引",
+              "children": [
+                {
+                  "title": "PKOと即応体制",
+                  "level": 3,
+                  "anchor": "pkoと即応体制",
+                  "children": []
+                },
+                {
+                  "title": "アンゴラ",
+                  "level": 3,
+                  "anchor": "アンゴラ",
+                  "children": []
+                },
+                {
+                  "title": "安保理サミット",
+                  "level": 3,
+                  "anchor": "安保理サミット",
+                  "children": []
+                },
+                {
+                  "title": "イラク情勢",
+                  "level": 3,
+                  "anchor": "イラク情勢",
+                  "children": []
+                },
+                {
+                  "title": "エルサルバドル",
+                  "level": 3,
+                  "anchor": "エルサルバドル",
+                  "children": []
+                },
+                {
+                  "title": "カンボジア紛争",
+                  "level": 3,
+                  "anchor": "カンボジア紛争",
+                  "children": []
+                },
+                {
+                  "title": "キプロス",
+                  "level": 3,
+                  "anchor": "キプロス",
+                  "children": []
+                },
+                {
+                  "title": "旧ユーゴスラビア内戦",
+                  "level": 3,
+                  "anchor": "旧ユーゴスラビア内戦",
+                  "children": []
+                },
+                {
+                  "title": "議長声明",
+                  "level": 3,
+                  "anchor": "議長声明",
+                  "children": []
+                },
+                {
+                  "title": "国連機関",
+                  "level": 3,
+                  "anchor": "国連機関",
+                  "children": []
+                },
+                {
+                  "title": "国連緊急軍",
+                  "level": 3,
+                  "anchor": "国連緊急軍",
+                  "children": []
+                },
+                {
+                  "title": "国連憲章",
+                  "level": 3,
+                  "anchor": "国連憲章",
+                  "children": []
+                },
+                {
+                  "title": "国連（パレスチナ）休戦監視機構",
+                  "level": 3,
+                  "anchor": "国連パレスチナ休戦監視機構",
+                  "children": []
+                },
+                {
+                  "title": "コンゴ動乱",
+                  "level": 3,
+                  "anchor": "コンゴ動乱",
+                  "children": []
+                },
+                {
+                  "title": "制裁",
+                  "level": 3,
+                  "anchor": "制裁",
+                  "children": []
+                },
+                {
+                  "title": "ソマリア内戦",
+                  "level": 3,
+                  "anchor": "ソマリア内戦",
+                  "children": []
+                },
+                {
+                  "title": "対リビア制裁",
+                  "level": 3,
+                  "anchor": "対リビア制裁",
+                  "children": []
+                },
+                {
+                  "title": "ナミビア",
+                  "level": 3,
+                  "anchor": "ナミビア",
+                  "children": []
+                },
+                {
+                  "title": "西サハラ",
+                  "level": 3,
+                  "anchor": "西サハラ",
+                  "children": []
+                },
+                {
+                  "title": "ハイチ情勢",
+                  "level": 3,
+                  "anchor": "ハイチ情勢",
+                  "children": []
+                },
+                {
+                  "title": "補遺と史実の議論",
+                  "level": 3,
+                  "anchor": "補遺と史実の議論",
+                  "children": []
+                },
+                {
+                  "title": "南アフリカ情勢",
+                  "level": 3,
+                  "anchor": "南アフリカ情勢",
+                  "children": []
+                },
+                {
+                  "title": "南ローデシア情勢",
+                  "level": 3,
+                  "anchor": "南ローデシア情勢",
+                  "children": []
+                },
+                {
+                  "title": "モザンビーク",
+                  "level": 3,
+                  "anchor": "モザンビーク",
+                  "children": []
+                },
+                {
+                  "title": "リベリア",
+                  "level": 3,
+                  "anchor": "リベリア",
+                  "children": []
+                },
+                {
+                  "title": "ルワンダ情勢",
+                  "level": 3,
+                  "anchor": "ルワンダ情勢",
+                  "children": []
+                },
+                {
+                  "title": "その他",
+                  "level": 3,
+                  "anchor": "その他",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};

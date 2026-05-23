@@ -1,0 +1,22 @@
+format:
+  html:
+    embed-resources: false
+    toc: true
+    number-sections: false
+    file-scope: true
+    page-layout: article
+    include-in-header:
+      - file: ../templates/pdf-download-config.html
+      - text: |
+          <style>
+            :root {
+              --sidebar-width: 280px;
+              --margin-width: 150px;
+              --gutter-width: 12px;
+            }
+          </style>
+          <link rel="preload" href="../fonts/BIZUDPMincho-Regular.ttf" as="font" type="font/ttf" crossorigin>
+
+    grid:
+      sidebar-width: 280px
+      margin-width: 220px

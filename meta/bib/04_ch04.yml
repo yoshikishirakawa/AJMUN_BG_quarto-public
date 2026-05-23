@@ -1,0 +1,43 @@
+# meta/bib/background_ashida.yml
+# 国連の平和維持活動と経済制裁に関する参考文献リスト
+# 補足: 検索によりISBN、URL、正式タイトルを補完しています。
+
+chapter:
+  - id: yokota-un-peace-2000
+    type: book
+    title: "国連による平和と安全の維持 : 解説と資料 第1巻"
+    author: "横田洋三"
+    year: 2000
+    publisher: "国際書院"
+    address: "東京"
+    isbn: "978-4-87791-094-5"
+
+  - id: yokota-un-peace-vol2-2007
+    type: book
+    title: "国連による平和と安全の維持 : 解説と資料 第2巻"
+    author: "横田洋三"
+    year: 2007
+    publisher: "国際書院"
+    address: "東京"
+    isbn: "978-4-87791-166-9"
+
+  - id: goulding-peacemonger-2005
+    type: book
+    title: "国連の平和外交 : PEACEMONGER"
+    author: "マラック・アーヴィン・グールディング"
+    year: 2005
+    publisher: "東信堂"
+    address: "東京"
+    isbn: "978-4-88713-620-5"
+    note: "幡新大実 訳"
+
+  - id: murc-sanctions-report-2013
+    type: techreport
+    title: "安保理決議による経済制裁：制裁に至る事情・内容・効果等の横断的比較分析報告書"
+    author: "三菱UFJリサーチ&コンサルティング株式会社"
+    year: 2013
+    institution: "三菱UFJリサーチ&コンサルティング"
+    url: "https://www.mofa.go.jp/mofaj/gaiko/jp_un/pdfs/itaku_1303.pdf"
+    note: "外務省委託調査"
+
+sections: []

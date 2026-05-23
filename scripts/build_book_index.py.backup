@@ -1,0 +1,152 @@
+#!/usr/bin/env python3
+"""索引生成スクリプト - build/index/*.json から索引を統合"""
+import os, sys, json, re
+from pathlib import Path
+from collections import defaultdict
+
+def load_index_files(index_dir):
+    index_terms = defaultdict(list)
+    index_path = Path(index_dir)
+    if not index_path.exists():
+        print(f"警告: 索引ディレクトリが見つかりません: {index_dir}")
+        return index_terms
+    json_files = list(index_path.glob("*.json"))
+    if not json_files:
+        print(f"警告: {index_dir} にJSONファイルが見つかりません")
+        return index_terms
+    print(f"索引ファイル読み込み中... ({len(json_files)}件)")
+    for json_file in json_files:
+        try:
+            with open(json_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            source = data.get('source', json_file.stem)
+            title = data.get('title', '')
+            entries = data.get('entries', [])
+            print(f"  処理中: {json_file.name} ({len(entries)}項目)")
+            for entry in entries:
+                term = entry.get('term', '')
+                if not term:
+                    continue
+                normalized_key = term.lower().strip()
+                index_terms[normalized_key].append({
+                    'term': term, 'reading': entry.get('reading'),
+                    'categories': entry.get('categories', []),
+                    'anchor': entry.get('anchor', ''),
+                    'section_label': entry.get('section_label', ''),
+                    'heading': entry.get('heading', ''),
+                    'source': source, 'doc_title': title,
+                })
+        except Exception as e:
+            print(f"警告: {json_file.name} の読み込みに失敗: {e}")
+            continue
+    return index_terms
+
+def generate_index_qmd(index_terms):
+    if not index_terms:
+        return "---\ntitle: \"索引\"\n---\n\n# 索引\n\n索引項目が見つかりませんでした。\n"
+    qmd_content = "---\ntitle: \"索引\"\n---\n\n# 索引\n\n"
+    kana_groups = {
+        "あ": r"^[あいうえおアイウエオ]", "か": r"^[かきくけこがぎぐげごカキクケコガギグゲゴ]",
+        "さ": r"^[さしすせそざじずぜぞサシスセソザジズゼゾ]", "た": r"^[たちつてとだぢづでどタチツテトダヂヅデド]",
+        "な": r"^[なにぬねのナニヌネノ]", "は": r"^[はひふへほばびぶべぼぱぴぷぺぽハヒフヘホバビブベボパピプペポ]",
+        "ま": r"^[まみむめもマミムメモ]", "や": r"^[やゆよヤユヨ]",
+        "ら": r"^[らりるれろラリルレロ]", "わ": r"^[わをんワヲン]"
+    }
+    groups = defaultdict(list)
+    for normalized_key, entries in index_terms.items():
+        if not entries:
+            continue
+        term = entries[0]['term']
+        first_char = term[0] if term else ""
+        group_key = "その他"
+        for key, pattern in kana_groups.items():
+            if re.match(pattern, first_char):
+                group_key = key
+                break
+        groups[group_key].append(normalized_key)
+    group_order = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ", "その他"]
+    for group_key in group_order:
+        terms = groups.get(group_key, [])
+        if not terms:
+            continue
+        qmd_content += f"## {group_key}行\n\n"
+        for normalized_key in sorted(terms):
+            entries = index_terms[normalized_key]
+            if not entries:
+                continue
+            display_term = entries[0]['term']
+            categories = set()
+            for entry in entries:
+                cats = entry.get('categories', [])
+                if cats:
+                    categories.update(cats)
+            locations = []
+            seen = set()
+            for entry in entries:
+                section_label = entry.get('section_label', '')
+                heading = entry.get('heading', '')
+                anchor = entry.get('anchor', '')
+                source = entry.get('source', '')
+                if section_label:
+                    label = section_label
+                elif heading:
+                    label = heading
+                else:
+                    label = source
+                location_key = f"{source}:{label}"
+                if location_key in seen:
+                    continue
+                seen.add(location_key)
+                if anchor and source:
+                    html_file = Path(source).stem + ".html"
+                    link = f"[{label}]({html_file}#{anchor})"
+                    locations.append(link)
+                else:
+                    locations.append(label)
+            location_text = ", ".join(locations)
+            if categories:
+                cat_text = " / ".join(sorted(categories))
+                qmd_content += f"- **{display_term}** ({cat_text}): {location_text}\n"
+            else:
+                qmd_content += f"- **{display_term}**: {location_text}\n"
+        qmd_content += "\n"
+    return qmd_content
+
+def main():
+    if len(sys.argv) < 2:
+        print("使用方法: python3 build_book_index.py <output_qmd_path>")
+        sys.exit(1)
+    output_qmd = Path(sys.argv[1])
+    index_dir = Path("build/index")
+    index_terms = load_index_files(index_dir)
+    if not index_terms:
+        print("警告: 索引項目が見つかりませんでした")
+        qmd_content = "---\ntitle: \"索引\"\n---\n\n# 索引\n\n索引項目が見つかりませんでした。\n"
+    else:
+        print(f"索引項目数: {len(index_terms)}")
+        qmd_content = generate_index_qmd(index_terms)
+    try:
+        output_qmd.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_qmd, 'w', encoding='utf-8') as f:
+            f.write(qmd_content)
+        print(f"索引QMDファイルを生成: {output_qmd}")
+    except Exception as e:
+        print(f"エラー: QMDファイルの生成に失敗: {e}")
+        sys.exit(1)
+    output_dir = Path("out")
+    output_dir.mkdir(exist_ok=True)
+    debug_file = output_dir / "index_debug.json"
+    debug_data = {
+        "total_terms": len(index_terms),
+        "terms_by_count": {entries[0]['term'] if entries else key: len(entries) for key, entries in index_terms.items()}
+    }
+    try:
+        with open(debug_file, 'w', encoding='utf-8') as f:
+            json.dump(debug_data, f, ensure_ascii=False, indent=2)
+        print(f"デバッグ情報を保存: {debug_file}")
+    except Exception as e:
+        print(f"警告: デバッグ情報の保存に失敗: {e}")
+    print("索引生成完了")
+
+if __name__ == "__main__":
+    main()

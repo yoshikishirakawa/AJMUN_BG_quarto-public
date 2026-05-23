@@ -1,0 +1,19 @@
+{
+  "name": "ajmun-bg-editor-root",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Root-level utility package for AJMUN BG Editor release checks and static sample syncing.",
+  "scripts": {
+    "build:reader-ui": "esbuild src/js/reader-ui.js --bundle --format=iife --target=es2018 --outfile=assets/reader-ui.js",
+    "release:check": "bash scripts/release_check.sh",
+    "release:html-smoke": "bash scripts/check_pdf_env.sh --render-html-smoke",
+    "release:pdf-smoke": "bash scripts/check_pdf_env.sh --render-pdf-smoke",
+    "release:sync-samples": "python3 scripts/sync_output_runtime_assets.py --sync-sample-outputs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.27.1"
+  }
+}

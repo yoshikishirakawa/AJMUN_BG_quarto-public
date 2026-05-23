@@ -1,0 +1,7 @@
+---
+title: ""
+---
+
+# 広告 {.unnumbered .unlisted}
+
+{{< include 99_advertisement_html.qmd >}}

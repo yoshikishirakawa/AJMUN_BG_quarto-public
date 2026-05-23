@@ -1,0 +1,7 @@
+---
+format:
+  html: default
+  pdf: default
+---
+
+![](/assets/uploads/ch_014_1769933342_37A4_1P_page-0001.jpg){.fullpage-image width="a4" fit="stretch" position="center"}

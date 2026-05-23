@@ -1,0 +1,576 @@
+:root {
+  --toc-surface: var(--ui-surface, #fff);
+  --toc-muted-surface: var(--ui-surface-muted, #f8f9fb);
+  --toc-border-color: var(--ui-border, #e1e5eb);
+  --toc-text-color: var(--ui-text, #202124);
+  --toc-muted-text: var(--ui-text-muted, #6c757d);
+  --toc-accent-color: var(--ui-link, #1a73e8);
+  --toc-accent-strong: var(--ui-link-strong, #0c5bc0);
+  --toc-highlight-color: rgba(26, 115, 232, 0.14);
+  --footnote-highlight: #fff6d6;
+}
+
+body[data-theme="dark"] {
+  --toc-highlight-color: rgba(138, 180, 248, 0.2);
+  --footnote-highlight: rgba(255, 214, 153, 0.25);
+
+  /* Dark mode variable overrides */
+  --toc-surface: var(--surface-raised-dark, #111726);
+  --toc-muted-surface: var(--surface-muted-dark, #151b2b);
+  --toc-border-color: var(--border-color-dark, rgba(255, 255, 255, 0.18));
+  --toc-text-color: var(--color-text-dark, #e8eaed);
+  --toc-muted-text: var(--color-muted-dark, #aeb4c0);
+  --toc-accent-color: var(--link-color-dark, #8ab4f8);
+  --toc-accent-strong: var(--link-hover-dark, #c8dafc);
+}
+
+/* Dark mode specific overrides for TOC tabs */
+body[data-theme="dark"] #quarto-sidebar .toc-tabs {
+  background: var(--ui-surface-strong);
+}
+
+body[data-theme="dark"] #quarto-sidebar .toc-tab {
+  color: var(--ui-text-muted);
+}
+
+body[data-theme="dark"] #quarto-sidebar .toc-tab:hover {
+  background: var(--ui-surface);
+  color: var(--ui-text);
+}
+
+body[data-theme="dark"] #quarto-sidebar .toc-tab.active {
+  background: var(--ui-surface);
+  color: var(--ui-link);
+}
+
+body[data-theme="dark"] #quarto-margin-sidebar .toc-tab {
+  background: var(--ui-surface-strong);
+  color: var(--ui-text-muted);
+}
+
+body[data-theme="dark"] #quarto-margin-sidebar .toc-tab:hover {
+  background: var(--ui-surface);
+  color: var(--ui-text);
+}
+
+body[data-theme="dark"] #quarto-margin-sidebar .toc-tab.active {
+  background: var(--ui-surface);
+  color: var(--ui-link);
+}
+
+/* Sidebar TOC toggle */
+
+#quarto-sidebar .toc-switcher {
+  margin-top: 16px;
+  border: 1px solid var(--toc-border-color);
+  border-radius: 8px;
+  background: var(--toc-surface);
+  overflow: hidden;
+  box-shadow: var(--ui-shadow-soft, 0 1px 2px rgba(0, 0, 0, 0.06));
+}
+
+#quarto-sidebar .toc-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--toc-border-color);
+  background: var(--toc-muted-surface);
+}
+
+#quarto-sidebar .toc-tab {
+  flex: 1;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--toc-muted-text);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#quarto-sidebar .toc-tab:first-child {
+  border-right: 1px solid var(--toc-border-color);
+}
+
+#quarto-sidebar .toc-tab:hover {
+  background: var(--toc-surface);
+  color: var(--toc-text-color);
+}
+
+#quarto-sidebar .toc-tab.active {
+  background: var(--toc-surface);
+  color: var(--toc-accent-color);
+  box-shadow: inset 0 -3px 0 var(--toc-accent-color);
+}
+
+#quarto-sidebar .toc-panel {
+  padding: 12px 16px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--toc-surface);
+  color: var(--toc-text-color);
+}
+
+/* 日本語 UI 用の折り返し設定（サイドバー TOC） */
+#quarto-sidebar .toc-panel,
+#quarto-sidebar .toc-page-content .page-toc-link,
+#quarto-sidebar .toc-all-content .all-toc-link,
+#quarto-sidebar .toc-all-content .all-toc-sublink {
+  word-break: keep-all;
+  line-break: strict;
+}
+
+#quarto-sidebar .toc-panel.hidden {
+  display: none;
+}
+
+#quarto-sidebar .toc-page-content {
+  padding-bottom: 8px;
+}
+
+#quarto-sidebar .toc-page-content .toc-empty {
+  margin: 0;
+  padding: 8px;
+  color: #868e96;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+#quarto-sidebar .toc-page-content .page-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#quarto-sidebar .toc-page-content .page-toc-item {
+  margin: 0;
+}
+
+#quarto-sidebar .toc-page-content .page-toc-link {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--toc-accent-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#quarto-sidebar .toc-page-content .page-toc-link:hover,
+#quarto-sidebar .toc-page-content .page-toc-link.active {
+  background: var(--toc-highlight-color);
+  color: var(--toc-accent-strong);
+}
+
+#quarto-sidebar .toc-page-content .page-toc-level-2 {
+  padding-left: var(--toc-indent-step, 1.2em);
+}
+
+#quarto-sidebar .toc-page-content .page-toc-level-3 {
+  padding-left: calc(var(--toc-indent-step, 1.2em) * 2);
+}
+
+#quarto-sidebar .toc-page-content .page-toc-level-4,
+#quarto-sidebar .toc-page-content .page-toc-level-5,
+#quarto-sidebar .toc-page-content .page-toc-level-6 {
+  padding-left: calc(var(--toc-indent-step, 1.2em) * 3);
+  font-size: 0.85rem;
+}
+
+#quarto-sidebar .toc-all-content {
+  padding-bottom: 8px;
+}
+
+#quarto-sidebar .toc-all-content .all-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#quarto-sidebar .toc-all-content .all-toc-item {
+  margin: 0;
+  line-height: 1.05;
+  color: var(--toc-text-color);
+}
+
+#quarto-sidebar .toc-all-content .all-toc-item.active>.all-toc-link {
+  font-weight: 600;
+  color: var(--toc-accent-color);
+}
+
+#quarto-sidebar .toc-all-content .all-toc-link {
+  display: block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: var(--toc-text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#quarto-sidebar .toc-all-content .all-toc-link:hover {
+  background: var(--toc-muted-surface);
+}
+
+#quarto-sidebar .toc-all-content .all-toc-sublist {
+  list-style: none;
+  padding-left: var(--toc-indent-step, 1.2em);
+  margin: 2px 0 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#quarto-sidebar .toc-all-content .all-toc-sublink {
+  font-size: 0.8rem;
+  color: var(--toc-muted-text);
+  text-decoration: none;
+  padding: 3px 8px;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#quarto-sidebar .toc-all-content .all-toc-sublink:hover {
+  background: var(--toc-muted-surface);
+  color: var(--toc-text-color);
+}
+
+#quarto-sidebar .toc-all-content .all-toc-item--chapter {
+  margin-top: 0.6em;
+  line-height: 1.15;
+}
+
+#quarto-sidebar .toc-all-content .all-toc-item--chapter:first-child {
+  margin-top: 0;
+}
+
+#quarto-sidebar .toc-empty {
+  margin: 0;
+  padding: 8px;
+  color: var(--toc-muted-text);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Right margin footnotes */
+
+#quarto-margin-sidebar {
+  padding: 16px 20px;
+  border-left: 1px solid var(--toc-border-color);
+  background: var(--toc-muted-surface);
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  color: var(--toc-text-color);
+}
+
+#quarto-margin-sidebar .right-switcher {
+  position: relative;
+  z-index: 2;
+  margin-top: -0.25cm;
+}
+
+/* 右マージンにタブ（脚注/コメント/両方） */
+#quarto-margin-sidebar .toc-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--toc-border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: var(--toc-surface);
+}
+
+#quarto-margin-sidebar .toc-tab {
+  flex: 1;
+  padding: 8px 10px;
+  background: var(--toc-muted-surface);
+  border: none;
+  font-size: 0.9rem;
+  color: var(--toc-muted-text);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#quarto-margin-sidebar .toc-tab+.toc-tab {
+  border-left: 1px solid var(--toc-border-color);
+}
+
+#quarto-margin-sidebar .toc-tab:hover {
+  background: var(--toc-surface);
+  color: var(--toc-text-color);
+}
+
+#quarto-margin-sidebar .toc-tab.active {
+  background: var(--toc-surface);
+  color: var(--toc-accent-color);
+  box-shadow: inset 0 -3px 0 var(--toc-accent-color);
+}
+
+#quarto-margin-sidebar .toc-panel {
+  padding: 4px 0;
+}
+
+/* 傍注（サイドノート）表示 */
+#quarto-margin-sidebar.sidenotes-on {
+  overflow: visible;
+}
+
+#quarto-margin-sidebar .margin-note {
+  position: absolute;
+  right: 0;
+  width: 280px;
+  max-width: 100%;
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--toc-accent-color);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 4px 6px;
+  font-size: 0.8em;
+  /* 本文の約80% */
+  color: var(--toc-text-color);
+  z-index: 1;
+
+  /* Phase 1: GPU加速のための最適化 */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+#quarto-margin-sidebar .margin-note.comment {
+  border-left-color: #ff9800;
+}
+
+#quarto-margin-sidebar .margin-note .meta {
+  font-size: 0.8em;
+  /* 傍注本文より少し小さめ */
+  color: var(--toc-muted-text);
+  margin-bottom: 2px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#quarto-margin-sidebar .margin-note .target {
+  background: var(--toc-muted-surface);
+  border-radius: 4px;
+  padding: 3px 4px;
+  margin-bottom: 2px;
+  color: var(--toc-text-color);
+}
+
+/* 傍注としての脚注本文を [番号] 本文 の1行スタイルに */
+#quarto-margin-sidebar .margin-note .body {
+  margin: 0;
+  padding: 0;
+}
+
+#quarto-margin-sidebar .margin-note .body p {
+  margin: 0;
+}
+
+#quarto-margin-sidebar .margin-note:not(.comment) .body {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+#quarto-margin-sidebar .margin-note .footnote-num {
+  flex: 0 0 auto;
+  font-weight: 600;
+  color: var(--toc-muted-text);
+  margin-right: 2px;
+}
+
+#quarto-margin-sidebar .sidenotes-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 8px;
+}
+
+#quarto-margin-sidebar .sidenotes-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85em;
+  color: var(--toc-muted-text);
+}
+
+/* 右パネル（通常タブ）の文字サイズを本文の80%に統一 */
+#quarto-margin-sidebar .right-footnotes,
+#quarto-margin-sidebar .right-comments,
+#quarto-margin-sidebar .right-both {
+  font-size: 0.8em;
+}
+
+#quarto-margin-sidebar .footnotes-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--toc-text-color);
+}
+
+#quarto-margin-sidebar .margin-footnotes {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+  /* 本文の約80% */
+}
+
+/* 日本語 UI 用の折り返し設定（右サイドバー・脚注・コメント） */
+#quarto-margin-sidebar,
+#quarto-margin-sidebar .margin-footnotes,
+#quarto-margin-sidebar .right-footnotes,
+#quarto-margin-sidebar .right-comments,
+#quarto-margin-sidebar .right-both {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-break: auto;
+  white-space: normal;
+}
+
+#quarto-margin-sidebar .margin-footnotes ol {
+  list-style: none;
+  /* 独自番号を表示するため */
+  padding: 0;
+  margin: 0;
+}
+
+#quarto-margin-sidebar .margin-footnotes li {
+  padding: 2px 0;
+  /* 1行内に番号と本文を並べる */
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  border-bottom: 1px solid var(--toc-border-color);
+  /* 薄い区切り線 */
+  line-height: 1.5;
+  background: transparent;
+  /* バブル解除 */
+  box-shadow: none;
+  /* バブル解除 */
+  border-left: none;
+  /* バブル解除 */
+}
+
+#quarto-margin-sidebar .margin-footnotes li:last-child {
+  border-bottom: none;
+}
+
+#quarto-margin-sidebar .margin-footnotes li p {
+  margin: 0;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-break: auto;
+}
+
+/* コメントパネルの余白をコンパクトに */
+#quarto-margin-sidebar .comment-item {
+  margin: 4px 0 !important;
+  padding: 6px 8px !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  border-left: none !important;
+  border-bottom: 1px solid var(--toc-border-color) !important;
+  box-shadow: none !important;
+  position: relative;
+}
+
+#quarto-margin-sidebar .comment-item .comment-snippet {
+  font-size: 13px;
+  color: var(--toc-text-color);
+  background: var(--toc-muted-surface);
+  padding: 4px 6px !important;
+  border-radius: 4px;
+  margin-bottom: 3px !important;
+}
+
+/* 両方タブ内のカードもコンパクトに */
+#quarto-margin-sidebar .both-mixed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#quarto-margin-sidebar .both-mixed-list .comment-card,
+#quarto-margin-sidebar .both-mixed-list .both-footnote-card {
+  padding: 6px 8px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-left-width: 2px !important;
+  border-bottom: 1px solid var(--toc-border-color) !important;
+}
+
+/* 両方タブ内の脚注も [番号] 本文 を同一行で表示 */
+#quarto-margin-sidebar .both-footnote-card li {
+  list-style: none;
+  margin: 0;
+  padding: 2px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  border: none;
+}
+
+#quarto-margin-sidebar .both-footnote-card .footnote-num {
+  display: inline-block;
+  flex: 0 0 auto;
+  font-weight: 600;
+  color: var(--toc-muted-text);
+  margin-right: 2px;
+}
+
+#quarto-margin-sidebar .both-footnote-card li p {
+  margin: 0;
+}
+
+#quarto-margin-sidebar .margin-footnotes a {
+  color: var(--toc-accent-color);
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+#quarto-margin-sidebar .margin-footnotes a:hover {
+  text-decoration: underline;
+}
+
+#quarto-margin-sidebar .footnotes-empty {
+  font-size: 0.85rem;
+  color: var(--toc-muted-text);
+  font-style: italic;
+}
+
+/* 脚注番号ラベル */
+#quarto-margin-sidebar .margin-footnotes .footnote-num {
+  display: inline-block;
+  flex: 0 0 auto;
+  font-weight: 600;
+  color: var(--toc-muted-text);
+  margin-right: 2px;
+}
+
+.highlighted-footnote {
+  animation: footnote-highlight 1.5s ease;
+}
+
+@keyframes footnote-highlight {
+  0% {
+    background: var(--footnote-highlight);
+  }
+
+  100% {
+    background: transparent;
+  }
+}

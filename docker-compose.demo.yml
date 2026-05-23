@@ -1,0 +1,7 @@
+services:
+  api:
+    environment:
+      AUTH_BYPASS_ENABLED: "true"
+  ui:
+    environment:
+      VITE_AUTH_BYPASS_ENABLED: "true"

@@ -1,0 +1,221 @@
+{
+  "version": "1.0",
+  "project": {
+    "title": "平和への課題：補遺",
+    "author": "AJMUN 37th",
+    "date": "2025-11-20"
+  },
+  "pdf": {
+    "pageSize": "a4",
+    "fontSize": 11,
+    "footer_text": "AJMUN37th 平和への課題：補遺",
+    "margins": {
+      "top": "30mm",
+      "left": "25mm",
+      "height": "230mm"
+    },
+    "fonts": {
+      "main": "Harano Aji Mincho",
+      "sans": "Harano Aji Gothic"
+    },
+    "colors": {
+      "preset": "default",
+      "presets": {
+        "default": {
+          "name": "デフォルト",
+          "link": "blue",
+          "titleblue": "#0d47a1",
+          "headerblue": "#0097a7",
+          "lawheaderbg": "#3d5a80",
+          "lawheadertext": "#ffffff",
+          "lawbodybg": "#e8f0f8",
+          "lawborder": "#b8c8d8",
+          "blockquotebg": "#f0f8ff",
+          "railactive": "#2C5070",
+          "railinactive": "#E5E5E5",
+          "railcursor": "#C04020"
+        },
+        "blue": {
+          "name": "ブルー",
+          "link": "#1a73e8",
+          "titleblue": "#1565c0",
+          "headerblue": "#0288d1",
+          "lawheaderbg": "#1976d2",
+          "lawheadertext": "#ffffff",
+          "lawbodybg": "#e3f2fd",
+          "lawborder": "#90caf9",
+          "blockquotebg": "#e3f2fd",
+          "railactive": "#1565c0",
+          "railinactive": "#e3f2fd",
+          "railcursor": "#d32f2f"
+        },
+        "green": {
+          "name": "グリーン",
+          "link": "#2e7d32",
+          "titleblue": "#1b5e20",
+          "headerblue": "#43a047",
+          "lawheaderbg": "#2e7d32",
+          "lawheadertext": "#ffffff",
+          "lawbodybg": "#e8f5e9",
+          "lawborder": "#a5d6a7",
+          "blockquotebg": "#e8f5e9",
+          "railactive": "#1b5e20",
+          "railinactive": "#e8f5e9",
+          "railcursor": "#c62828"
+        }
+      },
+      "custom": {
+        "link": "blue",
+        "titleblue": "#0d47a1",
+        "headerblue": "#0097a7",
+        "lawheaderbg": "#3d5a80",
+        "lawheadertext": "#ffffff",
+        "lawbodybg": "#e8f0f8",
+        "lawborder": "#b8c8d8",
+        "blockquotebg": "#f0f8ff"
+      }
+    }
+  },
+  "html": {
+    "theme": "cosmo",
+    "toc": true,
+    "numberSections": true,
+    "sidebarWidth": 280,
+    "marginWidth": 300
+  },
+  "raksul": {
+    "binding": "left",
+    "trim_width_mm": 182,
+    "trim_height_mm": 257,
+    "bleed_mm": 3,
+    "safe_margin_mm": 3,
+    "body_pages": 232,
+    "source_body_pages": 230,
+    "paper_width_mm": 188,
+    "paper_height_mm": 263,
+    "inner_margin_mm": 18,
+    "outer_margin_mm": 15,
+    "top_margin_mm": 18,
+    "bottom_margin_mm": 18,
+    "spine_width_mm": 13.0,
+    "spine_width_source": "template",
+    "body_stock": "マット紙 70kg",
+    "cover_stock": "マット紙 180kg",
+    "cover_finish": "片面マットPP",
+    "conference": {
+      "long_name": "37th All Japan Model United Nations",
+      "short_name": "AJMUN 37th",
+      "dates_en": "Dec 27-30, 2025"
+    },
+    "body_insert_pages": {
+      "enabled": true,
+      "front": {
+        "enabled": true,
+        "title": "平和への課題：補遺",
+        "subtitle": "Background Guide",
+        "conference_name": "37th All Japan Model United Nations",
+        "dates_en": "Dec 27-30, 2025"
+      },
+      "back": {
+        "enabled": true,
+        "lines": [
+          "平和への課題：補遺",
+          "AJMUN 37th",
+          "Dec 27-30, 2025"
+        ]
+      }
+    },
+    "cover": {
+      "inner_front_path": null,
+      "inner_back_path": null,
+      "inner_back_lines": [
+        "平和への課題：補遺",
+        "AJMUN 37th",
+        "Dec 27-30, 2025"
+      ],
+      "palette": {
+        "navy": "#102B44"
+      }
+    }
+  },
+  "chapters": [
+    {
+      "id": "index",
+      "file": "index.qmd",
+      "type": "index",
+      "title": "トップ"
+    },
+    {
+      "id": "00_front",
+      "file": "content/00_front.md",
+      "type": "chapter",
+      "title": "前書き"
+    },
+    {
+      "id": "01_ch01",
+      "file": "content/01_ch01.md",
+      "type": "chapter",
+      "title": "第1章"
+    },
+    {
+      "id": "02_ch02",
+      "file": "content/02_ch02.md",
+      "type": "chapter",
+      "title": "第2章"
+    },
+    {
+      "id": "03_ch03",
+      "file": "content/03_ch03.md",
+      "type": "chapter",
+      "title": "第3章"
+    },
+    {
+      "id": "04_ch04",
+      "file": "content/04_ch04.md",
+      "type": "chapter",
+      "title": "第4章"
+    },
+    {
+      "id": "05_ch05",
+      "file": "content/05_ch05.md",
+      "type": "chapter",
+      "title": "第5章"
+    },
+    {
+      "id": "06_ch06",
+      "file": "content/06_ch06.md",
+      "type": "chapter",
+      "title": "第6章"
+    },
+    {
+      "id": "ad_01",
+      "file": "content/ad_01.md",
+      "type": "ad",
+      "title": "広告1"
+    },
+    {
+      "id": "90_afterword",
+      "file": "content/90_afterword.md",
+      "type": "appendix",
+      "title": "あとがき"
+    },
+    {
+      "id": "95_references",
+      "file": "content/95_references.qmd",
+      "type": "appendix",
+      "title": "参考文献"
+    },
+    {
+      "id": "96_index",
+      "file": "content/96_index.qmd",
+      "type": "appendix",
+      "title": "索引"
+    },
+    {
+      "id": "99_advertisement",
+      "file": "content/99_advertisement.qmd",
+      "type": "appendix",
+      "title": "広告"
+    }
+  ]
+}

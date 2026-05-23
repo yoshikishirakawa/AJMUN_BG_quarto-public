@@ -1,0 +1,163 @@
+project:
+  type: book
+  output-dir: out
+  post-render:
+  - python3 scripts/sync_output_runtime_assets.py
+  - python3 scripts/build_nav_data.py
+  - python3 scripts/fix_index_anchors.py
+  - python3 scripts/build_index_data.py
+  resources:
+  - src/css/**
+  - assets/**
+  - robots.txt
+  - sitemap.xml
+  - sw.js
+
+book:
+  title: "平和への課題：補遺"
+  author: "AJMUN 37th"
+  date: "2025-11-20"
+  chapters:
+  - index.qmd
+  - content/00_front.md
+  - content/01_ch01.md
+  - content/02_ch02.md
+  - content/03_ch03.md
+  - content/04_ch04.md
+  - content/05_ch05.md
+  - content/06_ch06.md
+  - content/90_afterword.md
+  - content/95_references.qmd
+  - content/96_index.qmd
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: false
+    file-scope: true
+    page-layout: article
+    embed-resources: false
+    pandoc-args: ["--file-scope"]
+    css:
+    - src/css/font-udpmincho.css
+    - src/css/base.css
+    - src/css/simple-theme.css
+    - src/css/right-panel.css
+    include-before-body:
+    - file: templates/header-ui.html
+    include-after-body:
+    - file: src/include/analytics.html
+    - file: templates/ui-clean-script.html
+    - file: templates/gdoc-preview.html
+    - file: templates/pwa-loader.html
+    - file: templates/index-scroll.html
+    - file: templates/pdf-page-indicator.html
+    include-in-header:
+    - file: templates/pdf-download-config.html
+    - text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&display=swap" rel="stylesheet">
+    - text: |
+        <script>
+          (function() {
+            try {
+              var theme = localStorage.getItem('quarto-theme') || 'light';
+              document.documentElement.setAttribute('data-theme', theme);
+              if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+              // Ensure body gets the attribute as soon as it exists
+              var observer = new MutationObserver(function(mutations) {
+                if (document.body) {
+                  document.body.setAttribute('data-theme', theme);
+                  if (theme === 'dark') {
+                    document.body.classList.add('dark');
+                  }
+                  observer.disconnect();
+                }
+              });
+              observer.observe(document.documentElement, { childList: true });
+            } catch (e) {}
+          })();
+        </script>
+    - text: |
+        <style>
+          :root {
+            --sidebar-width: 280px;
+            --margin-width: 150px;
+            --gutter-width: 12px;
+          }
+        </style>
+    grid:
+      sidebar-width: 280px
+      margin-width: 220px
+
+
+    code-fold: true
+  pdf:
+    pdf-engine: lualatex
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    file-scope: true
+    pandoc-args: ["--file-scope"]
+    filters:
+    - filters/rail_system.lua
+    - filters/fullpage_image.lua
+    - filters/index_pdf.lua
+    - filters/auto-id.lua
+    - filters/paragraph_id.lua
+    geometry:
+    - top=30mm
+    - left=25mm
+    - height=230mm
+    documentclass: scrreprt
+    papersize: a4
+    fontsize: 11pt
+    classoption: []
+    header-includes: |
+      \usepackage{tocloft}
+      \usepackage{hyperref}
+      \hypersetup{
+        colorlinks=true,
+        linkcolor=blue,
+        filecolor=magenta,
+        urlcolor=cyan,
+        pdftitle={平和への課題：補遺},
+        pdfauthor={AJMUN 37th},
+        pdfsubject={Background Guide},
+      }
+    include-in-header:
+    - meta/latex/pdf-style.tex
+    - meta/latex/rail-navigation.tex
+    - meta/latex/footer-config.tex
+    include-after-body:
+    - file: templates/pdf-tail-fullpages.tex
+
+# bibliography: 
+#   - meta/style.csl
+
+    mainfont: Harano Aji Mincho
+    sansfont: Harano Aji Gothic
+filters:
+- filters/toc_header_ids.lua
+- filters/law.lua
+- filters/colmin.lua
+- filters/colmin_pdf.lua
+- filters/table_vertical_lines.lua
+- filters/index.lua
+- filters/highlight.lua
+- filters/small_block.lua
+- filters/indent.lua
+- filters/image.lua
+- filters/fullpage_image.lua
+- filters/toc_links.lua
+
+metadata:
+  crossref:
+    fig-prefix: 図
+    tbl-prefix: 表
+  lang: ja

@@ -1,0 +1,231 @@
+/* ============================================
+   responsive.css
+   レスポンシブ - 768pxブレークポイント
+
+   作成日: 2026-01-24
+   関連: docs/ui-redesign/02-layout-structure.md
+   ============================================ */
+
+/* ============================================
+   モバイル（< 768px）
+   ============================================ */
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 48px;
+    --sidebar-width: 100vw;
+  }
+
+  /* サイドバーは非表示 */
+  .sidebar {
+    display: none;
+  }
+
+  /* メインレイアウトはブロックに */
+  .reader-layout {
+    display: block;
+    padding-bottom: 0;
+  }
+
+  /* 傍注は非表示 */
+  .margin-note {
+    display: none;
+  }
+
+  /* インライン脚注を表示 */
+  .inline-footnotes {
+    display: block;
+  }
+
+  /* 章遷移ナビはドロワー内に移動（本文末尾のナビは非表示） */
+  .chapter-nav {
+    display: none;
+  }
+
+  /* ドロワー */
+  .drawer {
+    display: block;
+  }
+
+  .drawer-backdrop {
+    display: block;
+  }
+
+  /* ドロワー内の章遷移ナビ（最上部配置） */
+  .drawer-chapter-nav {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-border);
+    order: -1;
+  }
+
+  /* ============================================
+     モバイルドロワー
+     ============================================ */
+
+  .drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 85vw;
+    background: var(--color-surface);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .drawer.open {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .drawer-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .drawer-close {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text);
+  }
+
+  .drawer-content {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  /* ドロワー内の章遷移ナビ */
+  .drawer-chapter-nav-prev,
+  .drawer-chapter-nav-next {
+    flex: 1;
+    padding: 10px 12px;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.85rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .drawer-chapter-nav-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .drawer-chapter-nav-title {
+    display: block;
+    font-size: 0.85rem;
+  }
+
+  /* ドロワー内目次 */
+  .drawer-toc {
+    padding: 16px 0;
+  }
+
+  /* ============================================
+     ドロワー背景
+     ============================================ */
+
+  .drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 199;
+  }
+
+  .drawer-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ============================================
+     本文の調整
+     ============================================ */
+
+  .chapter {
+    padding: 24px 16px;
+  }
+
+  .chapter-header h1 {
+    font-size: 1.5rem;
+  }
+
+  /* ============================================
+     検索オーバーレイの調整
+     ============================================ */
+
+  .search-overlay {
+    padding-top: 60px;
+  }
+
+  .search-container {
+    width: 95%;
+    padding: 16px;
+  }
+
+  /* ============================================
+     設定メニューの調整
+     ============================================ */
+
+  .settings-container {
+    width: 95%;
+    padding: 16px;
+  }
+
+  /* ============================================
+     マーカーツールバーの調整
+     ============================================ */
+
+  .marker-toolbar {
+    flex-wrap: wrap;
+    max-width: 200px;
+  }
+}
+
+/* ============================================
+   デスクトップ（≥ 768px）でのドロワー非表示
+   ============================================ */
+
+@media (min-width: 768px) {
+  .drawer,
+  .drawer-backdrop,
+  .drawer-chapter-nav {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   インライン脚注の表示制御
+   ============================================ */
+
+@media (min-width: 768px) {
+  .inline-footnotes {
+    display: none;
+  }
+}

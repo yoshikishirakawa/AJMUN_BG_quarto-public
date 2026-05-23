@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ajmun37-aa4p-bg.web.app/sitemap.xml

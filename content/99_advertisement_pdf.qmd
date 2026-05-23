@@ -1,0 +1,8 @@
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=center] at (current page.center) {%
+    \includegraphics[width=\paperwidth, height=\paperheight]{assets/37A4_1P_page-0001.jpg}%
+  };
+\end{tikzpicture}
+\clearpage

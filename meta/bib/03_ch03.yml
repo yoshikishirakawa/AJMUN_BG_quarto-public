@@ -1,0 +1,39 @@
+# meta/bib/XX_chXX.yml
+# 第3章: 争点・論点解説
+
+# 章全体で共通の参考文献
+chapter:
+  # 佐藤 哲夫 「見果てぬ夢、国連常設軍 —国際公共目的に向けた軍事的強制の現代的諸相—」
+  - id: sato-2011-un-standing-army
+    type: article
+    title: "見果てぬ夢、国連常設軍 —国際公共目的に向けた軍事的強制の現代的諸相—"
+    author: "佐藤 哲夫"
+    year: 2011
+    journal: "世界法年報 = Yearbook of world law / 世界法学会 編"
+    number: "30"
+    pages: "1-51"
+    # ※ 2011年3月発行のため、yearは2011、numberは(30)を採用
+    
+  # 阪口 規純 「国連の緊急展開能力強化と常設軍構想の意義・限界」
+  - id: sakaguchi-2007-un-er-capacity
+    type: article
+    title: "国連の緊急展開能力強化と常設軍構想の意義・限界"
+    author: "阪口 規純"
+    year: 2007
+    journal: "国際公共政策研究"
+    volume: "12"
+    number: "1"
+    pages: "93-109"
+    
+  # 一政 祐行 「国連PKO待機制度の現状とその展望 ―待機軍即応旅団（SHIRBRIG）―」
+  - id: ichimasa-2003-shirbrig
+    type: article
+    title: "国連PKO待機制度の現状とその展望 ―待機軍即応旅団（SHIRBRIG）―"
+    author: "一政 祐行"
+    year: 2003
+    journal: "外務省調査月報"
+    number: "2002年度(3)"
+    pages: "79-117"
+    # ※ 2003年3月発行、2002年度(3)とあるため、yearは2003、numberは2002年度(3)を採用
+
+sections: []

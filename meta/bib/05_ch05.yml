@@ -1,0 +1,593 @@
+# meta/bib/05_ch05.yml
+# 第5章: 国連安保理の機能変化と制裁
+
+# 章全体・基礎理論・包括的な研究
+chapter:
+  - id: simma-charter-commentary
+    type: book
+    title: "The Charter of the United Nations: A Commentary"
+    author: "Simma, Bruno (ed.)"
+    year: 2012
+    edition: "3rd edition"
+    publisher: "Oxford University Press"
+    note: "Article 50 Commentary"
+
+  - id: un-repertory-suppl4
+    type: techreport
+    title: "Repertory of Practice of United Nations Organs, Supplement No. 4 (1966-1969), Volume I"
+    author: "United Nations"
+    year: 1970
+    url: "https://legal.un.org/repertory/"
+    note: "Article 50"
+
+  - id: un-repertory-suppl5
+    type: techreport
+    title: "Repertory of Practice of United Nations Organs, Supplement No. 5 (1970-1978), Volume II"
+    author: "United Nations"
+    year: 1980
+    url: "https://legal.un.org/repertory/"
+    note: "Article 50"
+
+  - id: boudreau-burden-sharing
+    type: article
+    title: "UN sanctions burden sharing: Article 50 of the UN charter and assistance to third states"
+    author: "Boudreau, Donald G."
+    year: 1998
+    journal: "Diplomacy & Statecraft"
+    volume: "9"
+    number: "1"
+    pages: "24-52"
+    note: "邦題：国連制裁における負担共有：国連憲章第50条と第三国への支援"
+
+  - id: cefkin-rhodesia
+    type: article
+    title: "The Rhodesian Question at the United Nations"
+    author: "Cefkin, J. Leo"
+    year: 1968
+    journal: "International Organization"
+    volume: "22"
+    number: "3"
+    pages: "649-669"
+
+  - id: boisson-collective-security
+    type: article
+    title: "Collective Security and the Economic Interventionism of the UN: the need for a coherent and Integrated Approach"
+    author: "Boisson de Chazournes, Laurence"
+    year: 2007
+    journal: "Journal of International Economic Law"
+    volume: "10"
+    number: "1"
+    pages: "51-86"
+
+  - id: murase-unsc-functions
+    type: book
+    title: "国連安保理の機能変化"
+    author: "村瀬信也（編）"
+    year: 2009
+    publisher: "東信堂"
+
+  - id: chayes-new-sovereignty
+    type: book
+    title: "国際法遵守の管理モデル：新しい主権のあり方"
+    author: "Chayes, Abram and Chayes, Antonia H.（宮野洋一監訳）"
+    year: 2018
+    publisher: "中央大学出版部"
+
+  - id: honda-sanctions-study
+    type: book
+    title: "経済制裁の研究：経済制裁の政治経済学的位置付け"
+    author: "本多美樹"
+    year: 2017
+    publisher: "志學社"
+
+  - id: globalpolicy-sanctions-analysis
+    type: misc
+    title: "Sanctions: An Analysis"
+    author: "Global Policy Forum"
+    url: "https://archive.globalpolicy.org/component/content/article/202-sanctions/41612-sanctions-an-analysis.html"
+
+  - id: lopez-rule-of-law
+    type: inproceedings
+    title: "Sanctions and the rule of law: Severe ethical and practical challenges"
+    author: "Lopez, George A."
+    year: 2001
+    booktitle: "International Studies Association (ISA) 2001 Annual Convention"
+    url: "https://ciaotest.cc.columbia.edu/isa/log01/"
+
+# 節ごとの参考文献
+sections:
+  - section: "第1節 国連安保理による非軍事的強制措置の法的諸問題"
+    references:
+      - id: yoshimura-financial-sanctions-book
+        type: book
+        title: "国連の金融制裁：法と実務"
+        author: "吉村祥子"
+        year: 2018
+        publisher: "東信堂"
+
+      - id: yoshimura-legal-problems-book
+        type: book
+        title: "国連非軍事的制裁の法的問題"
+        author: "吉村祥子"
+        year: 2003
+        publisher: "国際書院"
+
+      - id: matsukuma-sanctions-legal
+        type: article
+        title: "経済制裁の法的規制"
+        author: "松隈潤"
+        year: 2006
+        journal: "西南学院大学法学論集"
+        volume: "39"
+        number: "1"
+        pages: "113-122"
+
+      - id: de-wet-chapter-vii
+        type: book
+        title: "The Chapter VII Powers of the United Nations Security Council"
+        author: "de Wet, Erika"
+        year: 2004
+        publisher: "Hart Publishing"
+
+      - id: sarooshi-collective-security
+        type: book
+        title: "The United Nations and the Development of Collective Security"
+        author: "Sarooshi, Dan"
+        year: 1999
+        publisher: "Oxford University Press"
+
+      - id: cortright-smart-sanctions
+        type: book
+        title: "Smart Sanctions: Targeting Economic Statecraft"
+        author: "Cortright, David and Lopez, George A."
+        year: 2002
+        publisher: "Rowman & Littlefield"
+
+      - id: conlon-sanctions-management
+        type: book
+        title: "United Nations Sanctions Management: A Case Study of the Iraq Sanctions Committee 1990-1994"
+        author: "Conlon, Paul"
+        year: 2000
+        publisher: "Transnational Publishers"
+
+      - id: nakaya-iraq-sanctions-1990
+        type: article
+        title: "イラクに対する経済制裁"
+        author: "中谷和弘"
+        year: 1990
+        journal: "法学セミナー"
+        volume: "1990年11月号"
+        pages: "24-27"
+
+      - id: nakaya-sanctions-public-interest-1991
+        type: inproceedings
+        title: "経済制裁と国際公益 – 第三国との関係を中心として–"
+        author: "中谷和弘"
+        year: 1991
+        booktitle: "国際法と国内法 – 国際公益の展開– （山本草二先生還暦記念）"
+        pages: "535-561"
+        publisher: "勁草書房"
+
+      - id: nakaya-panam-1992
+        type: article
+        title: "パンナム103便およびUTA772便爆破事件と国際社会の対応 – 国連安全保障理事会決議731をめぐって"
+        author: "中谷和弘"
+        year: 1992
+        journal: "ジュリスト"
+        volume: "998"
+        pages: "82-86"
+
+      - id: nakaya-sanctions-intl-law-1995
+        type: inproceedings
+        title: "国際法の観点からみた経済制裁"
+        author: "中谷和弘"
+        year: 1995
+        booktitle: "論文から見る現代社会と法"
+        pages: "219-250"
+        publisher: "有斐閣"
+
+      - id: nakaya-uncc-1996
+        type: inproceedings
+        title: "湾岸戦争の事後救済機関としての国連補償委員会"
+        author: "中谷和弘"
+        year: 1996
+        booktitle: "国際社会の組織化と法（内田久司先生古希記念）"
+        pages: "333-363"
+        publisher: "信山社"
+
+      - id: nakaya-unsc-sanctions-2009
+        type: inproceedings
+        title: "安保理決議に基づく経済制裁ー近年の特徴と法的課題ー"
+        author: "中谷和弘"
+        year: 2009
+        booktitle: "国連安保理の機能変化"
+        pages: "79-96"
+        publisher: "東信堂"
+
+      - id: nakaya-mufj-report-2013
+        type: techreport
+        title: "委託研究 安保理決議による経済制裁：制裁に至る事情・内容・効果等の横断的比較分析"
+        author: "三菱UFJリサーチ＆コンサルティング（編）"
+        year: 2013
+        institution: "三菱UFJリサーチ＆コンサルティング株式会社"
+
+      - id: nakaya-jiia-report-2022
+        type: techreport
+        title: "経済制裁の国際法構造"
+        author: "中谷和弘"
+        year: 2022
+        institution: "日本国際問題研究所"
+
+      # その他の参考文献・資料
+      - id: gimura-uncc-legal
+        type: article
+        title: "国連補償委員会の法的性格：その設立根拠と準司法的機能をめぐって"
+        author: "儀村英司"
+        year: 2001
+        journal: "西南学院大学大学院法学研究論集"
+        volume: "19"
+        pages: "101-136"
+
+      - id: kwon-uncc-environment
+        type: article
+        title: "武力紛争による環境損害の賠償メカニズムの制度化：国連補償委員会における環境損害請求の特徴を中心に"
+        author: "権南希"
+        year: 2015
+        journal: "国際法外交雑誌"
+        volume: "114"
+        number: "2"
+
+      - id: un-yearbook-1994
+        type: techreport
+        title: "Yearbook of the United Nations 1994"
+        author: "United Nations"
+        year: 1994
+
+      - id: un-yearbook-1995
+        type: techreport
+        title: "Yearbook of the United Nations 1995"
+        author: "United Nations"
+        year: 1995
+
+      - id: brand-sc-resolutions
+        type: article
+        title: "Security Council Resolutions: When Do They Give Rise to Enforceable Legal Rights?"
+        author: "Brand, Ronald A."
+        year: 1976
+        journal: "Cornell International Law Journal"
+        volume: "9"
+        pages: "298"
+
+      - id: rajcic-legal-control
+        type: article
+        title: "Legal Control over Decisions Taken by the United Nations Organs and Judicial Review of the Security Council Decisions"
+        author: "Rajčić, Ivana"
+        year: 2014
+        journal: "Pravnik"
+        volume: "47"
+        number: "96"
+
+      - id: matsuura-sc-limits
+        type: book
+        title: "国連安全保障理事会：その限界と可能性"
+        author: "松浦博司"
+        year: 2005
+        publisher: "新風舎"
+
+      - id: suzuki-sc-expansion
+        type: article
+        title: "安保理機能の拡大とその限界：国連安保理による非軍事的強制措置の決定について"
+        author: "鈴木隆"
+        year: 2006
+        journal: "レファレンス（国立国会図書館）"
+        number: "662"
+
+      - id: wood-sc-working-methods
+        type: article
+        title: "Security Council Working Methods and Procedure: Recent Developments"
+        author: "Wood, Michael C."
+        year: 1996
+        journal: "International and Comparative Law Quarterly"
+        volume: "45"
+        pages: "150-161"
+
+      - id: hulton-sc-working-methods
+        type: article
+        title: "Security Council Working Methods: Provisional Progress"
+        author: "Hulton, Susan C."
+        year: 1996
+        journal: "Cambridge Law Journal"
+        volume: "55"
+        number: "1"
+
+      - id: kawashima-human-rights-peacebuilding
+        type: book
+        title: "人権保障による平和構築"
+        author: "川嶋隆志"
+        year: 2014
+        publisher: "デザインエッグ社"
+
+      # 第1節に関連するWebリンク群
+      - id: unis-vienna
+        type: misc
+        title: "United Nations Information Service (Vienna) Introduction"
+        url: "https://unis.unvienna.org/unis/en/united_nations/un_introduction.html"
+
+      - id: un-subsidiary-bodies
+        type: misc
+        title: "Subsidiary Organs of the General Assembly"
+        url: "https://www.un.org/en/ga/about/subsidiary/committees.shtml"
+
+      - id: mofa-un-general-assembly
+        type: misc
+        title: "外務省：国連総会"
+        url: "https://www.mofa.go.jp/mofaj/gaiko/unsokai/index.html"
+
+      - id: nations-encyclopedia-secretariat
+        type: misc
+        title: "The Secretariat: Structure and Composition"
+        url: "https://www.nationsencyclopedia.com/United-Nations/The-Secretariat-STRUCTURE-AND-COMPOSITION-OF-THE-SECRETARIAT.html"
+
+      - id: ejil-article-pdf
+        type: misc
+        title: "EJIL Article (Review of Sarooshi)"
+        url: "https://www.ejil.org/pdfs/16/5/329.pdf"
+
+  - section: "第2節 国連財政と憲章解釈"
+    references:
+      - id: kelsen-law-of-un
+        type: book
+        title: "The Law of the United Nations: A Critical Analysis of Its Fundamental Problems"
+        author: "Kelsen, Hans"
+        year: 1950
+        publisher: "Stevens & Sons"
+
+      - id: tadokoro-un-finance
+        type: book
+        title: "国連財政：予算から見た国連の実像"
+        author: "田所昌幸"
+        year: 1996
+        publisher: "有斐閣"
+
+  - section: "第3節 PKOと人道的介入"
+    references:
+      - id: un-pko-military-component
+        type: techreport
+        title: "Military Component of United Nations Peace-keeping Operations"
+        author: "Browne, Marjorie Ann"
+        year: 1990
+        institution: "Congressional Research Service (CRS)"
+        number: "IB90103"
+
+      - id: barnett-eyewitness-genocide
+        type: book
+        title: "国連はなぜルワンダを救えなかったのか"
+        author: "Barnett, Michael（著）、田所昌幸ほか（訳）"
+        year: 2003
+        publisher: "岩波書店"
+        note: "原著: Eyewitness to a Genocide (2002)"
+
+      - id: melvern-people-betrayed
+        type: book
+        title: "A People Betrayed: The Role of the West in Rwanda's Genocide"
+        author: "Melvern, Linda"
+        year: 2000
+        publisher: "Zed Books"
+        isbn: "978-1856498319"
+
+      - id: wedgwood-pko-evolution
+        type: article
+        title: "The Evolution of United Nations Peacekeeping"
+        author: "Wedgwood, Ruth"
+        year: 1995
+        journal: "Cornell International Law Journal"
+        volume: "28"
+        pages: "631"
+
+      - id: holt-protecting-civilians
+        type: techreport
+        title: "Protecting Civilians in the Context of UN Peacekeeping Operations"
+        author: "Holt, Victoria and Taylor, Glyn"
+        year: 2009
+        institution: "DPKO/OCHA"
+        url: "https://peacekeeping.un.org/en/protecting-civilians"
+
+      - id: canada-rapid-reaction
+        type: techreport
+        title: "Towards a Rapid Reaction Capability for the United Nations"
+        author: "Government of Canada"
+        year: 1995
+
+      - id: langille-conflict-prevention
+        type: article
+        title: "Conflict Prevention: Options for Rapid Deployment and UN Standing Forces"
+        author: "Langille, H. Peter"
+        year: 2000
+        journal: "International Peacekeeping"
+        volume: "7"
+        number: "1"
+        pages: "219-253"
+
+  - section: "第4節 経済制裁の事例研究"
+    references:
+      - id: bamber-iraqi-oil
+        type: article
+        title: "The Iraqi Oil Industry: History and Overview"
+        author: "Bamber, David, Saleh, Farsat and Panditharathna, Roshan"
+        year: 2023
+        journal: "European Journal of Political Science Studies"
+        volume: "6"
+        number: "1"
+        url: "https://oapub.org/soc/index.php/EJPSS/article/view/1424"
+
+      - id: rossignol-sanctions-weapon
+        type: techreport
+        title: "Sanctions: The Economic Weapon in the New World Order"
+        author: "Rossignol, Michel"
+        year: 1996
+        institution: "Library of Parliament, Canada"
+        number: "BP-346E"
+
+      - id: cortright-sanctions-decade
+        type: book
+        title: "The Sanctions Decade: Assessing the UN Experience of the 1990s"
+        author: "Cortright, David and Lopez, George A."
+        year: 2000
+        publisher: "Lynne Rienner Publishers"
+
+      - id: honda-humanitarian-sanctions
+        type: book
+        title: "国連による経済制裁と人道上の諸問題：スマート・サンクションの模索"
+        author: "本多美樹"
+        year: 2003
+        publisher: "国際書院"
+
+      - id: gao-bosnia
+        type: techreport
+        title: "Humanitarian Intervention: Effectiveness of U.N. Operations in Bosnia"
+        author: "U.S. General Accounting Office (GAO)"
+        year: 1994
+        number: "GAO/NSIAD-94-156BR"
+
+      - id: canada-lance-unamir
+        type: misc
+        title: "Operation LANCE (UNAMIR)"
+        url: "https://www.canada.ca/en/department-national-defence/services/military-history/history-heritage/past-operations/africa/lance-unamir.html"
+
+      - id: merip-egypt-debt
+        type: article
+        title: "Economic Impact of the Crisis in Egypt"
+        author: "MERIP"
+        year: 1991
+        journal: "Middle East Report"
+        url: "https://www.merip.org/1991/01/economic-impact-of-the-crisis-in-egypt/"
+
+      - id: merip-iraq-lessons
+        type: article
+        title: "The Enduring Lessons of the Iraq Sanctions"
+        author: "MERIP"
+        year: 2020
+        journal: "Middle East Report Online"
+        url: "https://www.merip.org/2020/06/the-enduring-lessons-of-the-iraq-sanctions/"
+
+      - id: hrw-iraq-memo
+        type: misc
+        title: "Iraq: Human Rights Watch Backgrounder"
+        author: "Human Rights Watch"
+        year: 2000
+        url: "https://www.hrw.org/legacy/press/2000/01/iraq-memo.htm"
+
+      - id: us-congress-gulf-war-costs
+        type: techreport
+        title: "Foreign Contributions to the Costs of the Persian Gulf War"
+        author: "U.S. House Committee on Ways and Means"
+        year: 1992
+        institution: "U.S. Government Printing Office"
+
+      - id: rubin-sanctions-iraq
+        type: article
+        title: "Sanctions on Iraq: A Valid Anti-American Grievance?"
+        author: "Rubin, Barry"
+        year: 2001
+        journal: "MERIA Journal"
+        volume: "5"
+        number: "4"
+        url: "https://web.archive.org/web/20060907153101/http://meria.idc.ac.il/journal/2001/issue4/mrubin.pdf"
+
+      - id: delevic-yugoslavia-sanctions
+        type: article
+        title: "Economic Sanctions as a Foreign Policy Tool: The Case of Yugoslavia"
+        author: "Delevic, Milica"
+        year: 1998
+        journal: "International Journal of Peace Studies"
+        volume: "3"
+        number: "1"
+        url: "https://www3.gmu.edu/programs/icar/ijps/vol3_1/Delvic.htm"
+
+      - id: odihpn-yugoslavia
+        type: misc
+        title: "Sanctions and the Federal Republic of Yugoslavia"
+        author: "ODI Humanitarian Practice Network"
+        url: "https://odihpn.org/en/publication/sanctions-and-the-federal-republic-of-yugoslavia-assessing-impacts-and-drawing-lessons/"
+
+      - id: globalpolicy-yugoslavia-roundtable
+        type: misc
+        title: "Report of the Copenhagen Round Table on United Nations Sanctions in the Case of the Former Yugoslavia"
+        author: "Global Policy Forum"
+        year: 1996
+        url: "https://archive.globalpolicy.org/component/content/article/202-sanctions/42472-report-of-the-copenhagen-round-table-on-united-nations-sanctions-in-the-case-of-the-former-yugoslavia.html"
+
+      - id: kawanishi-libya-sanctions
+        type: article
+        title: "リビアに対する経済制裁とその帰結"
+        author: "川西晶大"
+        year: 2020
+        journal: "外国の立法"
+        number: "283"
+
+      - id: grenville-wood-libya
+        type: article
+        title: "Sanctions Against Libya Set a Questionable Precedent"
+        author: "Grenville-Wood, Geoffrey"
+        year: 1993
+        journal: "Bulletin of the United Nations Association in Canada"
+
+      - id: refworld-haiti
+        type: misc
+        title: "Human Rights Watch World Report 1993 - Haiti"
+        author: "Human Rights Watch"
+        year: 1993
+        url: "https://www.refworld.org/reference/annualreport/hrw/1993/en/93501"
+
+      - id: garfield-sanctions-health
+        type: techreport
+        title: "The Impact of Economic Sanctions on Health and Well-being"
+        author: "Garfield, Richard"
+        year: 1999
+        institution: "Overseas Development Institute"
+        series: "Relief and Rehabilitation Network Paper"
+        number: "31"
+
+      - id: harvard-haiti-sanctions
+        type: techreport
+        title: "The Impact of Economic Sanctions on Health and Human Rights in Haiti, 1991-1994"
+        author: "Harvard Center for Population and Development Studies"
+        year: 1994
+
+      - id: izu-imf-conditionality
+        type: article
+        title: "IMF融資条件の構造改革化と国際金融システム（下・その5）"
+        author: "伊豆久"
+        year: 2023
+        journal: "久留米大学経済社会研究"
+
+      # 第4節に関連する追加Web資料
+      - id: state-gov-namibia
+        type: misc
+        title: "U.S. Department of State Archive: Namibia"
+        url: "https://2001-2009.state.gov/r/pa/ho/time/pcw/98678.htm"
+
+      - id: frus-1951
+        type: misc
+        title: "Foreign Relations of the United States, 1951, Volume I"
+        url: "https://history.state.gov/historicaldocuments/frus1951v01/d222"
+
+      - id: globalsecurity-mio
+        type: misc
+        title: "Maritime Interception Operations (MIO)"
+        url: "https://www.globalsecurity.org/military/ops/mio.htm"
+
+      - id: casi-iraq
+        type: misc
+        title: "Campaign Against Sanctions on Iraq (CASI)"
+        url: "https://www.casi.org.uk/info/themes.html#hum"
+
+      - id: cornell-gulf-war-cost
+        type: misc
+        title: "How much did the Gulf War cost the US"
+        url: "https://web.archive.org/web/20100821200403/http://people.psych.cornell.edu/~fhoran/gulf/GW_cost/GW_payments.html"
+
+      - id: un-oip-factsheet
+        type: misc
+        title: "Office of the Iraq Programme Fact Sheet"
+        url: "https://www.un.org/depts/oip/background/fact-sheet.html"

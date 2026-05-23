@@ -1,0 +1,887 @@
+/* 基本的なタイポグラフィと共通スタイル */
+
+:root {
+  /* タイポグラフィ */
+  --font-base: 17px;
+  --lh-base: 1.7;
+  --font-small: 14px;
+  --font-large: 19px;
+  --font-serif: 'BIZ UDPMincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho', serif;
+  --font-sans: 'BIZ UDPMincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho', serif;
+
+  /* カラー（ライト/ダーク共通のトークン） */
+  --color-text-light: #1f2329;
+  --color-text-dark: #e8eaed;
+  --color-muted-light: #5c6675;
+  --color-muted-dark: #aeb4c0;
+  --color-heading-light: #0f1115;
+  --color-heading-dark: #f5f7fa;
+  --color-bg-light: #fdfdfd;
+  --color-bg-dark: #05070b;
+  --surface-muted-light: #f5f6fb;
+  --surface-muted-dark: #151b2b;
+  --surface-raised-light: #ffffff;
+  --surface-raised-dark: #111726;
+  --border-color-light: #dfe3eb;
+  --border-color-dark: rgba(255, 255, 255, 0.18);
+  --accent-light: #ff6b35;
+  --accent-dark: #ffb347;
+  --link-color-light: #1a73e8;
+  --link-color-dark: #8ab4f8;
+  --link-hover-light: #0c56c3;
+  --link-hover-dark: #c8dafc;
+  --code-bg-light: #f5f5f5;
+  --code-bg-dark: #1f2430;
+  --code-fg-light: #1f1f1f;
+  --code-fg-dark: #f1f1f1;
+
+  /* デフォルト値（ライトテーマ相当） */
+  --color-text: var(--color-text-light);
+  --color-muted: var(--color-muted-light);
+  --color-heading: var(--color-heading-light);
+  --color-bg: var(--color-bg-light);
+  --surface-muted: var(--surface-muted-light);
+  --surface-raised: var(--surface-raised-light);
+  --border-color: var(--border-color-light);
+  --accent: var(--accent-light);
+  --link-color: var(--link-color-light);
+  --link-hover: var(--link-hover-light);
+  --code-bg: var(--code-bg-light);
+  --code-fg: var(--code-fg-light);
+
+  /* 互換性のための旧トークン */
+  --fg: var(--color-text);
+  --bg: var(--color-bg);
+  --muted: var(--color-muted);
+  --link: var(--link-color);
+
+  /* レイアウト */
+  --header-h: 56px;
+  --left-w: 300px;
+  --right-w: 320px;
+  --gutter: 24px;
+  --content-max: 1000px;
+
+  /* UI */
+  --btn-h: 32px;
+  --btn-pad-x: 10px;
+  --radius: 8px;
+  --z-header: 1000;
+  --z-menu: 1100;
+  --z-toc: 1200;
+  --z-sidebar: 100;
+}
+
+/* 基本設定 */
+html {
+  font-size: var(--font-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+  line-height: var(--lh-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 段落の字下げ (全角1文字相当) */
+p {
+  text-indent: 1em;
+}
+
+body[data-theme="light"] {
+  --color-text: var(--color-text-light);
+  --color-muted: var(--color-muted-light);
+  --color-heading: var(--color-heading-light);
+  --color-bg: var(--color-bg-light);
+  --surface-muted: var(--surface-muted-light);
+  --surface-raised: var(--surface-raised-light);
+  --border-color: var(--border-color-light);
+  --accent: var(--accent-light);
+  --link-color: var(--link-color-light);
+  --link-hover: var(--link-hover-light);
+  --code-bg: var(--code-bg-light);
+  --code-fg: var(--code-fg-light);
+  --fg: var(--color-text);
+  --bg: var(--color-bg);
+  --muted: var(--color-muted);
+  --link: var(--link-color);
+}
+
+body[data-theme="dark"] {
+  --color-text: var(--color-text-dark);
+  --color-muted: var(--color-muted-dark);
+  --color-heading: var(--color-heading-dark);
+  --color-bg: var(--color-bg-dark);
+  --surface-muted: var(--surface-muted-dark);
+  --surface-raised: var(--surface-raised-dark);
+  --border-color: var(--border-color-dark);
+  --accent: var(--accent-dark);
+  --link-color: var(--link-color-dark);
+  --link-hover: var(--link-hover-dark);
+  --code-bg: var(--code-bg-dark);
+  --code-fg: var(--code-fg-dark);
+  --fg: var(--color-text);
+  --bg: var(--color-bg);
+  --muted: var(--color-muted);
+  --link: var(--link-color);
+}
+
+body[data-theme="auto"] {
+  --fg: var(--color-text);
+  --bg: var(--color-bg);
+  --muted: var(--color-muted);
+  --link: var(--link-color);
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body[data-theme="auto"],
+  body:not([data-theme]) {
+    --color-text: var(--color-text-dark);
+    --color-muted: var(--color-muted-dark);
+    --color-heading: var(--color-heading-dark);
+    --color-bg: var(--color-bg-dark);
+    --surface-muted: var(--surface-muted-dark);
+    --surface-raised: var(--surface-raised-dark);
+    --border-color: var(--border-color-dark);
+    --accent: var(--accent-dark);
+    --link-color: var(--link-color-dark);
+    --link-hover: var(--link-hover-dark);
+    --code-bg: var(--code-bg-dark);
+    --code-fg: var(--code-fg-dark);
+  }
+}
+
+/* 文字サイズ調整 */
+body.font-s {
+  --font-base: 15px;
+}
+
+body.font-m {
+  --font-base: 17px;
+}
+
+body.font-l {
+  --font-base: 19px;
+}
+
+body.font-xl {
+  --font-base: 21px;
+}
+
+/* リンク */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* 見出し */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-heading);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 1.5em 0 1em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 2em 0 1em;
+}
+
+h3 {
+  font-size: 1.25em;
+  margin: 1.5em 0 0.8em;
+}
+
+h4 {
+  font-size: 1.1em;
+  margin: 1.2em 0 0.6em;
+}
+
+/* 段落 */
+p {
+  margin: 1em 0;
+  text-align: justify;
+}
+
+/* リスト */
+ul,
+ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+p {
+  text-indent: 1em;
+  /* 日本語ドキュメントスタイル */
+}
+
+/* 段落インデントの例外 */
+p:first-child,
+li>p:first-child,
+li>p,
+blockquote>p,
+.lawquote p,
+table p,
+.no-indent {
+  text-indent: 0;
+}
+
+/* 引用 - ミニマルアカデミックスタイル */
+blockquote {
+  margin: 0.8em 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid var(--border-color);
+  background: transparent;
+  font-style: normal;
+  color: var(--color-text);
+  line-height: 1.7;
+  font-size: 0.95em;
+}
+
+blockquote p {
+  margin: 0.3em 0;
+}
+
+blockquote p:first-child {
+  margin-top: 0;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ネストされた引用 */
+blockquote blockquote {
+  margin: 0.3em 0;
+  padding-left: 1em;
+  border-left-width: 2px;
+  border-left-color: var(--border-color);
+}
+
+/* コード */
+code {
+  font-family: 'Monaco', 'Menlo', monospace;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 1em;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* テーブル */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+  background: var(--surface-raised);
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+th,
+td {
+  padding: 0.8em 1em;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  vertical-align: top;
+  color: var(--color-text);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: var(--surface-muted);
+}
+
+th {
+  background: var(--surface-muted);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+}
+
+td p,
+th p,
+td ul,
+td ol {
+  margin: 0 0 0.6em;
+}
+
+td p:last-child,
+th p:last-child,
+td ul:last-child,
+td ol:last-child {
+  margin-bottom: 0;
+}
+
+td strong,
+th strong {
+  font-weight: 600;
+}
+
+td a,
+th a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+/* 列幅を指定する colmin テーブル（最小幅 + 自動折り返し） */
+table.aj-colmin {
+  table-layout: auto !important;
+  width: 100%;
+}
+
+table.aj-colmin th,
+table.aj-colmin td {
+  word-break: break-word;
+}
+
+/* data-aj-cols で指定された列は改行を許可しつつ最小幅を確保する */
+table.aj-colmin[data-aj-cols~="1"] th:nth-child(1),
+table.aj-colmin[data-aj-cols~="1"] td:nth-child(1),
+table.aj-colmin[data-aj-cols~="2"] th:nth-child(2),
+table.aj-colmin[data-aj-cols~="2"] td:nth-child(2),
+table.aj-colmin[data-aj-cols~="3"] th:nth-child(3),
+table.aj-colmin[data-aj-cols~="3"] td:nth-child(3),
+table.aj-colmin[data-aj-cols~="4"] th:nth-child(4),
+table.aj-colmin[data-aj-cols~="4"] td:nth-child(4),
+table.aj-colmin[data-aj-cols~="5"] th:nth-child(5),
+table.aj-colmin[data-aj-cols~="5"] td:nth-child(5),
+table.aj-colmin[data-aj-cols~="6"] th:nth-child(6),
+table.aj-colmin[data-aj-cols~="6"] td:nth-child(6),
+table.aj-colmin[data-aj-cols~="7"] th:nth-child(7),
+table.aj-colmin[data-aj-cols~="7"] td:nth-child(7),
+table.aj-colmin[data-aj-cols~="8"] th:nth-child(8),
+table.aj-colmin[data-aj-cols~="8"] td:nth-child(8),
+table.aj-colmin[data-aj-cols~="9"] th:nth-child(9),
+table.aj-colmin[data-aj-cols~="9"] td:nth-child(9),
+table.aj-colmin[data-aj-cols~="10"] th:nth-child(10),
+table.aj-colmin[data-aj-cols~="10"] td:nth-child(10),
+table.aj-colmin[data-aj-cols~="11"] th:nth-child(11),
+table.aj-colmin[data-aj-cols~="11"] td:nth-child(11),
+table.aj-colmin[data-aj-cols~="12"] th:nth-child(12),
+table.aj-colmin[data-aj-cols~="12"] td:nth-child(12) {
+  white-space: normal;
+  width: 1%;
+}
+
+/* colmin border controls */
+table.colmin-no-vlines th,
+table.colmin-no-vlines td {
+  border-left: none;
+  border-right: none;
+}
+
+table.colmin-no-hlines th,
+table.colmin-no-hlines td {
+  border-top: none;
+  border-bottom: none;
+}
+
+/* colmin header column style */
+td.header-col {
+  font-weight: 600;
+  background: var(--surface-muted);
+}
+
+/* ========================================
+   Text Highlighting (distinct from markers)
+   ======================================== */
+
+/* Base highlight style with border to distinguish from markers */
+.aj-highlight {
+  padding: 0.125em 0.25em;
+  border-radius: 0.1875em;
+  border: 1px solid;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: inherit;
+  display: inline;
+}
+
+/* Yellow highlight */
+.aj-highlight--yellow {
+  background-color: rgba(255, 255, 0, 0.2);
+  border-color: rgba(255, 200, 0, 0.6);
+}
+
+/* Green highlight */
+.aj-highlight--green {
+  background-color: rgba(144, 238, 144, 0.2);
+  border-color: rgba(60, 179, 113, 0.6);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .aj-highlight--yellow {
+  background-color: rgba(255, 255, 0, 0.15);
+  border-color: rgba(255, 200, 0, 0.5);
+}
+
+[data-theme="dark"] .aj-highlight--green {
+  background-color: rgba(144, 238, 144, 0.15);
+  border-color: rgba(60, 179, 113, 0.5);
+}
+
+/* 日本語 UI テキストの折り返し（見出し・表ヘッダ・索引ブロック） */
+h1,
+h2,
+h3,
+h4,
+.aj-index__block h2,
+table th {
+  word-break: break-word;
+  line-break: auto;
+}
+
+/* 脚注 */
+.footnote-ref {
+  font-size: 0.8em;
+  vertical-align: super;
+  color: var(--link);
+  text-decoration: none;
+}
+
+/* 選択時のスタイル */
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* フォーカス */
+:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+/* Hidden utility */
+.content-hidden {
+  display: none;
+}
+
+/* UI（システム）要素はゴシック体 */
+button,
+select,
+input,
+textarea,
+.js-header,
+.js-header *,
+.toc-switcher,
+.toc-switcher *,
+.right-switcher .toc-tabs,
+.right-switcher .toc-tabs *,
+.sidenotes-toolbar,
+.sidenotes-toolbar *,
+.marker-toolbar,
+.marker-toolbar *,
+.global-search-dialog,
+.global-search-dialog *,
+.comment-menu-popup,
+.comment-menu-popup *,
+#quarto-sidebar,
+#quarto-sidebar *,
+.right-comments,
+.right-comments *,
+.comment-card,
+.comment-card *,
+.comment-item,
+.comment-item *,
+.search-results-header,
+.search-results-list,
+.search-results-list *,
+.single-pager nav,
+.single-pager nav *,
+.single-pager a {
+  font-family: var(--font-sans);
+}
+
+/* 本文・脚注は明朝体を維持 */
+.right-footnotes,
+.right-footnotes *,
+.both-footnote-card,
+.both-footnote-card *,
+.footnote-inline,
+.footnote-inline * {
+  font-family: var(--font-serif);
+}
+
+/* コメントポップオーバー（インライン脚注モード向け） */
+.comment-inline-popover {
+  position: absolute;
+  z-index: 1200;
+  max-width: min(320px, calc(100vw - 32px));
+  background: #fff;
+  color: #212529;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.15);
+  padding: 12px 14px;
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+
+.comment-inline-popover[data-theme="dark"] {
+  background: #23242c;
+  color: #f1f3f5;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Header dark mode adjustments */
+[data-theme="dark"] .js-header {
+  background: var(--surface-raised-dark, #111726);
+  border-bottom-color: var(--border-color-dark, rgba(255, 255, 255, 0.18));
+  color: var(--color-text-dark, #e8eaed);
+}
+
+[data-theme="dark"] .js-header .settings-toggle-icon {
+  color: var(--color-text-dark, #e8eaed);
+}
+
+[data-theme="dark"] .js-header__title {
+  color: var(--color-heading-dark, #f5f7fa);
+}
+
+.comment-inline-popover__snippet {
+  font-size: 0.78em;
+  color: #6c757d;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.comment-inline-popover__body {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+
+/* 索引レイアウト */
+.aj-index {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 780px) {
+  .aj-index {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.aj-index__block {
+  break-inside: avoid;
+  padding: 0.4rem 0;
+}
+
+.aj-index__block h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.25rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 0.25rem;
+}
+
+.aj-index__block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aj-index__block li {
+  position: relative;
+  margin: 0.35rem 0;
+  padding-left: 1.2rem;
+}
+
+.aj-index__block li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  color: var(--muted);
+}
+
+.aj-index__entry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: baseline;
+}
+
+.aj-index__term {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.aj-index__dots {
+  color: var(--muted);
+  flex: 0 0 auto;
+}
+
+.aj-index__locations {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.6rem;
+  min-width: 0;
+}
+
+.aj-index__loc {
+  white-space: nowrap;
+}
+
+.aj-index__loc+.aj-index__loc::before {
+  content: "、";
+  margin-right: 0.1rem;
+  color: var(--muted);
+}
+
+.aj-index__loc a {
+  white-space: nowrap;
+}
+
+.aj-index em {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* 汎用画像レイアウト */
+
+/* ページ背景色を CSS 変数として公開（グラデーション用） */
+:root {
+  --page-bg: var(--color-bg);
+}
+
+/* ブロック画像（中央配置） */
+.q-image-block {
+  display: block;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.q-image-block img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  width: var(--img-width, 100%);
+}
+
+/* テキスト + 画像の左右レイアウト */
+.q-image-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+}
+
+.q-image-layout.pos-right {
+  flex-direction: row;
+}
+
+.q-image-layout.pos-left {
+  flex-direction: row-reverse;
+}
+
+.q-image-col.q-image-img {
+  flex: 0 0 var(--img-width, 30%);
+  max-width: var(--img-width, 30%);
+}
+
+.q-image-col.q-image-text {
+  flex: 1 1 auto;
+}
+
+.q-image-col.q-image-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .q-image-layout {
+    flex-direction: column;
+  }
+
+  .q-image-col.q-image-img,
+  .q-image-col.q-image-text {
+    max-width: 100%;
+    flex-basis: auto;
+  }
+}
+
+/* 画像端のグラデーション（背景色と馴染ませる） */
+.q-image-gradient {
+  position: relative;
+  background: var(--page-bg);
+}
+
+.q-image-gradient img {
+  display: block;
+}
+
+.q-image-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* 四辺すべてに線形グラデーションをかける（左・右・上・下） */
+  background:
+    /* 左 → 右（左右端をフェード） */
+    linear-gradient(to right,
+      var(--page-bg, var(--color-bg)) 0,
+      transparent var(--img-gradient-edge, 10%),
+      transparent calc(100% - var(--img-gradient-edge, 10%)),
+      var(--page-bg) 100%),
+    /* 上 → 下（上下端をフェード） */
+    linear-gradient(to bottom,
+      var(--page-bg, var(--color-bg)) 0,
+      transparent var(--img-gradient-edge, 10%),
+      transparent calc(100% - var(--img-gradient-edge, 10%)),
+      var(--page-bg) 100%);
+}
+
+/* 脚注内のリンク折り返し（特にモバイル用） */
+.footnote-inline,
+section.footnotes,
+section.footnotes ol,
+section.footnotes li {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.footnote-inline a,
+section.footnotes a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  text-decoration-thickness: 0.08em;
+}
+
+@media (max-width: 640px) {
+
+  .footnote-inline,
+  section.footnotes {
+    font-size: 0.9em;
+  }
+}
+
+/* PDFページ区切りマーカー（オーバーレイ表示） */
+.pdf-page-separator-container {
+  height: 0;
+  width: 100%;
+  position: relative;
+  /* 基準点 */
+  overflow: visible;
+  pointer-events: none;
+  /* クリックを透過 */
+  z-index: 10;
+  display: none; /* HTML版では非表示にする */
+}
+
+.pdf-page-separator {
+  position: absolute;
+  right: 0;
+  top: -1.5em;
+  /* 配置調整: 縦長になったので少し上げる */
+  display: flex;
+  flex-direction: column;
+  /* 縦並び */
+  align-items: center;
+  /* 中央揃え */
+  font-family: var(--font-sans);
+  font-size: 0.9em;
+  /* サイズを大きく (was 0.75em) */
+  color: #555;
+  /* 色を濃く (was #999) */
+  width: 60px;
+  /* 固定幅 */
+  line-height: 1.3;
+}
+
+/* ページ番号 */
+.pdf-page-upper,
+.pdf-page-lower {
+  padding: 0 4px;
+  background: var(--bg);
+  /* 背景色 */
+  z-index: 2;
+}
+
+/* 区切り線 */
+.pdf-page-line {
+  width: 100%;
+  border-top: 1px dashed #888;
+  /* 線も濃く */
+  margin: 2px 0;
+  height: 1px;
+}
+
+/* 画面幅が広いときは本文右端に（右パネルに食い込まない） */
+@media (min-width: 1200px) {
+  .pdf-page-separator {
+    right: 0;
+    /* 本文エリアの右端に配置 */
+  }
+}
+
+/* 画面幅が狭いときは本文右端に（控えめに） */
+@media (max-width: 1199px) {
+  .pdf-page-separator {
+    right: 0;
+    opacity: 0.5;
+    /* 少し薄く */
+    transform: scale(0.85);
+    transform-origin: right center;
+    background: rgba(255, 255, 255, 0.9);
+    /* 文字が重なっても読めるように */
+    border-radius: 4px;
+  }
+}
+
+/* === 索引カテゴリ名スタイル === */
+.index-category {
+  color: #0d47a1;
+  font-weight: bold;
+  font-size: 1.1em;
+}

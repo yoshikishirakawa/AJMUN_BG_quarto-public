@@ -1,0 +1,43 @@
+FROM python:3.11-slim-bookworm
+
+WORKDIR /workspace
+
+RUN set -eux; \
+  apt-get update; \
+  apt-get install -y --no-install-recommends \
+    bash \
+    ca-certificates \
+    curl \
+    git \
+  ; \
+  rm -rf /var/lib/apt/lists/*
+
+# Install Quarto CLI (HTML builds). PDF builds still require a TeX distribution.
+# Keep the default pinned for reproducible public builds; override with
+# --build-arg QUARTO_VERSION=... when intentionally upgrading.
+ARG QUARTO_VERSION="1.6.43"
+ARG QUARTO_SHA256_AMD64="cd3a19005604e9c75130d77c885634aa12178dcf043a66cdc91cc0d045b2dd3c"
+ARG QUARTO_SHA256_ARM64="01ae493539069dbb314dc301c43bd4df5c8622fd94932f1e1db02ef1950acfa7"
+RUN set -eux; \
+  arch="$(dpkg --print-architecture)"; \
+  case "${arch}" in \
+    amd64) quarto_arch="linux-amd64"; quarto_sha="${QUARTO_SHA256_AMD64}" ;; \
+    arm64) quarto_arch="linux-arm64"; quarto_sha="${QUARTO_SHA256_ARM64}" ;; \
+    *) echo "Unsupported architecture: ${arch}" >&2; exit 1 ;; \
+  esac; \
+  test -n "${quarto_sha}"; \
+  echo "Installing Quarto ${QUARTO_VERSION}"; \
+  curl -fsSL -o /tmp/quarto.deb "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-${quarto_arch}.deb"; \
+  echo "${quarto_sha}  /tmp/quarto.deb" | sha256sum -c -; \
+  apt-get update; \
+  apt-get install -y --no-install-recommends /tmp/quarto.deb; \
+  rm -rf /var/lib/apt/lists/* /tmp/quarto.deb
+
+
+# Pre-install Python dependencies using lockfile to cache the layer
+COPY api/requirements.lock /app/api/requirements.lock
+RUN python -m pip install --no-cache-dir -r /app/api/requirements.lock
+
+# Copy API source before editable install
+COPY api/ /app/api/
+RUN python -m pip install --no-deps -e /app/api

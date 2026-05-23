@@ -1,0 +1,7 @@
+---
+format:
+  html: default
+  pdf: default
+---
+
+![](/assets/uploads/ch_012_1769933301_front_cover.jpg){.fullpage-image width="a4" fit="stretch" position="center"}

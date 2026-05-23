@@ -1,0 +1,47 @@
+# Public clean-import exclude manifest.
+#
+# These paths/patterns are denied even if a broad directory appears in
+# public_manifest.txt. Patterns use rsync-style path matching.
+
+.git/
+.env
+.env.*
+.credentials/
+.claude/
+.vscode/
+.codex_vscode_user_settings.jsonc
+.documents_workspace_settings.json
+.DS_Store
+CLAUDE.md
+PUBLISH_REPO_DIR/
+api/.venv/
+api/.pytest_cache/
+api/**/__pycache__/
+audit_logs/*.json
+build/cache/
+config/auth.json
+content/build/
+content/test_*_files/
+credentials.json
+service_account.json
+authorized_user.json
+client_secret.json
+token.json
+docs/0513-plan*.md
+docs/0514-issue.md
+docs/0515-temp.md
+docs/plans/
+docs/review-*.md
+error/
+logs/
+meta_docs/
+node_modules/
+out/
+pdf_build/
+scripts/debug_*.py
+scripts/make_single_html.py
+temp_log.txt
+ui-next/dist/
+ui-next/node_modules/
+ui-next/test-results/
+ui-next/tsconfig.tsbuildinfo

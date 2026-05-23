@@ -1,0 +1,55 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    working_dir: /workspace
+    volumes:
+      - .:/workspace:cached
+      - api_venv:/workspace/api/.venv
+    expose:
+      - "8000"
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      APP_ENV: "production"
+      ADMIN_SECRET: "${ADMIN_SECRET:?Set ADMIN_SECRET before starting production compose}"
+      SESSION_SECRET: "${SESSION_SECRET:?Set SESSION_SECRET before starting production compose}"
+      SESSION_COOKIE_SECURE: "${SESSION_COOKIE_SECURE:-true}"
+      ALLOWED_ORIGINS: "${ALLOWED_ORIGINS:?Set ALLOWED_ORIGINS to the exact public HTTPS origin before starting production compose}"
+      ALLOWED_REDIRECT_URIS: "${ALLOWED_REDIRECT_URIS:?Set ALLOWED_REDIRECT_URIS before starting production compose}"
+      GOOGLE_INTEGRATION_ENABLED: "${GOOGLE_INTEGRATION_ENABLED:-auto}"
+      GOOGLE_CREDENTIALS_DIR: "${GOOGLE_CREDENTIALS_DIR:?Set GOOGLE_CREDENTIALS_DIR to a repo-external credentials directory}"
+      ENABLE_OPEN_IN_FINDER: "${ENABLE_OPEN_IN_FINDER:-false}"
+      ENABLE_RAW_CONFIG_EDITOR: "${ENABLE_RAW_CONFIG_EDITOR:-false}"
+      AUTH_BYPASS_ENABLED: "false"
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=2)\""]
+      interval: 10s
+      timeout: 3s
+      retries: 20
+      start_period: 20s
+    command: >
+      bash -lc "
+        python3 -m venv api/.venv &&
+        source api/.venv/bin/activate &&
+        python -m pip install -q --upgrade pip &&
+        python -m pip install -q -r api/requirements.lock &&
+        python -m pip install -q --no-deps -e api &&
+        PYTHONPATH=/workspace uvicorn api.main:app --host 0.0.0.0 --port 8000
+      "
+
+  ui:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ui
+      args:
+        VITE_AUTH_BYPASS_ENABLED: "false"
+    ports:
+      - "80:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  api_venv:

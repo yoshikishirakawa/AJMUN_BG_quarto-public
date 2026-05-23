@@ -1,0 +1,249 @@
+# meta/bib/02_ch02.yml
+# 第2章: 国連の平和維持活動に関する参考文献
+
+# 章全体で共通の参考文献
+# 複数の節にまたがるか、章の基礎となる文献
+chapter:
+  # B. Boutros-Ghali, "An Agenda for Peace", United Nations Doc., A/47/277, S/24111, 17 June 1992
+  - id: boutros-ghali1992agenda
+    type: techreport
+    title: "An Agenda for Peace"
+    author: "Boutros-Ghali, B."
+    year: 1992
+    institution: "United Nations"
+    number: "A/47/277, S/24111"
+    url: "https://digitallibrary.un.org/record/146039" # 参照可能なURLを付与
+    note: "17 June 1992発行の国連文書"
+
+  # B. Boutros-Ghali, "Supplement to an Agenda for Peace", United Nation Docs., A/50/60, S/1995/1, 3 Jan 1995
+  - id: boutros-ghali1995supplement
+    type: techreport
+    title: "Supplement to an Agenda for Peace"
+    author: "Boutros-Ghali, B."
+    year: 1995
+    institution: "United Nations"
+    number: "A/50/60, S/1995/1"
+    url: "https://www.un.org/en/documents/sg/agenda/supplement.shtml" # 参照可能なURLを付与
+    note: "3 Jan 1995発行の国連文書"
+
+  # 「平和への課題 1995年-国際連合広報センター」
+  - id: unic1995peace
+    type: misc
+    title: "平和への課題 1995年"
+    author: "国際連合広報センター"
+    year: 1995
+    howpublished: "広報冊子/オンライン"
+    url: "https://www.unic.or.jp/files/peace.pdf"
+    accessed: "2025-10-21"
+    note: "『平和への課題＝追補』と『平和への課題』を収録"
+
+  # Brian Urquhart, "The UN and international Security after the Cold War." Adam Roberts and Benedict Kingbury （eds.). United Nations, Divided World, Clarendon Press, Oxford, 1994.
+  - id: urquhart1994un
+    type: book
+    title: "The UN and International Security after the Cold War"
+    author: "Urquhart, Brian"
+    year: 1994
+    booktitle: "United Nations, Divided World: The UN's Role in International Relations （2nd edn)"
+    publisher: "Clarendon Press, Oxford"
+    editor: "Roberts, Adam and Kingbury, Benedict"
+
+  # 香西茂『国連の平和維持活動』有斐閣 1991年
+  - id: kozai1991unpko
+    type: book
+    title: "国連の平和維持活動"
+    author: "香西 茂"
+    year: 1991
+    publisher: "有斐閣"
+
+  # 西川 吉光『紛争解決と国連・国際法』晃洋書房 1996年
+  - id: nishikawa1996conflict
+    type: book
+    title: "紛争解決と国連・国際法"
+    author: "西川 吉光"
+    year: 1996
+    publisher: "晃洋書房"
+
+  # 石塚勝美『国連PKOと国際政治』創成社2011年
+  - id: ishitsuka2011pko
+    type: book
+    title: "国連PKOと国際政治"
+    author: "石塚 勝美"
+    year: 2011
+    publisher: "創成社"
+
+  # 福田 菊『国連とPKO―「戦わざる軍隊」のすべて』〈第二版〉 東信堂1994年
+  - id: fukuda1994pko
+    type: book
+    title: "国連とPKO―「戦わざる軍隊」のすべて"
+    author: "福田 菊"
+    year: 1994
+    publisher: "東信堂"
+    edition: "第二版"
+
+  # 甲山員司「冷戦後の国際平和維持活動（PKO): PKOの有効性と限界について」
+  - id: kouyama1999pko
+    type: article
+    title: "冷戦後の国際平和維持活動（PKO): PKOの有効性と限界について"
+    author: "甲山 員司"
+    year: 1999
+    institution: "大阪学院大学国際学研究科"
+    note: "博士学位論文"
+
+  # 篠田英朗「国際規範の歴史的・理論的検討 秩序・正義そして国家主権」
+  # 雑誌情報が不足しているためmiscとして登録
+  - id: shinoda-norm
+    type: article
+    title: "国際規範の歴史的・理論的検討 秩序・正義そして国家主権"
+    author: "篠田 英朗"
+    year: 2001
+
+  # 筒井 若水「集団安全保障と安全保障理事会の役割」
+  - id: tsutsui1994collective
+    type: article
+    title: "集団安全保障と安全保障理事会の役割"
+    author: "筒井 若水"
+    year: 1994
+    journal: "世界法年報"
+    number: "14"
+    pages: "23-36"
+
+  # 香西茂 「ポスト冷戦期における国連の役割」
+  - id: kozai1994postcoldwar
+    type: article
+    title: "ポスト冷戦期における国連の役割"
+    author: "香西 茂"
+    year: 1992
+    journal: "戦争と平和 : 大阪国際平和研究所紀要"
+    volume: "1"
+    number: "1"
+    pages: "13-20"
+
+  # 香西茂「国際連合の紛争処理機能の動向」
+  - id: kozai-dispute
+    type: article
+    title: "国際連合の紛争処理機能の動向"
+    author: "香西 茂"
+    year: 1993
+    journal: "国際問題"
+    volume: "390"
+
+  # 香西茂 「国連と世界平和の維持―――五○年の変遷と課題」
+  - id: kozai1995un50
+    type: article
+    title: "国連と世界平和の維持―――五○年の変遷と課題"
+    author: "香西 茂"
+    year: 1995
+    journal: "国際問題"
+    volume: "428"
+    pages: "26-27"
+
+  # 鴨 武彦 「ポスト冷戦下の国際連合————国際安全保障機能および役割の変化と改革構想」
+  - id: kamo-postcoldwar
+    type: article
+    title: "ポスト冷戦下の国際連合————国際安全保障機能および役割の変化と改革構想"
+    author: "鴨 武彦"
+    year: 1995
+    journal: “国際法外交雑誌”
+    volume: “94”
+
+  # 鴨 武彦 「冷戦後の安全保障と国連 理論的考察」
+  - id: kamo-coldwar-theory
+    type: article
+    title: "冷戦後の安全保障と国連 理論的考察"
+    author: "鴨 武彦"
+    year: 1993
+    journal: “平和研究”
+    volume: “18”
+    pages: “63-72”
+
+  # 松田 竹男「国際連合の集団安全保障 ――その歴史、現状、課題」
+  # 雑誌情報が不足しているためmiscとして登録
+  - id: matsuda-collective
+    type: misc
+    title: "国際連合の集団安全保障 ――その歴史、現状、課題"
+    author: "松田 竹男"
+    year: 1995
+    journal: “国際法外交雑誌”
+    volume: “94”
+    number: “5・6”
+
+  # 酒井 啓亘「国連平和維持活動の今日的展開と原則の動揺」
+  - id: sakai1996pko
+    type: article
+    title: "国連平和維持活動の今日的展開と原則の動揺"
+    author: "酒井 啓亘"
+    year: 1996
+    journal: "国際法外交雑誌"
+    volume: "94"
+    number: "5"
+    pages: "667-690"
+
+  # 土屋 茂樹「勢力均衡政策と集団安全保障」
+  - id: tsuchiya1990balance
+    type: article
+    title: "勢力均衡政策と集団安全保障"
+    author: "土屋 茂樹"
+    year: 1990
+    journal: "滋賀大学教育学部紀要"
+    pages: "33-54"
+
+  # 松葉 真美「国連平和維持活動（PKO)の発展と武力行使をめぐる原則の変化」
+  - id: matsuba2010pko
+    type: article
+    title: "国連平和維持活動（PKO)の発展と武力行使をめぐる原則の変化"
+    author: "松葉 真美"
+    year: 2010
+    journal: "レファレンス"
+    volume: "60"
+    number: "1"
+
+  # 高井晉「紛争解決支援と軍事力の役割」
+  - id: takai2002military
+    type: techreport
+    title: "紛争解決支援と軍事力の役割"
+    author: "高井 晉"
+    year: 2002
+    institution: "防衛研究所"
+    note: "防衛研究所シンポジウム報告"
+    pages: "116-129"
+
+  # Roberts A., "The Crisis in UN Peacekeeping," Survival, Vol. 36, No. 3, Autumn 1994, pp. 102-104.
+  - id: roberts1994crisis
+    type: article
+    title: "The Crisis in UN Peacekeeping"
+    author: "Roberts, A."
+    year: 1994
+    journal: "Survival"
+    volume: "36"
+    number: "3"
+    pages: "102-104"
+    note: "Autumn 1994"
+
+  # Thadoor S., "Should UN Peacekeeping Go 'Back to Basic'?", Survival, Vol. 37, No. 4, 1995, p. 61.
+  - id: thadoor1995basic
+    type: article
+    title: "Should UN Peacekeeping Go 'Back to Basic'?"
+    author: "Thadoor, S."
+    year: 1995
+    journal: "Survival"
+    volume: "37"
+    number: "4"
+
+  # Annan K., "UN Peacekeeping Operation and Cooperation with NATO", NATO review, Vol. 41, No. 5, Oct. 1993, p. 4
+  - id: annan1993nato
+    type: article
+    title: "UN Peacekeeping Operation and Cooperation with NATO"
+    author: "Annan, K."
+    year: 1993
+    journal: "NATO Review"
+    volume: "41"
+    number: "5"
+
+  # Mackenzie L., "Military Realities of UN Peacekeeping Operations", A presentation paper to Royal United Service Institute for Defence Studies （RUSI), 9 Dec. 1992.
+  - id: mackenzie1992military
+    type: inproceedings # 発表論文として登録
+    title: "Military Realities of UN Peacekeeping Operations"
+    author: "Mackenzie, L."
+    year: 1992
+    booktitle: "A presentation paper to Royal United Service Institute for Defence Studies （RUSI)"
+

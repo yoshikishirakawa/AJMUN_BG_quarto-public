@@ -1,0 +1,132 @@
+# meta/bib/XX_chXX.yml
+# 国際法、国家責任、経済制裁等に関する参考文献リスト
+
+# 章全体で共通の参考文献（節ごとの分類に変更したため空リストとする）
+chapter: []
+
+# 節ごとの参考文献
+sections:
+  - section: "第1節 国際法基礎"
+    references:
+      # 「国際法判例百選」、1、2001年
+      - id: international-law-cases-2001
+        type: book
+        title: "国際法判例百選（初版）"
+        author: "山本草二、古川照美、松井芳郎"
+        year: 2001
+        publisher: "有斐閣"
+        address: "東京"
+        note: "編者を特定。第1版。"
+
+      # KMUNC2024 コソボ情勢会議 BG
+      - id: kmunc24-kosovo-bg
+        type: misc
+        title: "KMUNC24 コソボ情勢会議 BG"
+        author: "該当会議フロント"
+        year: 2024
+        howpublished: "BG"
+        note: "国際模擬国連の会議文書と推定。"
+
+  - section: "第2節 国家責任法"
+    references:
+      # DRAFT ARTICLES ON STATE RESPONSIBILITY WITH COMMENTARIES THERETO ADOPTED BY THE INTERNATIONAL LAW COMMISSION ON FIRST READING
+      - id: ilc-draft-articles-1996
+        type: techreport
+        title: "Draft articles on State Responsibility adopted by the International Law Commission on first reading"
+        author: "International Law Commission"
+        institution: "United Nations"
+        year: 1996
+        url: "https://legal.un.org/ilc/texts/instruments/english/commentaries/9_6_1996.pdf"
+        note: "1996年に第一読会で採択された草案（及びコメンタリー）"
+
+      # 対抗措置制度における均衡性原則の意義*均衡性原則の多元的把握へ向けての予備的考察、岩月直樹
+      - id: iwaduki-countermeasures-2003
+        type: article
+        title: "対抗措置制度における均衡性原則の意義 : 均衡性原則の多元的把握へ向けての予備的考察"
+        author: "岩月直樹"
+        year: 2003
+        journal: "東京大学学術機関リポジトリ"
+
+      # 国家責任における『国家の国際犯罪』 吉野宏美
+      - id: yoshino-state-crime-1994
+        type: article
+        title: "国家責任法における『国家の国際犯罪』―集団責任の問題を中心として"
+        author: "吉野宏美"
+        year: 1994
+        journal: "本郷法改紀要"
+        number: "3"
+        pages: "393-397"
+
+  - section: "第3節 国際経済法"
+    references:
+      # **更新: 中谷和弘氏の文献（2章分）**
+      - id: nakatani-econ-sanctions-ch2-2022
+        type: incollection
+        title: "国際法から見た経済制裁"
+        author: "中谷和弘"
+        year: 2022
+        booktitle: "経済安全保障に関する研究報告書（令和4年度）"
+        publisher: "日本国際問題研究所"
+        url: "https://www.jiia.or.jp/pdf/research/R04_Economic_Security/01-02.pdf"
+        note: "日本国際問題研究所の令和4年度報告書に収録。同PDFには次項も収録されている。"
+
+      - id: nakatani-econ-sanctions-ch3-2022
+        type: incollection
+        title: "経済制裁の国際法構造"
+        author: "中谷和弘"
+        year: 2022
+        booktitle: "経済安全保障に関する研究報告書（令和4年度）"
+        publisher: "日本国際問題研究所"
+        url: "https://www.jiia.or.jp/pdf/research/R04_Economic_Security/01-02.pdf"
+        note: "前項と同じ報告書・PDFに収録。"
+
+     
+      - id: abe-security-exception-2020
+        type: article
+        title: "ポスト・グローバリゼーションにおける安全保障例外条項"
+        author: "阿部克則"
+        year: 2020
+        journal: "金融財政経済論叢"
+        number: "155" # PDFのURLより推定
+        institution: "財務省財務総合政策研究所"
+        url: "https://www.mof.go.jp/pri/publication/financial_review/fr_list8/r155/r155_4.pdf"
+        note: "発行年（2020年）は推定。"
+
+      # 米国の対キューバ経済制裁 ヘルムズ・バートン法成立以降の米国政府内の議論を中心に 山岡加奈子
+      - id: yamaoka-cuba-sanctions-2000
+        type: article
+        title: "米国の対キューバ経済制裁―ヘルムズ・バートン法成立以降の米国政府内の議論を中心に"
+        author: "山岡加奈子"
+        year: 2000
+        journal: "アジア経済"
+        volume: "XLI"
+        number: "9"
+        pages: "3-36"
+
+      # Economic sanctions:legal and policy constraints RICRDECEMBRE IRRC DECEMBER 1999 VOL.81 N°836
+      - id: segall-economic-sanctions-1999
+        type: article
+        title: "Economic Sanctions: Legal and Policy Constraints"
+        author: "Segall, Arnaldo"
+        year: 1999
+        journal: "International Review of the Red Cross (IRRC)"
+        volume: "81"
+        number: "836"
+        pages: "867-897"
+
+      # 国連による経済制裁と人道上の諸問題:『スマート・サンクション』の模索 本多美樹
+      - id: honda-smart-sanctions-2013
+        type: book
+        title: "国連による経済制裁と人道上の諸問題:「スマート・サンクション」の模索"
+        author: "本多美樹"
+        year: 2013
+        publisher: "国際書院"
+        isbn: "9784877912529"
+
+      # 国連非軍事措置の法的問題 吉村祥子
+      - id: yoshimura-un-sanctions-2003
+        type: book
+        title: "国連非軍事的制裁の法的問題"
+        author: "吉村祥子"
+        year: 2003
+        publisher: "国際書院"

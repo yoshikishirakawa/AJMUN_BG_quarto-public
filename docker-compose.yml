@@ -1,0 +1,61 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    working_dir: /workspace
+    volumes:
+      - .:/workspace:cached
+      - api_venv:/workspace/api/.venv
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      ADMIN_SECRET: "${ADMIN_SECRET:-}"
+      SESSION_SECRET: "${SESSION_SECRET:-ajmun-dev-session-secret}"
+      ALLOWED_ORIGINS: "${ALLOWED_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173}"
+      ALLOWED_REDIRECT_URIS: "${ALLOWED_REDIRECT_URIS:-http://localhost:5173/auth/callback,http://127.0.0.1:5173/auth/callback}"
+      GOOGLE_INTEGRATION_ENABLED: "${GOOGLE_INTEGRATION_ENABLED:-auto}"
+      ENABLE_OPEN_IN_FINDER: "${ENABLE_OPEN_IN_FINDER:-false}"
+      AUTH_BYPASS_ENABLED: "${AUTH_BYPASS_ENABLED:-false}"
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=2)\""]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 20s
+    command: >
+      bash -lc "
+        python3 -m venv api/.venv &&
+        source api/.venv/bin/activate &&
+        python -m pip install -q --upgrade pip &&
+        python -m pip install -q -r api/requirements.lock &&
+        python -m pip install -q --no-deps -e api &&
+        PYTHONPATH=/workspace uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
+      "
+
+  ui:
+    image: node:20-bookworm-slim
+    working_dir: /workspace/ui-next
+    volumes:
+      - .:/workspace:cached
+      - ui_node_modules:/workspace/ui-next/node_modules
+    ports:
+      - "127.0.0.1:5173:5173"
+    environment:
+      VITE_PROXY_TARGET: "http://api:8000"
+      VITE_AUTH_BYPASS_ENABLED: "${VITE_AUTH_BYPASS_ENABLED:-false}"
+      CHOKIDAR_USEPOLLING: "true"
+    depends_on:
+      api:
+        condition: service_healthy
+    command: >
+      bash -lc "
+        if [ -f package-lock.json ]; then npm ci; else npm install; fi &&
+        npm run dev -- --host 0.0.0.0 --port 5173
+      "
+
+volumes:
+  api_venv:
+  ui_node_modules:

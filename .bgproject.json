@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "name": "平和への課題：補遺",
+    "author": "AJMUN 37th",
+    "date": "2025-11-20",
+    "description": ""
+  },
+  "chapters": [
+    {
+      "id": "ch_001",
+      "title": "00 Front",
+      "googleDocId": null,
+      "localPath": "content/00_front.md",
+      "order": 0,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    },
+    {
+      "id": "ch_002",
+      "title": "01 Ch01",
+      "googleDocId": null,
+      "localPath": "content/01_ch01.md",
+      "order": 1,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    },
+    {
+      "id": "ch_003",
+      "title": "02 Ch02",
+      "googleDocId": null,
+      "localPath": "content/02_ch02.md",
+      "order": 2,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    },
+    {
+      "id": "ch_004",
+      "title": "03 Ch03",
+      "googleDocId": null,
+      "localPath": "content/03_ch03.md",
+      "order": 3,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    },
+    {
+      "id": "ch_005",
+      "title": "04 Ch04",
+      "googleDocId": null,
+      "localPath": "content/04_ch04.md",
+      "order": 4,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    },
+    {
+      "id": "ch_006",
+      "title": "05 Ch05",
+      "googleDocId": null,
+      "localPath": "content/05_ch05.md",
+      "order": 5,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    },
+    {
+      "id": "ch_007",
+      "title": "06 Ch06",
+      "googleDocId": null,
+      "localPath": "content/06_ch06.md",
+      "order": 6,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    },
+    {
+      "id": "ch_008",
+      "title": "90 Afterword",
+      "googleDocId": null,
+      "localPath": "content/90_afterword.md",
+      "order": 7,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    },
+    {
+      "id": "ch_009",
+      "title": "95 References",
+      "googleDocId": null,
+      "localPath": "content/95_references.qmd",
+      "order": 8,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    },
+    {
+      "id": "ch_010",
+      "title": "96 Index",
+      "googleDocId": null,
+      "localPath": "content/96_index.qmd",
+      "order": 9,
+      "lastSync": null,
+      "enabled": true,
+      "type": "document",
+      "images": [],
+      "isAppendix": false
+    }
+  ],
+  "chapterOrder": [
+    "__toc__",
+    "ch_001",
+    "ch_002",
+    "ch_003",
+    "ch_004",
+    "ch_005",
+    "ch_006",
+    "ch_007",
+    "ch_008",
+    "ch_009",
+    "ch_010"
+  ],
+  "style": {
+    "primaryColor": "#1a73e8",
+    "fontFamily": null,
+    "pdf": {
+      "documentclass": "scrreprt",
+      "classoption": [],
+      "geometry": [
+        "top=30mm",
+        "left=25mm",
+        "height=230mm"
+      ],
+      "mainfont": "Harano Aji Mincho",
+      "sansfont": "Harano Aji Gothic"
+    },
+    "html": {
+      "toc": true,
+      "numberSections": true,
+      "codeFold": true,
+      "theme": "cosmo"
+    },
+    "customCss": null
+  },
+  "createdAt": "2026-01-17T09:36:51.884993Z",
+  "updatedAt": "2026-04-30T01:56:38.289161Z"
+}

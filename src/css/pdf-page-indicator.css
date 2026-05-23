@@ -1,0 +1,85 @@
+/* PDF Page Indicator Styles */
+/* Shows page change markers and scroll popup */
+
+/* Page change marker - appears between paragraphs where PDF page changes */
+.pdf-page-marker {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0.5em 0;
+  padding: 0.2em 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pdf-page-marker::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(128, 128, 128, 0.3) 20%,
+    rgba(128, 128, 128, 0.3) 80%,
+    transparent 100%
+  );
+}
+
+.pdf-page-marker .pdf-page-number {
+  position: relative;
+  display: inline-block;
+  background: var(--bs-body-bg, #fff);
+  padding: 0 0.5em;
+  font-size: 0.7em;
+  color: rgba(128, 128, 128, 0.6);
+  font-family: monospace;
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .pdf-page-marker .pdf-page-number {
+    background: var(--bs-body-bg, #212529);
+  }
+}
+
+/* Hide in print */
+@media print {
+  .pdf-page-marker {
+    display: none !important;
+  }
+}
+
+/* Scroll popup - appears during fast scrolling near scrollbar */
+#pdf-scroll-popup {
+  position: fixed;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(50, 50, 50, 0.9);
+  color: #fff;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: monospace;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#pdf-scroll-popup.visible {
+  opacity: 1;
+}
+
+#pdf-scroll-popup.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}

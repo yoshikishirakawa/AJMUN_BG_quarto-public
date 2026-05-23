@@ -1,0 +1,55 @@
+{
+    "version": "1.0.0",
+    "covers": {
+        "front": {
+            "enabled": false,
+            "fileId": "front_default",
+            "fileName": "front_cover.jpg",
+            "mimeType": "image/jpeg",
+            "path": "assets/front_cover.jpg",
+            "position": "before_toc",
+            "pageNumber": 0,
+            "updatedAt": "2026-02-03T18:10:00Z",
+            "updatedBy": "system"
+        },
+        "back": {
+            "enabled": false,
+            "fileId": null,
+            "fileName": null,
+            "mimeType": null,
+            "path": null,
+            "position": "after_content",
+            "pageNumber": null,
+            "updatedAt": null,
+            "updatedBy": null
+        }
+    },
+    "history": [
+        {
+            "timestamp": "2024-02-01T00:00:00Z",
+            "action": "initialize",
+            "coverType": "front",
+            "userId": "system",
+            "fileId": "front_default",
+            "previousFileId": null
+        }
+    ],
+    "metadata": {
+        "storage": {
+            "type": "local",
+            "basePath": "assets/covers"
+        },
+        "validation": {
+            "allowedMimeTypes": [
+                "image/jpeg",
+                "image/png"
+            ],
+            "maxFileSize": 10485760,
+            "recommendedDimensions": {
+                "width": 2480,
+                "height": 3508,
+                "dpi": 300
+            }
+        }
+    }
+}
