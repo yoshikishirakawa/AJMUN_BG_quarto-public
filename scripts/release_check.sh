@@ -274,6 +274,12 @@ else
   echo "[failed] public demo build or read-only wording is missing"
   status=1
 fi
+if grep -Eq '(src|href)="/editor/' sample-outputs/editor/index.html; then
+  echo "[failed] public demo assets must be relative for GitHub Pages subpath hosting"
+  status=1
+else
+  echo "[ok] public demo assets support GitHub Pages subpath hosting"
+fi
 
 echo
 echo "Checking representative sample HTML excludes source-only runtime artifacts..."
