@@ -19,6 +19,7 @@ import { useUIStore } from "@/store/useUIStore";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ChapterList } from "@/features/project/ChapterList";
 import { useAuthStore } from "@/store/useAuthStore";
+import { isPublicDemoMode } from "@/lib/public-demo";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { EnhancedOutlineView } from "@/features/editor/EnhancedOutlineView";
@@ -33,6 +34,7 @@ export function AppSidebar() {
   const navigate = useNavigate();
   const isAdmin = session?.role === "admin";
   const isPublicEditingMode = session?.auth_bypass === true;
+  const isPublicDemo = isPublicDemoMode();
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -133,13 +135,17 @@ export function AppSidebar() {
 
       <div className="p-4 border-t">
         <div className="space-y-2">
-          {isPublicEditingMode ? (
+          {isPublicDemo ? (
+            <div className="rounded-md border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-[11px] leading-relaxed text-amber-100">
+              公開用デモ: 入力は一時的で、保存やビルドは行われません。
+            </div>
+          ) : isPublicEditingMode ? (
             <div className="rounded-md border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-[11px] leading-relaxed text-amber-100">
               Public editing mode is enabled. Anyone with access to this deployment can edit without signing in.
             </div>
           ) : null}
           <div className="px-2 text-xs text-muted-foreground truncate">
-            {isPublicEditingMode ? "public editing mode" : session?.role === "admin" ? "admin" : "invited editor"}
+            {isPublicDemo ? "read-only public demo" : isPublicEditingMode ? "public editing mode" : session?.role === "admin" ? "admin" : "invited editor"}
           </div>
           <Button
             variant="ghost"
@@ -153,14 +159,16 @@ export function AppSidebar() {
             </span>
             <span className="truncate">{t("toggle_theme")}</span>
           </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start gap-2 min-w-0"
-            onClick={() => logout().then(() => navigate("/login"))}
-          >
-            <span className="truncate">Log out</span>
-          </Button>
+          {!isPublicDemo ? (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start gap-2 min-w-0"
+              onClick={() => logout().then(() => navigate("/login"))}
+            >
+              <span className="truncate">Log out</span>
+            </Button>
+          ) : null}
         </div>
       </div>
     </div>

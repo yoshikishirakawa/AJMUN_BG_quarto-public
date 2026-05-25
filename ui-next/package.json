@@ -9,6 +9,7 @@
     "prepreview": "node ./scripts/ensure-esbuild.cjs",
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:public-demo": "tsc -b && VITE_PUBLIC_DEMO=true vite build --outDir ../sample-outputs/editor --emptyOutDir",
     "lint": "eslint . --max-warnings=0",
     "preview": "vite preview",
     "test:e2e": "playwright test",

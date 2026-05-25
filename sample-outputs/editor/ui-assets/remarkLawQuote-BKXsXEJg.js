@@ -1,0 +1,4 @@
+import{v as d}from"./markdown-preview-C2iFpxO6.js";import"./react-vendor-CDlCZncB.js";const b=()=>u=>{d(u,"containerDirective",t=>{var l,n;if(t.name!=="lawquote")return;const a=t.data||(t.data={}),r=t.attributes||{},h=r.title?r.title:"",i=(n=(l=t.position)==null?void 0:l.start)==null?void 0:n.line;a.hName="div",a.hProperties={className:["lawquote"],...i?{"data-source-line":i}:{}},t.children&&Array.isArray(t.children)&&t.children.forEach(e=>{var o,c;if((c=(o=e.position)==null?void 0:o.start)!=null&&c.line){const p=e.data||(e.data={}),f=p.hProperties||(p.hProperties={});f["data-source-line"]=e.position.start.line}});const s=h.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'),m=`
+                <span class="lawquote-label">条文</span>
+                ${s?`<div class="lawquote-title">${s}</div>`:""}
+            `;t.children.unshift({type:"html",value:m})})};export{b as remarkLawQuote};

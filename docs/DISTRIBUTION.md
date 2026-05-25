@@ -23,6 +23,7 @@ the supported product surface and reviewed representative outputs.
   `config/settings.json`, `config/fullpage_images.json`, and representative
   assets
 - reviewed representative outputs under `sample-outputs/`
+- the static read-only editor demo under `sample-outputs/editor/`
 
 日本語での公開対象:
 
@@ -70,8 +71,11 @@ Representative distribution outputs are stored separately:
 - `sample-outputs/html/site_libs/`, `sample-outputs/html/src/`,
   `sample-outputs/html/fonts/`, and `sample-outputs/html/assets/`
 - `sample-outputs/pdf/*.pdf`
+- `sample-outputs/editor/`: a static demo built from public fixture data
 
 Only curated representative outputs should remain in `sample-outputs/`.
+The editor demo permits temporary browser-local text input only; it does not
+save, build, authenticate, upload files, or contact Google Docs.
 
 ## Licensing Boundary
 
@@ -92,11 +96,16 @@ content license and asset manifest.
 4. Run the production-like compose with `docker compose -f docker-compose.prod.yml --env-file .env.prod up --build`.
 5. Build and smoke-test HTML/PDF outputs.
 6. Sync reviewed representative outputs with `python3 scripts/sync_output_runtime_assets.py --sync-sample-outputs`.
-7. Run `bash scripts/release_check.sh`.
-8. Generate the clean public tree with `bash scripts/create_public_import.sh`.
-9. Run the release checks and redacted secret scan again in the clean tree.
-10. Publish only after tests, release checks, secret scans, and human rights
-    review are complete.
+7. Build the static editor demo with `npm --prefix ui-next run build:public-demo`.
+8. Run `bash scripts/release_check.sh`.
+9. Generate the clean public tree with `bash scripts/create_public_import.sh`.
+10. Run the release checks and redacted secret scan again in the clean tree.
+11. Publish only after tests, release checks, secret scans, and human rights
+review are complete.
+
+User-facing guidance starts in `docs/GETTING_STARTED.md`,
+`docs/EDITOR_USAGE.md`, `docs/PUBLISHING_WORKFLOW.md`,
+`docs/PUBLIC_REPOSITORY_BOUNDARY.md`, and `docs/DEPLOYMENT.md`.
 
 日本語手順としては、まず sample output を再生成・同期し、private tree と clean
 tree の両方で release check と secret scan を通します。その後、内容・画像・PDF

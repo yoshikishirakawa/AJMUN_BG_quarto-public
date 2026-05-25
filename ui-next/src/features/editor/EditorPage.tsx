@@ -6,6 +6,7 @@ import { FileText, Save, RefreshCw, Newspaper, ImageIcon } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import { useToast } from "@/hooks/use-toast";
 import { FullpageImageConfig } from '@/types';
+import { isPublicDemoMode } from '@/lib/public-demo';
 
 const SplitPane = React.lazy(() => import("@/features/editor/SplitPane").then((module) => ({ default: module.SplitPane })));
 const FullpageImageEditor = React.lazy(() => import("./components/FullpageImageEditor").then((module) => ({ default: module.FullpageImageEditor })));
@@ -15,6 +16,7 @@ export const EditorPage = () => {
     const { t } = useTranslation();
     const { toast } = useToast();
     const { chapterId } = useParams();
+    const isPublicDemo = isPublicDemoMode();
     const {
         selectChapter,
         currentChapterContent,
@@ -119,22 +121,22 @@ export const EditorPage = () => {
         }
 
         const timer = setTimeout(() => {
-            if (chapterId && isDirty) {
+            if (!isPublicDemo && chapterId && isDirty) {
                 updateChapterContent(chapterId, localContent);
             }
         }, debounceTime);
         return () => clearTimeout(timer);
-    }, [localContent, chapterId, isDirty, updateChapterContent]);
+    }, [localContent, chapterId, isDirty, updateChapterContent, isPublicDemo]);
 
     // Flush pending edits when leaving the current chapter or unmounting the editor.
     useEffect(() => {
         return () => {
             const pending = pendingSaveRef.current;
-            if (pending.chapterId && pending.chapterId === chapterId && pending.isDirty) {
+            if (!isPublicDemo && pending.chapterId && pending.chapterId === chapterId && pending.isDirty) {
                 updateChapterContent(pending.chapterId, pending.content);
             }
         };
-    }, [chapterId, updateChapterContent]);
+    }, [chapterId, updateChapterContent, isPublicDemo]);
 
     // Set loaded state when content arrives for the correct chapter
     useEffect(() => {
@@ -145,7 +147,7 @@ export const EditorPage = () => {
     }, [currentChapterContent, currentChapterId, chapterId, hasLoaded]);
 
     const handleSave = () => {
-        if (chapterId) {
+        if (!isPublicDemo && chapterId) {
             updateChapterContent(chapterId, localContent);
             toast({
                 title: "保存完了",
@@ -250,7 +252,7 @@ export const EditorPage = () => {
                     <span className="truncate flex-1 min-w-0" title={currentChapter?.title || t("untitled_project")}>
                         {currentChapter?.title || t("untitled_project")}
                     </span>
-                    {isDirty && <span className="text-[10px] sm:text-xs text-muted-foreground flex-shrink-0 hidden xs:inline">({t("saving")})</span>}
+                    {isDirty && <span className="text-[10px] sm:text-xs text-muted-foreground flex-shrink-0 hidden xs:inline">({isPublicDemo ? "一時変更" : t("saving")})</span>}
                     {/* Document size indicator - only show for non-fullpage chapters */}
                     {(!currentChapter?.type || currentChapter?.type === 'document') && (
                         <span className={`text-[10px] sm:text-xs px-1 sm:px-1.5 py-0.5 rounded flex-shrink-0 whitespace-nowrap hidden sm:inline-block ${docStats.category === 'small' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100' :
@@ -266,7 +268,7 @@ export const EditorPage = () => {
                         variant="ghost"
                         size="sm"
                         onClick={handleSave}
-                        disabled={!isDirty}
+                        disabled={isPublicDemo || !isDirty}
                         className="h-8 px-2 sm:h-9 sm:px-3"
                     >
                         <Save className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -315,7 +317,7 @@ export const EditorPage = () => {
                             content={localContent}
                             onContentChange={setLocalContent}
                             fileId={editorFileId}
-                            chapterId={chapterId}
+                            chapterId={isPublicDemo ? null : chapterId}
                         />
                     </Suspense>
                 )}

@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 
 import { appAuth, type AppSessionStatus, type InviteInfo } from '@/lib/api'
+import { isPublicDemoMode } from '@/lib/public-demo'
 
 const PUBLIC_BYPASS_SESSION: AppSessionStatus = {
   authenticated: true,
@@ -10,8 +11,22 @@ const PUBLIC_BYPASS_SESSION: AppSessionStatus = {
   auth_bypass: true,
 }
 
+const PUBLIC_DEMO_SESSION: AppSessionStatus = {
+  authenticated: true,
+  role: 'admin',
+  invite_id: null,
+  label: 'Public read-only demo',
+  auth_bypass: false,
+}
+
 const isPublicAuthBypassEnabled = () =>
   String(import.meta.env.VITE_AUTH_BYPASS_ENABLED ?? 'false').toLowerCase() === 'true'
+
+const initialPublicSession = () => isPublicDemoMode()
+  ? PUBLIC_DEMO_SESSION
+  : isPublicAuthBypassEnabled()
+    ? PUBLIC_BYPASS_SESSION
+    : null
 
 interface AuthState {
   session: AppSessionStatus | null
@@ -29,12 +44,16 @@ interface AuthState {
 }
 
 export const useAuthStore = create<AuthState>((set, get) => ({
-  session: isPublicAuthBypassEnabled() ? PUBLIC_BYPASS_SESSION : null,
+  session: initialPublicSession(),
   invites: [],
   isLoading: false,
   error: null,
 
   fetchSession: async () => {
+    if (isPublicDemoMode()) {
+      set({ session: PUBLIC_DEMO_SESSION, isLoading: false, error: null })
+      return
+    }
     if (isPublicAuthBypassEnabled()) {
       set({ session: PUBLIC_BYPASS_SESSION, isLoading: false, error: null })
       return
@@ -88,6 +107,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   logout: async () => {
+    if (isPublicDemoMode()) {
+      set({ session: PUBLIC_DEMO_SESSION, invites: [], isLoading: false, error: null })
+      return
+    }
     if (isPublicAuthBypassEnabled()) {
       set({ session: PUBLIC_BYPASS_SESSION, invites: [], isLoading: false, error: null })
       return
@@ -106,6 +129,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   fetchInvites: async () => {
+    if (isPublicDemoMode()) {
+      set({ invites: [], error: null })
+      return
+    }
     try {
       const res = await appAuth.listInvites()
       set({ invites: res.data })
@@ -116,6 +143,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   createInvite: async (label?: string) => {
+    if (isPublicDemoMode()) {
+      set({ error: '公開デモでは招待を作成できません。' })
+      return null
+    }
     try {
       const res = await appAuth.createInvite(label)
       await get().fetchInvites()
@@ -128,6 +159,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   revokeInvite: async (inviteId: string) => {
+    if (isPublicDemoMode()) return
     try {
       await appAuth.revokeInvite(inviteId)
       await get().fetchInvites()
@@ -138,6 +170,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   revokeAllInvites: async () => {
+    if (isPublicDemoMode()) return
     try {
       await appAuth.revokeAllInvites()
       await get().fetchInvites()

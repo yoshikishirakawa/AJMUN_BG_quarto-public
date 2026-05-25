@@ -33,8 +33,10 @@ interface ProjectState {
 }
 
 import { WebProjectService } from "@/lib/services/web-project-service";
+import { PublicDemoProjectService } from "@/lib/services/public-demo-project-service";
+import { isPublicDemoMode } from "@/lib/public-demo";
 
-const projectService = new WebProjectService();
+const projectService = isPublicDemoMode() ? new PublicDemoProjectService() : new WebProjectService();
 
 export const useProjectStore = create<ProjectState>((set, get) => ({
   project: null,

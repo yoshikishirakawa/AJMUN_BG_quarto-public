@@ -157,6 +157,8 @@ sample-outputs/*
 !sample-outputs/html/**
 !sample-outputs/pdf/
 !sample-outputs/pdf/**
+!sample-outputs/editor/
+!sample-outputs/editor/**
 **/.DS_Store
 
 # ui-next (Vite + React)

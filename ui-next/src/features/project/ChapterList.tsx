@@ -40,6 +40,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { DocsImportModal } from "./components/DocsImportModal";
+import { isPublicDemoMode } from "@/lib/public-demo";
 
 type ChapterListItem =
     | (Chapter & { virtualType?: 'index' })
@@ -49,6 +50,7 @@ interface SortableChapterItemProps {
     item: ChapterListItem;
     onRename: (id: string, currentTitle: string) => void;
     onDelete: (id: string) => void;
+    readOnly?: boolean;
 }
 
 // Helper to get icon based on chapter type
@@ -84,7 +86,7 @@ const getChapterColor = (type?: ChapterType, virtualType?: 'toc' | 'index') => {
     }
 };
 
-const SortableChapterItem: React.FC<SortableChapterItemProps> = ({ item, onRename, onDelete }) => {
+const SortableChapterItem: React.FC<SortableChapterItemProps> = ({ item, onRename, onDelete, readOnly = false }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const location = useLocation();
@@ -125,7 +127,7 @@ const SortableChapterItem: React.FC<SortableChapterItemProps> = ({ item, onRenam
                 isDragging && "bg-muted shadow-md"
             )}
         >
-            <div {...attributes} {...listeners} className="cursor-grab text-muted-foreground/50 hover:text-foreground p-1 flex-shrink-0">
+            <div {...(readOnly ? {} : attributes)} {...(readOnly ? {} : listeners)} className={cn("text-muted-foreground/50 p-1 flex-shrink-0", readOnly ? "opacity-30" : "cursor-grab hover:text-foreground")}>
                 <GripVertical className="h-4 w-4" />
             </div>
 
@@ -149,7 +151,7 @@ const SortableChapterItem: React.FC<SortableChapterItemProps> = ({ item, onRenam
                 <span className="truncate">{displayTitle}</span>
             </button>
 
-            {!isSystem && (
+            {!isSystem && !readOnly && (
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
@@ -178,6 +180,7 @@ export const ChapterList: React.FC = () => {
     const { project, reorderChapters, addChapter, renameChapter, deleteChapter, addFullpageImageChapter, addImageGroupChapter } = useProjectStore();
     const { t } = useTranslation();
     const virtualTocId = "__toc__";
+    const readOnly = isPublicDemoMode();
 
     const isIndexChapter = (chapter: Chapter) => {
         const path = (chapter.localPath || "").toLowerCase();
@@ -336,7 +339,7 @@ export const ChapterList: React.FC = () => {
                 <DndContext
                     sensors={sensors}
                     collisionDetection={closestCenter}
-                    onDragEnd={handleDragEnd}
+                    onDragEnd={readOnly ? undefined : handleDragEnd}
                 >
                     <SortableContext
                         items={orderedItems.map(item => item.id)}
@@ -352,13 +355,14 @@ export const ChapterList: React.FC = () => {
                                     item={item}
                                     onRename={openRename}
                                     onDelete={openDelete}
+                                    readOnly={readOnly}
                                 />
                             ))}
                         </div>
                     </SortableContext>
                 </DndContext>
 
-                <Button
+                {!readOnly ? <Button
                     variant="outline"
                     size="sm"
                     className="mt-2 w-full border-dashed"
@@ -366,8 +370,8 @@ export const ChapterList: React.FC = () => {
                 >
                     <Plus className="mr-2 h-3 w-3" />
                     {t("new_chapter")}
-                </Button>
-                <Button
+                </Button> : null}
+                {!readOnly ? <Button
                     variant="ghost"
                     size="sm"
                     className="w-full"
@@ -375,7 +379,9 @@ export const ChapterList: React.FC = () => {
                 >
                     <DownloadCloud className="mr-2 h-3 w-3" />
                     {t("import_docs")}
-                </Button>
+                </Button> : (
+                    <div className="mt-2 px-2 text-[11px] text-muted-foreground">章の追加、並び替え、取り込みは公開デモでは無効です。</div>
+                )}
             </div>
 
             {/* Create Dialog with Type Selection */}
@@ -480,10 +486,10 @@ export const ChapterList: React.FC = () => {
                 </DialogContent>
             </Dialog>
 
-            <DocsImportModal
+            {!readOnly ? <DocsImportModal
                 open={isDocsImportOpen}
                 onOpenChange={setIsDocsImportOpen}
-            />
+            /> : null}
         </>
     );
 };

@@ -54,6 +54,7 @@ assets only, not broadly reusable public-domain or open-license materials.
 | --- | --- | --- |
 | `sample-outputs/html/` | generated-sample | Contains generated HTML, copied assets, static libraries, and bundled fonts. |
 | `sample-outputs/pdf/平和への課題：補遺.pdf` | generated-sample-user-confirmed-cleared | Generated PDF sample containing manuscript text, confirmed images, and embedded fonts. Metadata must be refreshed during release builds. |
+| `sample-outputs/editor/**` | generated-demo-public-fixture | Static editor demo generated from short public-safe fixture Markdown and frontend assets; contains no external IDs or private draft content. |
 
 ## Source Links
 

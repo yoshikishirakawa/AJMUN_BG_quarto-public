@@ -17,6 +17,7 @@ import { QuickStylePanel } from './components/QuickStylePanel';
 import { SearchReplaceFloating } from './components/SearchReplacePanel';
 import { useHeadings } from './hooks/useHeadings';
 import { lightweightEditorSyntaxHighlighting } from './plugins/editorSyntaxLite';
+import { isPublicDemoMode } from '@/lib/public-demo';
 
 interface MarkdownEditorProps {
     initialValue: string;
@@ -56,6 +57,7 @@ const MarkdownEditorComponent: React.FC<MarkdownEditorProps> = ({
     const showPerfHud = isLargeDoc || import.meta.env.DEV;
     const showPerfStatus = showPerfHud && perfLatencyMs !== null;
     const showHeaderStatus = isLargeDoc || showPerfStatus;
+    const isPublicDemo = isPublicDemoMode();
 
     const updateDocSizeState = useCallback((nextLength: number) => {
         const nextIsLarge = nextLength >= LARGE_DOC_THRESHOLD;
@@ -257,6 +259,7 @@ const MarkdownEditorComponent: React.FC<MarkdownEditorProps> = ({
     // ドラッグ&ドロップイベントハンドラ
     const handleDrop = useCallback((event: DragEvent) => {
         event.preventDefault();
+        if (isPublicDemo) return;
 
         const files = event.dataTransfer?.files;
         if (!files || files.length === 0) return;
@@ -276,7 +279,7 @@ const MarkdownEditorComponent: React.FC<MarkdownEditorProps> = ({
 
         // 自動アップロード（ドラッグ&ドロップはモーダルを開いて確認させる）
         setIsImageModalOpen(true);
-    }, [chapterId]);
+    }, [chapterId, isPublicDemo]);
 
     const handleChange = useCallback((value: string) => {
         lastInputAtRef.current = performance.now();
@@ -561,7 +564,7 @@ const MarkdownEditorComponent: React.FC<MarkdownEditorProps> = ({
                     onClick={() => setIsImageModalOpen(true)}
                     title="画像を挿入 (Cmd/Ctrl + I)"
                     aria-label="画像を挿入"
-                    disabled={!chapterId}
+                    disabled={isPublicDemo || !chapterId}
                 >
                     <ImageIcon className="h-3.5 w-3.5" />
                 </Button>

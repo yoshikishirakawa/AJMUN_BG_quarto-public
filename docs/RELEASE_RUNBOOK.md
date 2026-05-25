@@ -34,6 +34,7 @@ state, private planning notes, or private-only helper utilities.
 - `config/fullpage_images.json`
 - `sample-outputs/html/`
 - `sample-outputs/pdf/`
+- `sample-outputs/editor/`
 - public documentation under `docs/`
 - `CONTENT_LICENSE.md`
 - `docs/ASSET_RIGHTS_MANIFEST.md`
@@ -58,28 +59,30 @@ state, private planning notes, or private-only helper utilities.
    `npm run build:reader-ui`
 2. Build the frontend:
    `npm --prefix ui-next run build`
-3. Run HTML smoke render:
+3. Build the static public editor demo:
+   `npm --prefix ui-next run build:public-demo`
+4. Run HTML smoke render:
    `bash scripts/check_pdf_env.sh --render-html-smoke`
-4. Run PDF smoke render:
+5. Run PDF smoke render:
    `bash scripts/check_pdf_env.sh --render-pdf-smoke`
-5. Refresh representative outputs:
+6. Refresh representative outputs:
    `python3 scripts/sync_output_runtime_assets.py --sync-sample-outputs`
-6. Run release checks:
+7. Run release checks:
    `bash scripts/release_check.sh`
-7. Validate compose configuration:
+8. Validate compose configuration:
    `docker compose config`
-8. Confirm the production example fails for missing required secrets:
+9. Confirm the production example fails for missing required secrets:
    `docker compose -f docker-compose.prod.yml --env-file .env.prod.example config`
-9. Validate the PDF compose override:
+10. Validate the PDF compose override:
    `docker compose -f docker-compose.yml -f docker-compose.pdf.yml config`
-10. Run dependency and secret checks:
+11. Run dependency and secret checks:
    `npm audit --audit-level=moderate`,
    `npm --prefix ui-next audit --audit-level=moderate`,
    `pip-audit api --cache-dir /tmp/pip-audit-cache`, and a redacted gitleaks
    scan.
-11. Create the clean public tree:
+12. Create the clean public tree:
    `bash scripts/create_public_import.sh`
-12. Repeat release checks, tests, frontend checks, and redacted secret scanning
+13. Repeat release checks, tests, frontend checks, and redacted secret scanning
    in the clean tree.
 
 日本語での freeze 手順:
@@ -102,6 +105,8 @@ state, private planning notes, or private-only helper utilities.
 - `sample-outputs/html/fonts/`
 - `sample-outputs/html/assets/`
 - `sample-outputs/pdf/*.pdf`
+- `sample-outputs/editor/`: static public demo with fixture data and no
+  persistence or external integration
 
 The active build output under `out/` remains disposable and is not part of the
 release package.
@@ -124,6 +129,9 @@ release package.
 - No secrets or credential files are tracked.
 - Public docs describe the same boundary enforced by the clean-import manifests.
 - `sample-outputs/` contains only reviewed representative outputs.
+- The landing page links to HTML, PDF, and the static editor demo.
+- The editor demo cannot save, build, authenticate, upload, or connect to
+  Google Docs.
 - `bash scripts/release_check.sh` passes.
 - HTML and PDF smoke checks pass.
 - Content, assets, and sample outputs have been reviewed by a human.

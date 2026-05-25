@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Outlet, Route, Routes, useParams } from "react-router-dom";
+import { BrowserRouter, HashRouter, Outlet, Route, Routes, useParams } from "react-router-dom";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -8,6 +8,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { AuthGate, AdminGate } from "@/components/auth/AuthGate";
 import { useAuthStore } from "@/store/useAuthStore";
+import { isPublicDemoMode } from "@/lib/public-demo";
+import { PublicDemoBanner } from "@/components/public-demo-banner";
+import { PublicDemoDashboardPage, PublicDemoBibliographyPage, PublicDemoBuildPage, PublicDemoSettingsPage } from "@/features/demo/PublicDemoPages";
 
 const DashboardPage = React.lazy(() => import("@/features/dashboard/DashboardPage").then((module) => ({ default: module.DashboardPage })));
 const EditorPage = React.lazy(() => import("@/features/editor/EditorPage").then((module) => ({ default: module.EditorPage })));
@@ -68,8 +71,11 @@ function ProtectedLayout() {
   return (
     <>
       <AppSidebar />
-      <main className="flex-1 overflow-hidden">
-        <Outlet />
+      <main className="flex-1 overflow-hidden flex flex-col">
+        {isPublicDemoMode() ? <PublicDemoBanner /> : null}
+        <div className="flex-1 overflow-hidden">
+          <Outlet />
+        </div>
       </main>
     </>
   );
@@ -77,6 +83,7 @@ function ProtectedLayout() {
 
 function AppRouter() {
   const { fetchSession, isLoading } = useAuthStore();
+  const isPublicDemo = isPublicDemoMode();
 
   React.useEffect(() => {
     fetchSession();
@@ -90,18 +97,24 @@ function AppRouter() {
     );
   }
 
+  const Router = isPublicDemo ? HashRouter : BrowserRouter;
+  const DashboardRoute = isPublicDemo ? PublicDemoDashboardPage : DashboardPage;
+  const BibliographyRoute = isPublicDemo ? PublicDemoBibliographyPage : BibliographyPage;
+  const BuildRoute = isPublicDemo ? PublicDemoBuildPage : BuildPage;
+  const SettingsRoute = isPublicDemo ? PublicDemoSettingsPage : SettingsPage;
+
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/login" element={<LazyRoute><LoginPage /></LazyRoute>} />
-        <Route path="/invite" element={<LazyRoute><InviteLoginPage /></LazyRoute>} />
-        <Route path="/auth/callback" element={<LazyRoute><AuthCallback /></LazyRoute>} />
+        {!isPublicDemo ? <Route path="/login" element={<LazyRoute><LoginPage /></LazyRoute>} /> : null}
+        {!isPublicDemo ? <Route path="/invite" element={<LazyRoute><InviteLoginPage /></LazyRoute>} /> : null}
+        {!isPublicDemo ? <Route path="/auth/callback" element={<LazyRoute><AuthCallback /></LazyRoute>} /> : null}
 
         <Route element={<AuthGate />}>
           <Route element={<ProtectedLayout />}>
             <Route path="/" element={
               <ErrorBoundary>
-                <LazyRoute><DashboardPage /></LazyRoute>
+                <LazyRoute><DashboardRoute /></LazyRoute>
               </ErrorBoundary>
             } />
             <Route path="/editor/:chapterId?" element={
@@ -111,25 +124,25 @@ function AppRouter() {
             } />
             <Route path="/bibliography" element={
               <ErrorBoundary>
-                <LazyRoute><BibliographyPage /></LazyRoute>
+                <LazyRoute><BibliographyRoute /></LazyRoute>
               </ErrorBoundary>
             } />
             <Route path="/build" element={
               <ErrorBoundary>
-                <LazyRoute><BuildPage /></LazyRoute>
+                <LazyRoute><BuildRoute /></LazyRoute>
               </ErrorBoundary>
             } />
             <Route element={<AdminGate />}>
               <Route path="/settings" element={
                 <ErrorBoundary>
-                  <LazyRoute><SettingsPage /></LazyRoute>
+                  <LazyRoute><SettingsRoute /></LazyRoute>
                 </ErrorBoundary>
               } />
             </Route>
           </Route>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

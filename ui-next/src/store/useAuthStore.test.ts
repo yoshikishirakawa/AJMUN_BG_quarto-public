@@ -68,4 +68,19 @@ describe('useAuthStore public bypass defaults', () => {
       auth_bypass: true,
     })
   })
+
+  it('skips API session fetch in static public demo mode', async () => {
+    vi.stubEnv('VITE_PUBLIC_DEMO', 'true')
+
+    const { useAuthStore } = await loadStore()
+    await useAuthStore.getState().fetchSession()
+
+    expect(appAuthMocks.getSession).not.toHaveBeenCalled()
+    expect(useAuthStore.getState().session).toMatchObject({
+      authenticated: true,
+      role: 'admin',
+      label: 'Public read-only demo',
+      auth_bypass: false,
+    })
+  })
 })

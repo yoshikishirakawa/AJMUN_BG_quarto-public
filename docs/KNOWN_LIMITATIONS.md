@@ -36,3 +36,14 @@ notes, and private-only helper utilities are intentionally excluded.
 日本語: public repository は clean import から作成する前提です。private history、
 credentials、生成作業領域、local machine state、内部メモ、公開不要な補助ファイルは
 意図的に除外します。
+
+## Static Public Demo
+
+The public editor demo is an interface preview, not a hosted editing service.
+It loads short static fixture files and allows temporary in-browser Markdown
+input for preview purposes only. Save, build, authentication, Google Docs
+integration, uploads, and persistent settings are disabled.
+
+日本語: 公開エディタ体験版は静的な画面確認用です。本文入力は preview 確認の
+ため一時的に可能ですが、保存、build、認証、Google Docs 連携、upload、
+永続的な設定変更は利用できません。

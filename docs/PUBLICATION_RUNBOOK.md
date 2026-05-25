@@ -24,6 +24,10 @@ public documentation, license files, and reviewed representative outputs. It
 should not contain credentials, generated work areas, private planning notes,
 or private-only helper utilities.
 
+The public samples also include `sample-outputs/editor/`, a static editor demo
+that loads public fixture data and provides no save, build, authentication,
+upload, or Google Docs operation.
+
 日本語での方針:
 
 - private repo は作業場として扱います。
@@ -77,6 +81,7 @@ npm --prefix ui-next ci
 npm --prefix ui-next run lint
 npm --prefix ui-next run test:run
 npm --prefix ui-next run build
+npm --prefix ui-next run build:public-demo
 bash scripts/check_pdf_env.sh --render-html-smoke
 bash scripts/check_pdf_env.sh --render-pdf-smoke
 python3 scripts/sync_output_runtime_assets.py --sync-sample-outputs
@@ -102,10 +107,13 @@ After reader runtime changes, run:
 ```bash
 npm run build:reader-ui
 python3 scripts/sync_output_runtime_assets.py --sync-sample-outputs
+npm --prefix ui-next run build:public-demo
 ```
 
 Confirm that `assets/reader-ui.js`, `sample-outputs/html/assets/reader-ui.js`,
 and `sample-outputs/html/content/assets/reader-ui.js` are synchronized.
+Confirm that `sample-outputs/index.html` describes the three available samples
+and that `sample-outputs/editor/index.html` is present.
 
 ## Clean Import Procedure
 
@@ -127,6 +135,7 @@ npm --prefix ui-next ci
 npm --prefix ui-next run lint
 npm --prefix ui-next run test:run
 npm --prefix ui-next run build
+npm --prefix ui-next run build:public-demo
 gitleaks detect --source . --redact --no-git
 ```
 
@@ -153,6 +162,8 @@ Before publishing, confirm:
   and secret scanning
 - least-privilege GitHub Actions permissions
 - Pages or deployment settings expose only reviewed sample outputs
+- the Pages root is the reviewed `sample-outputs/` tree, including only the
+  static read-only editor demo and reviewed HTML/PDF samples
 
 ## Tagging And Rollback
 

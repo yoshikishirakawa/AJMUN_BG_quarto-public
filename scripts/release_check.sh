@@ -38,6 +38,11 @@ check_required_file README.md
 check_required_file LICENSE
 check_required_file THIRD_PARTY_NOTICES.md
 check_required_file docs/DISTRIBUTION.md
+check_required_file docs/GETTING_STARTED.md
+check_required_file docs/EDITOR_USAGE.md
+check_required_file docs/PUBLISHING_WORKFLOW.md
+check_required_file docs/PUBLIC_REPOSITORY_BOUNDARY.md
+check_required_file docs/DEPLOYMENT.md
 check_required_file docs/RELEASE_RUNBOOK.md
 check_required_file docs/PUBLICATION_RUNBOOK.md
 check_required_file docs/setup_guide.md
@@ -62,6 +67,32 @@ check_required_file scripts/create_public_import.sh
 check_required_file licenses/OFL-1.1-BIZ-FONTS.txt
 check_required_file .bgproject.json
 check_absent_file docs/reviw0510.md
+check_absent_file docs/PUBLIC_RELEASE_FINAL_HARDENING_PLAN.md
+check_absent_file docs/PUBLIC_RELEASE_FIX_TASKS.md
+check_absent_file docs/PUBLIC_RELEASE_VERIFICATION_RUNBOOK.md
+
+echo
+echo "Checking public documentation manifest boundary..."
+for path in \
+  docs/GETTING_STARTED.md \
+  docs/EDITOR_USAGE.md \
+  docs/PUBLISHING_WORKFLOW.md \
+  docs/PUBLIC_REPOSITORY_BOUNDARY.md \
+  docs/DEPLOYMENT.md
+do
+  if grep -qx "$path" public_manifest.txt; then
+    echo "[ok] public manifest includes $path"
+  else
+    echo "[failed] public manifest must include $path"
+    status=1
+  fi
+done
+if grep -qx 'docs/PUBLIC_REPOSITORY_DOCS_AND_SAMPLE_SITE_PLAN.md' public_manifest.txt; then
+  echo "[failed] implementation plan must not ship in the public manifest"
+  status=1
+else
+  echo "[ok] implementation plan remains outside the public manifest"
+fi
 
 echo
 echo "Checking production hardening configuration..."
@@ -207,7 +238,11 @@ for path in \
   sample-outputs/html/assets \
   sample-outputs/html/fonts \
   sample-outputs/html/sw.js \
-  sample-outputs/html/content/assets
+  sample-outputs/html/content/assets \
+  sample-outputs/editor/index.html \
+  sample-outputs/editor/sample-project.json \
+  sample-outputs/editor/content/00_introduction.md \
+  sample-outputs/editor/content/01_editing_sample.md
 do
   if [ -e "$path" ]; then
     echo "[ok] $path"
@@ -216,6 +251,29 @@ do
     status=1
   fi
 done
+
+echo
+echo "Checking public sample landing and editor demo contract..."
+if grep -qi 'http-equiv=.*refresh' sample-outputs/index.html; then
+  echo "[failed] sample landing page must not immediately redirect"
+  status=1
+elif grep -q 'エディタ体験版' sample-outputs/index.html \
+  && grep -q './html/index.html' sample-outputs/index.html \
+  && grep -q './pdf/' sample-outputs/index.html \
+  && grep -q './editor/index.html' sample-outputs/index.html; then
+  echo "[ok] sample landing page exposes HTML, PDF, and editor demo links"
+else
+  echo "[failed] sample landing page does not describe all public samples"
+  status=1
+fi
+if grep -q '"build:public-demo"' ui-next/package.json \
+  && grep -q '保存、ビルド、認証、Google Docs 連携、アップロード' ui-next/src/components/public-demo-banner.tsx \
+  && grep -q '保存、ビルド、認証、Google Docs 連携、ファイルアップロード' README.md; then
+  echo "[ok] public demo build and read-only wording are documented"
+else
+  echo "[failed] public demo build or read-only wording is missing"
+  status=1
+fi
 
 echo
 echo "Checking representative sample HTML excludes source-only runtime artifacts..."

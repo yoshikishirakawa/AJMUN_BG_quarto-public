@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "title": "AJMUN BG Editor 公開デモ",
+    "author": "AJMUN BG Editor",
+    "date": "2026-05-25",
+    "version": "1.0.0",
+    "description": "公開画面確認用の静的サンプルです。"
+  },
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "はじめに",
+      "order": 0,
+      "localPath": "content/00_introduction.md",
+      "type": "document",
+      "images": []
+    },
+    {
+      "id": "editing-sample",
+      "title": "編集操作のサンプル",
+      "order": 1,
+      "localPath": "content/01_editing_sample.md",
+      "type": "document",
+      "images": []
+    }
+  ],
+  "chapterOrder": ["introduction", "editing-sample"],
+  "style": {
+    "primaryColor": "#18354f",
+    "typography": {
+      "fontSize": 16,
+      "lineHeight": 1.8,
+      "letterSpacing": 0.02,
+      "headingScale": 1.25,
+      "fontFamilyMincho": "BIZ UDPMincho",
+      "fontFamilyGothic": "BIZ UDPGothic"
+    },
+    "layout": {
+      "paperSize": "a4",
+      "columns": 1,
+      "sidebar": true,
+      "margins": { "top": 25, "bottom": 25, "left": 25, "right": 25 }
+    },
+    "paragraph": {
+      "indent": true,
+      "indentSize": 1,
+      "spacing": 0.8,
+      "justify": true
+    },
+    "visuals": {
+      "blockquoteStyle": "left-border",
+      "linkColor": "#18354f",
+      "codeBlockTheme": "github"
+    },
+    "pdf": {
+      "documentclass": "scrreprt",
+      "classoption": [],
+      "geometry": [],
+      "mainfont": "BIZ UDPMincho",
+      "sansfont": "BIZ UDPGothic"
+    },
+    "html": {
+      "toc": true,
+      "numberSections": true,
+      "codeFold": false,
+      "theme": "cosmo"
+    }
+  },
+  "buildOptions": {
+    "cleanBuild": true,
+    "syncBeforeBuild": false,
+    "generateSingleHtml": false
+  },
+  "conversionRules": [],
+  "createdAt": "2026-05-25T00:00:00Z",
+  "updatedAt": "2026-05-25T00:00:00Z"
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
+import { isPublicDemoMode, publicSampleUrl } from '@/lib/public-demo';
 
 /**
  * Enhanced PDF page mapping data structure
@@ -67,8 +68,12 @@ export function usePageMapping(_chapterId: string | null = null): UsePageMapping
 
     try {
       // Try enhanced mapping first, fall back to basic mapping
-      const enhancedPath = '/assets/pdf-page-map-enhanced.json';
-      const basicPath = '/assets/pdf-page-map.json';
+      const enhancedPath = isPublicDemoMode()
+        ? publicSampleUrl('html/assets/pdf-page-map-enhanced.json')
+        : '/assets/pdf-page-map-enhanced.json';
+      const basicPath = isPublicDemoMode()
+        ? publicSampleUrl('html/assets/pdf-page-map.json')
+        : '/assets/pdf-page-map.json';
 
       let data: EnhancedPageMapping | null = null;
 

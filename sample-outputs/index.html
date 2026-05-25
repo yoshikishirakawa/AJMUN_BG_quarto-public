@@ -2,11 +2,56 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=./html/index.html">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AJMUN Sample Outputs</title>
+  <title>AJMUN BG Editor Samples</title>
+  <style>
+    :root { color-scheme: light; --ink: #152b3c; --sub: #526475; --line: #dce3e8; --accent: #163e59; --paper: #ffffff; --wash: #f2f5f7; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--wash); font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.7; }
+    header, main, footer { width: min(100% - 40px, 920px); margin: 0 auto; }
+    header { padding: 64px 0 36px; }
+    .label { margin: 0 0 12px; color: var(--sub); font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; }
+    h1 { margin: 0 0 14px; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; }
+    h2 { font-size: 1.2rem; margin-top: 0; }
+    p { margin: 0 0 14px; color: var(--sub); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+    .card, .notice { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+    .card a { display: inline-block; margin-top: 14px; color: var(--accent); font-weight: 600; text-decoration: none; }
+    .card a:hover { text-decoration: underline; }
+    .notice { margin-bottom: 42px; }
+    footer { color: var(--sub); border-top: 1px solid var(--line); padding: 22px 0 48px; font-size: .9rem; }
+    @media (max-width: 720px) { header { padding-top: 40px; } .cards { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-  <p><a href="./html/index.html">Open the representative HTML sample</a></p>
+  <header>
+    <p class="label">AJMUN BG Editor</p>
+    <h1>公開サンプル</h1>
+    <p>背景解説書の生成結果と、編集画面の読み取り専用体験版を確認できます。</p>
+  </header>
+  <main>
+    <section class="cards" aria-label="公開サンプル一覧">
+      <article class="card">
+        <h2>HTML 版</h2>
+        <p>章構成と閲覧用 UI を含む背景解説書の代表出力です。</p>
+        <a href="./html/index.html">HTML を開く</a>
+      </article>
+      <article class="card">
+        <h2>PDF 版</h2>
+        <p>組版済みのレビュー対象 PDF サンプルです。</p>
+        <a href="./pdf/平和への課題：補遺.pdf">PDF を開く</a>
+      </article>
+      <article class="card">
+        <h2>エディタ体験版</h2>
+        <p>編集画面と Markdown preview を静的データで確認できます。</p>
+        <a href="./editor/index.html">体験版を開く</a>
+      </article>
+    </section>
+    <section class="notice">
+      <h2>体験版の制限</h2>
+      <p>公開デモでは保存、ビルド、認証、Google Docs 連携、ファイルアップロードを利用できません。本文の入力は一時的に試せますが、再読み込みすると初期状態に戻ります。</p>
+    </section>
+  </main>
+  <footer>公開対象として確認済みのサンプル出力だけを掲載しています。</footer>
 </body>
 </html>

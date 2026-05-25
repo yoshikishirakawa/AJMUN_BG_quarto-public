@@ -23,6 +23,7 @@ Use this checklist before publishing a clean public import of AJMUN BG Editor. D
 - [ ] `docs/AUDIT_REPORT.md` reflects the current release candidate.
 - [ ] `docs/IMPROVEMENT_PLAN.md` lists unresolved risks and next tasks.
 - [ ] `docs/PUBLIC_RELEASE_CHECKLIST.md` is completed for the release candidate.
+- [ ] `docs/GETTING_STARTED.md`, `docs/EDITOR_USAGE.md`, `docs/PUBLISHING_WORKFLOW.md`, `docs/PUBLIC_REPOSITORY_BOUNDARY.md`, and `docs/DEPLOYMENT.md` are current.
 - [ ] `SECURITY.md` has reporting and deployment guidance.
 - [ ] `CONTRIBUTING.md` gives the required checks for contributors.
 - [ ] Known limitations and troubleshooting docs are current.
@@ -98,6 +99,9 @@ Use this checklist before publishing a clean public import of AJMUN BG Editor. D
 ## Examples
 
 - [ ] `sample-outputs/index.html` exists.
+- [ ] `sample-outputs/index.html` describes HTML, PDF, and static editor demo links without an immediate redirect.
+- [ ] `sample-outputs/editor/index.html` exists after `npm --prefix ui-next run build:public-demo`.
+- [ ] The editor demo states that save, build, authentication, Google Docs integration, and uploads are disabled.
 - [ ] Representative HTML outputs are current and intentional.
 - [ ] Representative PDF outputs are current and intentional.
 - [ ] Sample outputs do not include private links, local absolute paths, unpublished notes, or credentials.
