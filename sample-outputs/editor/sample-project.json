@@ -23,9 +23,49 @@
       "localPath": "content/01_editing_sample.md",
       "type": "document",
       "images": []
+    },
+    {
+      "id": "image-gallery-sample",
+      "title": "画像グループの表示例",
+      "order": 2,
+      "localPath": "content/02_image_gallery_sample.md",
+      "type": "image_group",
+      "images": [
+        {
+          "path": "fixtures/image-placeholder-landscape.svg",
+          "caption": "Landscape placeholder"
+        },
+        {
+          "path": "fixtures/image-placeholder-portrait.svg",
+          "caption": "Portrait placeholder"
+        }
+      ]
+    },
+    {
+      "id": "fullpage-image-sample",
+      "title": "全面画像の表示例",
+      "order": 3,
+      "localPath": "content/03_fullpage_image_sample.md",
+      "type": "fullpage_image",
+      "images": [
+        {
+          "path": "fixtures/image-placeholder-portrait.svg",
+          "caption": "Full-page placeholder",
+          "width": "a4",
+          "fit": "contain",
+          "position": "center"
+        },
+        {
+          "path": "fixtures/image-placeholder-landscape.svg",
+          "caption": "Alternate placeholder",
+          "width": "a4",
+          "fit": "contain",
+          "position": "center"
+        }
+      ]
     }
   ],
-  "chapterOrder": ["introduction", "editing-sample"],
+  "chapterOrder": ["introduction", "editing-sample", "image-gallery-sample", "fullpage-image-sample"],
   "style": {
     "primaryColor": "#18354f",
     "typography": {

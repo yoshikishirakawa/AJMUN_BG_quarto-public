@@ -33,21 +33,24 @@ import {
     verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import { editorImageUrl, isPublicDemoMode } from '@/lib/public-demo';
+import { cn } from '@/lib/utils';
 
 interface SortableImageItemProps {
     image: FullpageImageConfig;
+    readOnly?: boolean;
     onRemove: () => void;
     onUpdate: (updates: Partial<FullpageImageConfig>) => void;
 }
 
-const SortableImageItem: React.FC<SortableImageItemProps> = ({ image, onRemove, onUpdate }) => {
+const SortableImageItem: React.FC<SortableImageItemProps> = ({ image, readOnly = false, onRemove, onUpdate }) => {
     const {
         attributes,
         listeners,
         setNodeRef,
         transform,
         transition,
-    } = useSortable({ id: image.path });
+    } = useSortable({ id: image.path, disabled: readOnly });
 
     const style = {
         transform: CSS.Transform.toString(transform),
@@ -60,14 +63,14 @@ const SortableImageItem: React.FC<SortableImageItemProps> = ({ image, onRemove, 
             style={style}
             className="flex gap-3 p-3 bg-muted/30 rounded-lg border"
         >
-            <div {...attributes} {...listeners} className="cursor-grab pt-4">
+            <div {...attributes} {...listeners} className={cn("pt-4", readOnly ? "cursor-not-allowed opacity-40" : "cursor-grab")}>
                 <GripVertical className="h-4 w-4 text-muted-foreground" />
             </div>
 
             {/* Preview */}
             <div className="w-24 h-32 bg-background rounded overflow-hidden flex-shrink-0">
                 <img
-                    src={image.path.startsWith('/') ? image.path : `/${image.path}`}
+                    src={editorImageUrl(image.path)}
                     alt="Preview"
                     className="w-full h-full object-cover"
                 />
@@ -79,7 +82,10 @@ const SortableImageItem: React.FC<SortableImageItemProps> = ({ image, onRemove, 
                     <Label className="text-xs">Size</Label>
                     <Select
                         value={image.width || 'a4'}
-                        onValueChange={(v) => onUpdate({ width: v })}
+                        disabled={readOnly}
+                        onValueChange={(v) => {
+                            if (!readOnly) onUpdate({ width: v });
+                        }}
                     >
                         <SelectTrigger className="h-8">
                             <SelectValue />
@@ -97,7 +103,10 @@ const SortableImageItem: React.FC<SortableImageItemProps> = ({ image, onRemove, 
                     <Label className="text-xs">Fit</Label>
                     <Select
                         value={image.fit || 'stretch'}
-                        onValueChange={(v) => onUpdate({ fit: v as 'stretch' | 'contain' })}
+                        disabled={readOnly}
+                        onValueChange={(v) => {
+                            if (!readOnly) onUpdate({ fit: v as 'stretch' | 'contain' });
+                        }}
                     >
                         <SelectTrigger className="h-8">
                             <SelectValue />
@@ -113,7 +122,10 @@ const SortableImageItem: React.FC<SortableImageItemProps> = ({ image, onRemove, 
                     <Label className="text-xs">Position</Label>
                     <Select
                         value={image.position || 'center'}
-                        onValueChange={(v) => onUpdate({ position: v as 'center' | 'top' | 'bottom' })}
+                        disabled={readOnly}
+                        onValueChange={(v) => {
+                            if (!readOnly) onUpdate({ position: v as 'center' | 'top' | 'bottom' });
+                        }}
                     >
                         <SelectTrigger className="h-8">
                             <SelectValue />
@@ -131,7 +143,9 @@ const SortableImageItem: React.FC<SortableImageItemProps> = ({ image, onRemove, 
                 variant="ghost"
                 size="icon"
                 onClick={onRemove}
+                disabled={readOnly}
                 className="text-destructive"
+                aria-label={readOnly ? '公開デモでは画像を削除できません' : undefined}
             >
                 <Trash2 className="h-4 w-4" />
             </Button>
@@ -152,12 +166,14 @@ export const FullpageImageEditor: React.FC<FullpageImageEditorProps> = ({
 }) => {
     const { toast } = useToast();
     const { uploadChapterImage } = useProjectStore();
+    const readOnly = isPublicDemoMode();
     const [isUploading, setIsUploading] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     const sensors = [useSensor(PointerSensor)];
 
     const handleDragEnd = (event: DragEndEvent) => {
+        if (readOnly) return;
         const { active, over } = event;
         if (!over) return;
         if (active.id !== over?.id) {
@@ -168,6 +184,7 @@ export const FullpageImageEditor: React.FC<FullpageImageEditorProps> = ({
     };
 
     const handleAddImage = async (file: File) => {
+        if (readOnly) return;
         if (!file.type.startsWith('image/')) {
             toast({
                 title: 'Error',
@@ -204,12 +221,14 @@ export const FullpageImageEditor: React.FC<FullpageImageEditorProps> = ({
     };
 
     const handleUpdateImage = (index: number, updates: Partial<FullpageImageConfig>) => {
+        if (readOnly) return;
         const updated = [...images];
         updated[index] = { ...updated[index], ...updates };
         onChange(updated);
     };
 
     const handleRemoveImage = (index: number) => {
+        if (readOnly) return;
         onChange(images.filter((_, i) => i !== index));
     };
 
@@ -224,7 +243,7 @@ export const FullpageImageEditor: React.FC<FullpageImageEditorProps> = ({
                 <Button
                     size="sm"
                     onClick={() => fileInputRef.current?.click()}
-                    disabled={isUploading}
+                    disabled={readOnly || isUploading}
                 >
                     <Plus className="h-4 w-4 mr-2" />
                     Add Image
@@ -234,7 +253,9 @@ export const FullpageImageEditor: React.FC<FullpageImageEditorProps> = ({
                     type="file"
                     accept="image/*"
                     className="hidden"
+                    disabled={readOnly}
                     onChange={(e) => {
+                        if (readOnly) return;
                         const file = e.target.files?.[0];
                         if (file) {
                             handleAddImage(file);
@@ -245,12 +266,17 @@ export const FullpageImageEditor: React.FC<FullpageImageEditorProps> = ({
 
             {/* Image List */}
             <ScrollArea className="flex-1 p-4">
+                {readOnly && (
+                    <div className="rounded-lg border bg-muted/30 p-3 mb-4 text-sm text-muted-foreground">
+                        公開デモでは画像の追加、削除、並べ替え、設定変更は利用できません。
+                    </div>
+                )}
                 {images.length === 0 ? (
                     <div className="h-full flex flex-col items-center justify-center text-center py-12">
                         <ImageIcon className="h-16 w-16 text-muted-foreground/30 mb-4" />
                         <p className="text-muted-foreground">No images yet</p>
                         <p className="text-sm text-muted-foreground mt-1">
-                            Add images to create full-page pages
+                            {readOnly ? '公開デモでは画像を追加できません。' : 'Add images to create full-page pages'}
                         </p>
                     </div>
                 ) : (
@@ -268,6 +294,7 @@ export const FullpageImageEditor: React.FC<FullpageImageEditorProps> = ({
                                     <SortableImageItem
                                         key={image.path}
                                         image={image}
+                                        readOnly={readOnly}
                                         onRemove={() => handleRemoveImage(index)}
                                         onUpdate={(updates) =>
                                             handleUpdateImage(index, updates)

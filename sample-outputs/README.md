@@ -16,4 +16,4 @@ This directory stores the curated representative deliverables that ship with the
 - any persisted editor change, credentials, or external-service configuration
 
 Refresh this directory from `out/` during the release freeze process described in `docs/RELEASE_RUNBOOK.md`.
-Build the public editor demo with `npm --prefix ui-next run build:public-demo`. The demo permits temporary Markdown input for preview only; it cannot save or build.
+Build the public editor demo with `npm --prefix ui-next run build:public-demo`. The demo permits temporary Markdown input for preview only; it cannot save, build, authenticate, connect to Google Docs, or mutate the included image fixtures.

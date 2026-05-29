@@ -21,11 +21,17 @@ Google Docs integration is optional and depends on deployment-provided OAuth
 configuration. The application must remain usable for local editing and builds
 when Google integration is disabled or unconfigured.
 
+日本語: 公開エディタ体験版は Google Docs 連携を提供せず、接続や同期の操作は
+実行できません。
+
 ## PDF Environment
 
 The default Docker workflow is intentionally lightweight and does not include a
 full TeX environment. Use the PDF Docker override or a host TeX installation
 for PDF rendering.
+
+日本語: ローカルでの通常編集には依存関係のセットアップが必要です。PDF の生成には
+PDF 用 Docker 構成または TeX を導入した host 環境が必要です。
 
 ## Public Import
 
@@ -46,4 +52,6 @@ integration, uploads, and persistent settings are disabled.
 
 日本語: 公開エディタ体験版は静的な画面確認用です。本文入力は preview 確認の
 ため一時的に可能ですが、保存、build、認証、Google Docs 連携、upload、
-永続的な設定変更は利用できません。
+画像の追加・削除・並べ替え・設定変更、永続的な設定変更は利用できません。
+掲載する HTML、PDF、editor fixture は機能確認用の代表出力であり、完全な作業
+データセットや hosted 編集サービスではありません。

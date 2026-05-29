@@ -37,5 +37,8 @@ describe('PublicDemoProjectService', () => {
 
     await expect(service.updateChapterContent('intro', 'changed')).rejects.toThrow('公開デモではこの操作を利用できません。')
     await expect(service.saveProject(fixture as never)).rejects.toThrow('公開デモではこの操作を利用できません。')
+    await expect(service.updateChapterImages('intro', [])).rejects.toThrow('公開デモではこの操作を利用できません。')
+    await expect(service.uploadChapterImage('intro', new File(['x'], 'x.png', { type: 'image/png' }))).rejects.toThrow('公開デモではこの操作を利用できません。')
+    await expect(service.updateMetadata(fixture.metadata as never)).rejects.toThrow('公開デモではこの操作を利用できません。')
   })
 })

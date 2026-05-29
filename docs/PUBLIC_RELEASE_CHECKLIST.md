@@ -20,8 +20,6 @@ Use this checklist before publishing a clean public import of AJMUN BG Editor. D
 - [ ] `docs/DISTRIBUTION.md` describes public/private boundaries.
 - [ ] `docs/RELEASE_RUNBOOK.md` describes release steps.
 - [ ] `docs/PUBLICATION_RUNBOOK.md` describes clean import steps.
-- [ ] `docs/AUDIT_REPORT.md` reflects the current release candidate.
-- [ ] `docs/IMPROVEMENT_PLAN.md` lists unresolved risks and next tasks.
 - [ ] `docs/PUBLIC_RELEASE_CHECKLIST.md` is completed for the release candidate.
 - [ ] `docs/GETTING_STARTED.md`, `docs/EDITOR_USAGE.md`, `docs/PUBLISHING_WORKFLOW.md`, `docs/PUBLIC_REPOSITORY_BOUNDARY.md`, and `docs/DEPLOYMENT.md` are current.
 - [ ] `SECURITY.md` has reporting and deployment guidance.
@@ -67,6 +65,8 @@ Use this checklist before publishing a clean public import of AJMUN BG Editor. D
 - [ ] `npm --prefix ui-next run lint` passes.
 - [ ] `npm --prefix ui-next run test:run` passes.
 - [ ] `npm --prefix ui-next run build` passes.
+- [ ] `npm --prefix ui-next run build:public-demo` passes and finalizes public metadata.
+- [ ] `npm --prefix ui-next run test:e2e:public-demo` passes for the generated static demo.
 - [ ] `bash scripts/release_check.sh` passes.
 - [ ] `docker compose config` passes.
 - [ ] Production compose validation behaves as expected with `.env.prod.example` requiring missing secrets.
@@ -84,6 +84,7 @@ Use this checklist before publishing a clean public import of AJMUN BG Editor. D
 - [ ] Secret scanning workflow passes or findings are triaged privately.
 - [ ] Dependency audit steps pass or accepted exceptions are documented.
 - [ ] Pages deployment, if enabled, publishes only reviewed representative samples.
+- [ ] Pages workflow succeeds for the public synchronization commit with `sample-outputs/` as its artifact root.
 - [ ] Workflow permissions are least-privilege for each workflow.
 - [ ] PR checks are clearly visible before merge.
 
@@ -102,6 +103,7 @@ Use this checklist before publishing a clean public import of AJMUN BG Editor. D
 - [ ] `sample-outputs/index.html` describes HTML, PDF, and static editor demo links without an immediate redirect.
 - [ ] `sample-outputs/editor/index.html` exists after `npm --prefix ui-next run build:public-demo`.
 - [ ] The editor demo states that save, build, authentication, Google Docs integration, and uploads are disabled.
+- [ ] The editor demo includes image group and full-page image fixtures whose mutation controls are disabled.
 - [ ] Representative HTML outputs are current and intentional.
 - [ ] Representative PDF outputs are current and intentional.
 - [ ] Sample outputs do not include private links, local absolute paths, unpublished notes, or credentials.
@@ -134,7 +136,7 @@ Use this checklist before publishing a clean public import of AJMUN BG Editor. D
 - [ ] Browse the clean import tree in GitHub UI before public announcement.
 - [ ] Open representative sample HTML in a browser.
 - [ ] Open representative PDF and inspect metadata.
+- [ ] Open the live Pages editor demo and confirm banner, disabled save/build/image operations, and absence of mutation API requests.
 - [ ] Confirm no private/confidential conference information is unintentionally exposed.
 - [ ] Confirm no non-public Google Docs or Drive URLs are embedded.
 - [ ] Confirm no generated or local-only files are included.
-- [ ] Confirm unresolved findings in `docs/AUDIT_REPORT.md` and `docs/IMPROVEMENT_PLAN.md` are acceptable for release.

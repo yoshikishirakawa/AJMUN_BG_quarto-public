@@ -53,10 +53,7 @@ check_required_file docs/AUTH_MODEL.md
 check_required_file docs/API_EXPOSURE_AUDIT.md
 check_required_file docs/ASSET_RIGHTS_MANIFEST.md
 check_required_file docs/KNOWN_LIMITATIONS.md
-check_required_file docs/AUDIT_REPORT.md
-check_required_file docs/IMPROVEMENT_PLAN.md
 check_required_file docs/PUBLIC_RELEASE_CHECKLIST.md
-check_required_file docs/PR_DESCRIPTION.md
 check_required_file docs/TROUBLESHOOTING.md
 check_required_file CONTENT_LICENSE.md
 check_required_file SECURITY.md
@@ -93,6 +90,14 @@ if grep -qx 'docs/PUBLIC_REPOSITORY_DOCS_AND_SAMPLE_SITE_PLAN.md' public_manifes
 else
   echo "[ok] implementation plan remains outside the public manifest"
 fi
+for path in docs/AUDIT_REPORT.md docs/IMPROVEMENT_PLAN.md docs/PR_DESCRIPTION.md; do
+  if grep -qx "$path" public_manifest.txt; then
+    echo "[failed] private release record must not ship in the public manifest: $path"
+    status=1
+  else
+    echo "[ok] private release record excluded from public manifest: $path"
+  fi
+done
 
 echo
 echo "Checking production hardening configuration..."
@@ -242,7 +247,11 @@ for path in \
   sample-outputs/editor/index.html \
   sample-outputs/editor/sample-project.json \
   sample-outputs/editor/content/00_introduction.md \
-  sample-outputs/editor/content/01_editing_sample.md
+  sample-outputs/editor/content/01_editing_sample.md \
+  sample-outputs/editor/content/02_image_gallery_sample.md \
+  sample-outputs/editor/content/03_fullpage_image_sample.md \
+  sample-outputs/editor/fixtures/image-placeholder-landscape.svg \
+  sample-outputs/editor/fixtures/image-placeholder-portrait.svg
 do
   if [ -e "$path" ]; then
     echo "[ok] $path"
@@ -260,10 +269,16 @@ if grep -qi 'http-equiv=.*refresh' sample-outputs/index.html; then
 elif grep -q 'エディタ体験版' sample-outputs/index.html \
   && grep -q './html/index.html' sample-outputs/index.html \
   && grep -q './pdf/' sample-outputs/index.html \
-  && grep -q './editor/index.html' sample-outputs/index.html; then
+  && grep -q './editor/index.html' sample-outputs/index.html \
+  && grep -q 'github.com/yoshikishirakawa/AJMUN_BG_quarto-public' sample-outputs/index.html \
+  && grep -q 'docs/GETTING_STARTED.md' sample-outputs/index.html \
+  && grep -q 'property="og:title"' sample-outputs/index.html \
+  && grep -q 'property="og:description"' sample-outputs/index.html \
+  && grep -q 'property="og:type"' sample-outputs/index.html \
+  && grep -q 'property="og:url"' sample-outputs/index.html; then
   echo "[ok] sample landing page exposes HTML, PDF, and editor demo links"
 else
-  echo "[failed] sample landing page does not describe all public samples"
+  echo "[failed] sample landing page does not expose samples, navigation, and basic metadata"
   status=1
 fi
 if grep -q '"build:public-demo"' ui-next/package.json \
@@ -279,6 +294,23 @@ if grep -Eq '(src|href)="/editor/' sample-outputs/editor/index.html; then
   status=1
 else
   echo "[ok] public demo assets support GitHub Pages subpath hosting"
+fi
+if grep -q '<html lang="ja">' sample-outputs/editor/index.html \
+  && grep -q 'AJMUN BG Editor 公開デモ' sample-outputs/editor/index.html \
+  && grep -q '保存・ビルド・認証・外部連携' sample-outputs/editor/index.html; then
+  echo "[ok] public demo HTML metadata is finalized"
+else
+  echo "[failed] public demo HTML metadata has not been finalized"
+  status=1
+fi
+if grep -q 'const readOnly = isPublicDemoMode()' ui-next/src/features/editor/components/ImageGroupPanel.tsx \
+  && grep -q 'const readOnly = isPublicDemoMode()' ui-next/src/features/editor/components/FullpageImageEditor.tsx \
+  && grep -q 'editorImageUrl' ui-next/src/features/editor/components/ImageGroupPanel.tsx \
+  && grep -q 'editorImageUrl' ui-next/src/features/editor/components/FullpageImageEditor.tsx; then
+  echo "[ok] public demo image panels keep read-only guards and artifact-relative previews"
+else
+  echo "[failed] public demo image panel read-only or preview URL guard is missing"
+  status=1
 fi
 
 echo

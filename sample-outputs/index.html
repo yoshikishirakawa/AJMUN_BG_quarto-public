@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AJMUN BG Editor Samples</title>
+  <meta name="description" content="AJMUN BG Editor の背景解説書 HTML/PDF と読み取り専用エディタ公開デモです。">
+  <meta property="og:title" content="AJMUN BG Editor 公開サンプル">
+  <meta property="og:description" content="背景解説書 HTML/PDF と読み取り専用エディタ公開デモを確認できます。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yoshikishirakawa.github.io/AJMUN_BG_quarto-public/">
   <style>
     :root { color-scheme: light; --ink: #152b3c; --sub: #526475; --line: #dce3e8; --accent: #163e59; --paper: #ffffff; --wash: #f2f5f7; }
     * { box-sizing: border-box; }
@@ -20,6 +25,7 @@
     .card a:hover { text-decoration: underline; }
     .notice { margin-bottom: 42px; }
     footer { color: var(--sub); border-top: 1px solid var(--line); padding: 22px 0 48px; font-size: .9rem; }
+    footer a { color: var(--accent); margin-right: 18px; }
     @media (max-width: 720px) { header { padding-top: 40px; } .cards { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -52,6 +58,10 @@
       <p>公開デモでは保存、ビルド、認証、Google Docs 連携、ファイルアップロードを利用できません。本文の入力は一時的に試せますが、再読み込みすると初期状態に戻ります。</p>
     </section>
   </main>
-  <footer>公開対象として確認済みのサンプル出力だけを掲載しています。</footer>
+  <footer>
+    <a href="https://github.com/yoshikishirakawa/AJMUN_BG_quarto-public">GitHub repository</a>
+    <a href="https://github.com/yoshikishirakawa/AJMUN_BG_quarto-public/blob/main/docs/GETTING_STARTED.md">Documentation</a>
+    <span>公開対象として確認済みのサンプル出力だけを掲載しています。</span>
+  </footer>
 </body>
 </html>

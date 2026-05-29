@@ -9,3 +9,6 @@ export const publicDemoAssetUrl = (path: string) =>
 export const publicSampleUrl = (path: string) =>
   `${publicDemoBasePath()}../${path.replace(/^\/+/, '')}`
 
+export const editorImageUrl = (path: string) => isPublicDemoMode()
+  ? publicDemoAssetUrl(path)
+  : path.startsWith('/') ? path : `/${path}`

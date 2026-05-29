@@ -82,6 +82,7 @@ npm --prefix ui-next run lint
 npm --prefix ui-next run test:run
 npm --prefix ui-next run build
 npm --prefix ui-next run build:public-demo
+npm --prefix ui-next run test:e2e:public-demo
 bash scripts/check_pdf_env.sh --render-html-smoke
 bash scripts/check_pdf_env.sh --render-pdf-smoke
 python3 scripts/sync_output_runtime_assets.py --sync-sample-outputs
@@ -136,6 +137,7 @@ npm --prefix ui-next run lint
 npm --prefix ui-next run test:run
 npm --prefix ui-next run build
 npm --prefix ui-next run build:public-demo
+npm --prefix ui-next run test:e2e:public-demo
 gitleaks detect --source . --redact --no-git
 ```
 
