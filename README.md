@@ -2,12 +2,9 @@
 
 AJMUN BG Editor は、第37回全日本模擬国連大会の背景解説書を作成するために整備した編集・組版環境です。章ごとの Markdown 原稿から、Quarto による HTML 版と LaTeX による PDF 版を生成します。
 
-この公開リポジトリには、公開可能なコード、設定、ドキュメント、レビュー済みの代表出力を収録しています。認証情報、ローカル状態、作業中の内部メモ、生成途中の作業領域は含めません。
-
 ## 公開サンプル
 
-GitHub Pages で `sample-outputs/` の次の成果物を公開します。
-
+公開サンプルは以下のとおりです。
 - サンプル一覧: <https://yoshikishirakawa.github.io/AJMUN_BG_quarto-public/>
 - 背景解説書の HTML 版: <https://yoshikishirakawa.github.io/AJMUN_BG_quarto-public/html/>
 - 背景解説書の PDF 版: <https://yoshikishirakawa.github.io/AJMUN_BG_quarto-public/pdf/%E5%B9%B3%E5%92%8C%E3%81%B8%E3%81%AE%E8%AA%B2%E9%A1%8C%EF%BC%9A%E8%A3%9C%E9%81%BA.pdf>
